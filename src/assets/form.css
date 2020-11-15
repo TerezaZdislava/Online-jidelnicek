@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(0, 0, 0);
+  font-family: Montserrat;
+}
+#navigace {
+  width: 100%;
+  height: 48px;
+  background-color: rgb(22, 107, 37);
+  font-family: 'Pattaya', sans-serif;
+  font-size: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#navigace a {
+  text-decoration: none;
+  padding-right: 40px;
+  padding-left: 40px;
+  color: rgb(0, 0, 0);
+}
+#navItems {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+  text-align: center;
+}
+h1 {
+  color: rgb(32, 32, 32);
+  font-size: 4.2rem;
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  font-family: 'Pattaya', sans-serif;
+}
+p {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+img {
+  width: 16.4%;
+}
+#obrazky {
+  align-content: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(0, 0, 0);
+  justify-content: center;
+}
+.tlacitko {
+  display: flex;
+  margin-top: 30px;
+  width: 100%;
+  justify-content: center;
+}
+.btn {
+  width: 10rem;
+  height: 5rem;
+  background-color: rgb(22, 107, 37);
+  font-family: 'Pattaya', sans-serif;
+  font-size: 2rem;
+  border-radius: 8px;
+  margin: 30px;
+}
+.card {
+  width: 450px;
+}
+.card-title {
+  margin: 20px;
+}
+.question-choices {
+  font-size: 1rem;
+}
+.cta {
+  color: rgb(22, 107, 37);
+  font-family: 'Pattaya', sans-serif;
+  font-size: 1.5rem;
+}
+/*
+
+.intro {
+  color: brown;
+}*/

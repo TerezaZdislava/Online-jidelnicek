@@ -1,0 +1,221 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url('assets/img/pozadi4.png');
+}
+#navigace {
+  width: 100%;
+  height: 48px;
+  background-color: rgb(22, 107, 37);
+  font-family: Montserrat;
+  font-size: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#navigace a {
+  text-decoration: none;
+  padding-right: 40px;
+  padding-left: 40px;
+  color: whitesmoke;
+}
+
+#navItems {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+}
+
+#intro h1 {
+  text-align: center;
+  font-size: 4.2rem;
+  font-family: 'Pattaya', sans-serif;
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+
+#intro p {
+  margin-top: 0;
+  text-align: center;
+  padding-left: 350px;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(46, 46, 46);
+  font-size: 1.2rem;
+}
+
+#content {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#showApp img {
+  height: 80%;
+  margin-left: 50px;
+}
+
+#appDescription {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+#aboutApp {
+  width: 400px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#cta1 {
+  font-family: 'Pattaya', sans-serif;
+  color: black;
+  font-size: 1.8rem;
+}
+#cta2 {
+  font-weight: bold;
+  margin-bottom: 70px;
+}
+#cta4 {
+  margin-top: 60px;
+}
+
+#food {
+  position: relative;
+  top: -50px;
+  left: -70px;
+}
+
+.fotogalerie {
+  display: flex;
+  justify-content: center;
+}
+
+/*-------respozini design-------*/
+@media (max-width: 540px) {
+  #navigace a {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 10px;
+  }
+  #intro h1 {
+    font-size: 2rem;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  #intro h1 {
+    font-size: 2rem;
+  }
+  #intro p {
+    font-size: 1rem;
+    padding-left: 50px;
+    padding-top: 10px;
+  }
+  #food {
+    width: 40%;
+    top: -1300px;
+    left: -50px;
+  }
+  #foodDiv {
+    order: 3;
+  }
+  #content {
+    margin: 0;
+  }
+  #aboutApp {
+    order: 0;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 0;
+  }
+  #cta1,
+  #cta2 {
+    text-align: right;
+    font-weight: normal;
+  }
+  #cta2 {
+    padding-left: 25%;
+  }
+}
+#showApp img {
+  height: 90%;
+  align-self: center;
+}
+
+@media (min-width: 540px) and (max-width: 800px) {
+  #navigace a {
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 14px;
+  }
+  #intro h1 {
+    font-size: 3.5rem;
+  }
+  #food {
+    width: 50%;
+    order: 3;
+    top: -1300px;
+    left: -50px;
+  }
+  #foodDiv {
+    order: 3;
+  }
+  #cta1,
+  #cta2 {
+    text-align: right;
+    font-weight: normal;
+  }
+  #cta2 {
+    padding-left: 25%;
+  }
+  #showApp img {
+    height: 90%;
+    align-self: center;
+    order: 3;
+  }
+  #aboutApp {
+    width: 500px;
+    justify-content: center;
+    justify-self: center;
+  }
+}
+@media (min-width: 800px) and (max-width: 1200px) {
+  #navigace a {
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 14px;
+  }
+  #intro h1 {
+    font-size: 3.5rem;
+  }
+  #food {
+    width: 130%;
+    order: 0;
+    left: -50px;
+  }
+  #foodDiv {
+    order: 0;
+    width: 20%;
+  }
+  #cta1,
+  #cta2 {
+    text-align: right;
+    font-weight: normal;
+  }
+  #cta2 {
+    padding-left: 25%;
+  }
+  #showApp img {
+    height: 80%;
+    align-self: center;
+    order: 3;
+  }
+  #aboutApp {
+    width: 400px;
+  }
+}
