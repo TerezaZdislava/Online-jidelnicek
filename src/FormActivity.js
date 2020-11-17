@@ -1,44 +1,16 @@
-// import React from 'react';
-// import './App.css';
-// import { Formik } from 'formik';
-
-// const questions = {
-//   form1:{
-//     otazka1: '',
-//     otazka2: '',
-//     otazka3: ''
-//   },
-//   form2: {
-//     question: 'Sportujete během týdne?',
-//     choices: [
-//       { option: 'A', answer: 'Nesportuji.' },
-//       { option: 'B', answer: 'Sportuji 1 - 2x týdně.' },
-//       { option: 'C', answer: 'Sportuji 3 - 4x týdně.' },
-//       {
-//         option: 'D',
-//         answer: 'Jsem sportovní nadšenec a dám si do těla minimálně 5x týdně.',
-//       },
-//     ],
-//   },
-//   form3: {
-//     question: 'Jaké je Vaše zaměstnání, popřípadě náplň dne?',
-//     choices: [
-//       { option: 'A', answer: 'Nejsem aktivní. Denně ujdu méně než 8 K kroků.' },
-//       {
-//         option: 'B',
-//         answer: 'Jsem středně aktivní, nachodím kolem 8 K kroků.',
-//       },
-//       {
-//         option: 'C',
-//         answer: 'Jsem aktivní a většinu dne na nohou. Nachodím nad 10 K kroků',
-//       },
-//     ],
-//   },
-// };
+import React, { useState } from 'react';
+import { Formik, Field, Form } from 'formik';
 
 // const questions = [
 //   {
-//     question: 'Sportujete během týdne?',
+//     question: 'Kolik jídel denně preferuješ?',
+//     choices: [
+//       { option: 'A', answer: '3 jídla (snídaně, oběd, večeře)' },
+//       { option: 'A', answer: '5 jídel (svačiny mezi hlavními jídly)' },
+//     ],
+//   },
+//   {
+//     question: 'Sportuješ během týdne?',
 //     choices: [
 //       { option: 'A', answer: 'Nesportuji.' },
 //       { option: 'B', answer: 'Sportuji 1 - 2x týdně.' },
@@ -66,6 +38,8 @@
 // ];
 
 // class Questions extends React.Component {
+// //const FormActivity = ({ formData, setFormData, nextStep, prevStep }) => {
+
 //   constructor(props) {
 //     super(props);
 //     this.state = {
@@ -91,6 +65,7 @@
 //     const { questions } = this.state;
 //     const userSelection = { answers: this.userSelection(questions.length) };
 //     console.log(userSelection);
+//     const [direction, setDirection] = useState('back');
 
 //     return (
 //       <Formik enableReinitialize={true} initialValues={userSelection}>
@@ -132,24 +107,20 @@
 //               </div>
 //             ))}
 //             <pre>{JSON.stringify(values, null, 2)}</pre>
-//             <div className="tlacitko">
+//             <div>
 //               <button
 //                 type="submit"
-//                 className="btn btn-primary"
-//                 disabled={isSubmitting}
-//                 onClick={() => {
-//                   const odpovedi = ['A', 'B'];
-//                   let vysledek = 0;
-//                   for (let i = 0; i < odpovedi.length; i++) {
-//                     if (values.answers[i].answer === odpovedi[i]) {
-//                       vysledek++;
-//                     }
-//                   }
-//                   console.log(vysledek);
-//                   alert('Získali jste celkem ' + vysledek + ' bodů 🎉');
-//                 }}
+//                 variant="contained"
+//                 onClick={() => setDirection('back')}
 //               >
-//                 Výsledek
+//                 Back
+//               </button>
+//               <button
+//                 type="submit"
+//                 variant="contained"
+//                 onClick={() => setDirection('forward')}
+//               >
+//                 Continue
 //               </button>
 //             </div>
 //           </form>
@@ -159,6 +130,83 @@
 //   }
 // }
 
+const FormActivity = ({ formData, setFormData, nextStep, prevStep }) => {
+  // const userSelection = {
+  //   answers: this.userSelection(formData.form3.questions.length),
+  // };
+  const [direction, setDirection] = useState('back');
+
+  return (
+    // <Formik enableReinitialize={true} initialValues={userSelection}>
+    //   {({ values, handleBlur, handleChange, handleSubmit, isSubmitting }) => (
+    <Formik
+      initialValues={formData}
+      onSubmit={(values) => {
+        console.log(JSON.stringify(values, null, 2)); //co to je?
+        setFormData(values);
+        direction === 'back' ? prevStep() : nextStep();
+      }}
+    >
+      {({ values, handleBlur, handleChange }) => (
+        <Form>
+          {formData.form3.questions.map((q, index) => (
+            <div className="card" key={index}>
+              {/* <div className="card-header">Hádej</div> */}
+              <div className="card-body">
+                <h6 className="card-title">{q.question}</h6>
+                <div className="question-choices px-2">
+                  {q.choices.map((choice) => (
+                    <div className="form-check" key={choice.option}>
+                      <input
+                        type="radio"
+                        id={choice.option}
+                        className="form-check-input"
+                        name={`answers[${index}].answer`}
+                        value={choice.option}
+                        checked={
+                          values.answers && values.answers[index]
+                            ? values.answers[index].answer === choice.option
+                            : false
+                        }
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      <label
+                        className="form-check-label clickable"
+                        htmlFor={choice.option}
+                      >
+                        <span className="mr-2">{choice.option} )</span>
+                        {choice.answer}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+          {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
+          <div>
+            <button
+              type="submit"
+              variant="contained"
+              onClick={() => setDirection('back')}
+            >
+              Back
+            </button>
+            <button
+              type="submit"
+              variant="contained"
+              onClick={() => setDirection('forward')}
+            >
+              Continue
+            </button>
+          </div>
+        </Form>
+      )}
+    </Formik>
+  );
+};
+
 // function Activity() {
 //   return (
 //     <div>
@@ -167,8 +215,8 @@
 //   );
 // }
 
-// export default Activity;
+export default FormActivity;
 
-// // zdroje kodu:
-// // https://formik.org/docs/overview
-// // https://codesandbox.io/s/gifted-brown-xemxi?file=/src/App.js:2405-2429
+// zdroje kodu:
+// https://formik.org/docs/overview
+// https://codesandbox.io/s/gifted-brown-xemxi?file=/src/App.js:2405-2429
