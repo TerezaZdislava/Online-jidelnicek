@@ -90,6 +90,6 @@ export const FormParent = () => {
     default:
       // console.log(formData);
       // alert(formData);
-      return <Success />;
+      return <Success formData={formData} />;
   }
 };

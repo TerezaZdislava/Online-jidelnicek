@@ -5,7 +5,7 @@ export const Success = ({ formData }) => {
     <div>
       <h1>Thank You For Your Submission</h1>
       <p>You will get an email with further instructions</p>
-      <p>{JSON.stringify({ formData })}</p>
+      <pre>{JSON.stringify(formData, null, 2)}</pre>
     </div>
   );
 };
