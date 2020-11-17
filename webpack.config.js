@@ -2,10 +2,10 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   //musim zapsat i dalsi javascript
-  //zapisovat html soubory jen jako ./nazev
+  //do odkazu zapisovat html soubory jen jako ./nazev
   //funguje to jako zacatek stromu
   //https://webpack.js.org/concepts/entry-points/
-  //pokud menim webpack, potreba ctrc+c a ukoncit a zacit znovu
+  //pokud menim webpack, potreba ctrc+c a ukoncit a zacit znovu npm start
   entry: {
     main: './src/form.js',
   },

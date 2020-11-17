@@ -1,25 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { FormParent } from './Formparent.js';
 
 ReactDOM.render(
   <div className="content">
-    <h1>Podnikni virtuální výlet z gauče!</h1>
+    <h1>Interaktivní formulář</h1>
     <div className="intro">
       <p>
-        Milý návštěvnku, místo vyprávění o sobě jsem Ti přichystala jsem kvíz,
-        kde můžeš otestovat znalost Česka a imaginárně si procestovat pár míst.
+        Abychom ti mohli sestavit jídelníček na míru, potřebujeme od tebe
+        vyplnit pár základních informací.
       </p>
-      <p>
-        Proč mě to napadlo? Své pracovní dny trávím mimojiné tvorbou
-        cestovatelské inspirace a prostě jsem se musela o ty boží tipy podělit i
-        s Tebou. A také jsem si chtěla nanečisto zkusit formulář v Reactu. Za
-        chvíli ho budu tvořit na projektu a mnohem obsáhlejší, tak ať to mám
-        potrénované.
-      </p>
-      <p className="cta">👇 Otestuj své znalosti 👇</p>
     </div>
-    <App />
+    <FormParent />
+    {/* <button
+      type="submit"
+      className="btn btn-primary"
+      disabled={isSubmitting}
+      onClick={() => {
+        const odpovedi = ['A', 'B'];
+        let vysledek = 0;
+        for (let i = 0; i < odpovedi.length; i++) {
+          if (values.answers[i].answer === odpovedi[i]) {
+            vysledek++;
+          }
+        }
+        console.log(vysledek);
+        alert('Získali jste celkem ' + vysledek + ' bodů 🎉');
+      }}
+    >
+      Výsledek
+    </button> */}
   </div>,
 
   document.getElementById('app'),
