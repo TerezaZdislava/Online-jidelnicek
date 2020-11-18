@@ -20,10 +20,10 @@ export const FormUserDetails = ({ formData, setFormData, nextStep }) => {
       >
         {({ errors, touched }) => (
           <Form className="formular1">
-            <div className="otazka">
+            {/* <div className="otazka">
               <label htmlFor="firstName">First Name1</label>
               <Field name="form1.gender" label="Pohlaví" margin="normal" />
-            </div>
+            </div> */}
             <div className="otazka">
               <label htmlFor="firstName">Věk</label>
               <Field name="form1.age" label="Věk" margin="normal" />
