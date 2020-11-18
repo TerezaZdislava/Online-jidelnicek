@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Formik, Field, Form } from 'formik';
+import './assets/form.css';
 
 const questions = [
   {
@@ -59,10 +60,10 @@ const FormActivity = ({ formData, setFormData, nextStep, prevStep }) => {
             <div className="card" key={index}>
               {/* <div className="card-header">Hádej</div> */}
               <div className="card-body">
-                <h6 className="card-title">{q.question}</h6>
-                <div className="question-choices px-2">
+                <h6 className="formactivity-question">{q.question}</h6>
+                <div className="formactivity-choices px-2">
                   {q.choices.map((choice) => (
-                    <div className="form-check" key={choice.option}>
+                    <div className="formactivity-check" key={choice.option}>
                       <input
                         type="radio"
                         id={choice.option}
@@ -81,7 +82,7 @@ const FormActivity = ({ formData, setFormData, nextStep, prevStep }) => {
                         className="form-check-label clickable"
                         htmlFor={choice.option}
                       >
-                        <span className="mr-2">{choice.option} )</span>
+                        {/* <span className="mr-2">{choice.option} )</span> */}
                         {choice.answer}
                       </label>
                     </div>
@@ -93,18 +94,20 @@ const FormActivity = ({ formData, setFormData, nextStep, prevStep }) => {
           {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
           <div>
             <button
+              className="tlacitko"
               type="submit"
               variant="contained"
               onClick={() => setDirection('back')}
             >
-              Back
+              Zpět
             </button>
             <button
+              className="tlacitko"
               type="submit"
               variant="contained"
               onClick={() => setDirection('forward')}
             >
-              Continue
+              Další
             </button>
           </div>
         </Form>

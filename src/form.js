@@ -4,12 +4,12 @@ import { FormParent } from './Formparent.js';
 
 ReactDOM.render(
   <div className="content">
-    <h1>Interaktivní formulář</h1>
+    {/* <h1>Interaktivní formulář</h1> */}
     <div className="intro">
-      <p>
+      {/* <p>
         Abychom ti mohli sestavit jídelníček na míru, potřebujeme od tebe
         vyplnit pár základních informací.
-      </p>
+      </p> */}
     </div>
     <FormParent />
     {/* <button

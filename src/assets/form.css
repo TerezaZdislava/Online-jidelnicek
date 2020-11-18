@@ -1,6 +1,6 @@
 body {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   color: rgb(0, 0, 0);
   font-family: Montserrat;
 }
@@ -9,7 +9,7 @@ body {
   height: 48px;
   background-color: rgb(22, 107, 37);
   font-family: 'Pattaya', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -33,9 +33,10 @@ body {
   flex-wrap: wrap;
   font-size: 1.2rem;
   text-align: center;
+  justify-content: center;
 }
 h1 {
-  color: rgb(32, 32, 32);
+  color: rgb(175, 3, 3);
   font-size: 4.2rem;
   text-align: center;
   margin-left: 30%;
@@ -54,24 +55,12 @@ img {
   justify-content: center;
 }
 
-form {
-  display: flex;
-  flex-wrap: wrap;
-  color: rgb(0, 0, 0);
-  justify-content: center;
-}
 .tlacitko {
-  display: flex;
-  margin-top: 30px;
-  width: 100%;
-  justify-content: center;
-}
-.btn {
-  width: 10rem;
-  height: 5rem;
+  width: 13rem;
+  height: 4rem;
   background-color: rgb(22, 107, 37);
   font-family: 'Pattaya', sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: 8px;
   margin: 30px;
 }
@@ -88,6 +77,59 @@ form {
   color: rgb(22, 107, 37);
   font-family: 'Pattaya', sans-serif;
   font-size: 1.5rem;
+}
+.formUserDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formular1 {
+  color: rgb(0, 0, 0);
+  width: 300px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.otazka {
+  display: flex;
+  flex-basis: 100%;
+  margin: 10px;
+  justify-content: space-between;
+}
+.formFood {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.formFood-otazka {
+  text-align: center;
+  justify-self: center;
+}
+.formFood-group {
+  width: 200px;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+.formFood label {
+  width: 120px;
+  display: flex;
+  flex-basis: 100%;
+  margin: 8px;
+  align-items: center;
+}
+.formFood input {
+  margin-right: 7px;
+}
+.formactivity-question {
+  font-size: 1.2rem;
+}
+.formactivity-check {
+  text-align: left;
+  margin: 5px;
+}
+.form-check-input {
+  margin-right: 7px;
 }
 /*
 
