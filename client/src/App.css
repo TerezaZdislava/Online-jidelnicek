@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  margin-top: 15px;
+  background-color: rgb(0, 61, 41);
+}
