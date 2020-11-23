@@ -8,6 +8,9 @@ export const Success = ({ formData }) => {
       .then((json) => console.log(json));
   }, []);
 
+  //tady budu upravovat data co vylezly y backendu
+  //tohle uvidi uzivatel
+
   return (
     <div>
       <h1>Thank You</h1>
