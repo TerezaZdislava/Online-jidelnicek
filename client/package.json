@@ -9,7 +9,6 @@
   },
   "author": "pinglinh",
   "license": "ISC",
-  "proxy": "http://localhost:5000",
   "devDependencies": {
     "copy-webpack-plugin": "^6.3.1",
     "babel-core": "^6.26.3",

@@ -6,6 +6,7 @@ export const Success = ({ formData }) => {
     fetch(`/api/hello`)
       .then((resp) => resp.json())
       .then((json) => console.log(json));
+    //useState(data)
   }, []);
 
   //tady budu upravovat data co vylezly y backendu

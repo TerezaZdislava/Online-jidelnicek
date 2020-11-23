@@ -29,7 +29,7 @@ app.post('/api/world', (req, res) => {
   console.log(req.body); //tady prijde json vystup //tady budu VOLAT FUNKCI
 
   const elm = processForm(req.body);
-  res.send(elm);
+  res.send(elm); //posila odpoved na frontend
 });
 app.listen(port, () => console.log(`Listening on port ${port}`));
 //zapina server
