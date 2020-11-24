@@ -1,11 +1,11 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
-import './assets/form.css';
+import './assets/form.module.css';
 // import { Header } from './Header';
 
 export const FormUserDetails = ({ formData, setFormData, nextStep }) => {
   return (
-    <div className="formormUserDetails">
+    <div className="formUserDetails">
       <h1>Formulář</h1>
       <p>
         Abychom ti mohli sestavit jídelníček na míru, potřebujeme od tebe

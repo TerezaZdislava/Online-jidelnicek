@@ -4,6 +4,7 @@ import Home from './Home.js';
 import About from './About.js';
 import { FormParent } from './FormParent.js';
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import './assets/form.module.css';
 
 const routes = [
   { path: '/', component: Home, exact: true },

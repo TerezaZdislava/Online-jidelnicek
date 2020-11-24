@@ -4,7 +4,7 @@ import { FormUserDetails } from './FormUserDetails';
 import FormFood from './FormFood';
 import FormActivity from './FormActivity';
 import { Success } from './Success';
-import './assets/form.css';
+import './assets/form.module.css';
 
 export const FormParent = () => {
   const [step, setStep] = useState(1);

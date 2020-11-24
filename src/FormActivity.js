@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Formik, Field, Form } from 'formik';
-import './assets/form.css';
+import './assets/form.module.css';
 
 const questions = [
   {
