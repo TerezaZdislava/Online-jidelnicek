@@ -2,14 +2,16 @@
   "name": "simple_webpack_boilerplate",
   "version": "1.0.0",
   "description": "A ready to use simple webpack boilerplate",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
-  },
   "author": "pinglinh",
   "license": "ISC",
+  "scripts": {
+    "client": "webpack-dev-server --mode development --open",
+    "server": "nodemon server.js",
+    "build": "webpack --mode production",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  },
   "devDependencies": {
+    "concurrently": "^4.0.1",
     "copy-webpack-plugin": "^6.3.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -25,6 +27,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "formik": "^2.2.5",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
