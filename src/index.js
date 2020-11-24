@@ -3,13 +3,13 @@ import { render } from 'react-dom';
 import './index.html';
 import Home from './Home.js';
 import About from './About.js';
-import Form from './form.js';
+import FormParent from './FormParent.js';
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const routes = [
   { path: '/', component: Home, exact: true },
   { path: '/about', component: About },
-  { path: '/detail/:id?', component: Detail },
+  { path: '/form', component: FormParent },
 ];
 
 render(
@@ -20,10 +20,10 @@ render(
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/about">O nás</Link>
         </li>
         <li>
-          <Link to="/detail">Detail</Link>
+          <Link to="/form">Formulář</Link>
         </li>
       </ul>
     </header>
