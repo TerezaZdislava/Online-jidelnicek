@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { FormParent } from './Formparent.js';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import { FormParent } from './Formparent.js';
 
-ReactDOM.render(
-  <div className="content">
-    <div className="intro"></div>
-    <FormParent />
-  </div>,
-  document.getElementById('app'),
-);
+// ReactDOM.render(
+//   <div className="content">
+//     <div className="intro"></div>
+//     <FormParent />
+//   </div>,
+//   document.getElementById('app'),
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
