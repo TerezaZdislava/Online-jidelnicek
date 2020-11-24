@@ -7,7 +7,7 @@ module.exports = {
   //https://webpack.js.org/concepts/entry-points/
   //pokud menim webpack, potreba ctrc+c a ukoncit a zacit znovu npm start
   entry: {
-    main: './src/form.js',
+    entry: './src/index.js',
   },
   module: {
     rules: [
@@ -52,10 +52,10 @@ module.exports = {
     },
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: './src/form.html',
-      filename: './form.html',
-    }),
+    // new HtmlWebPackPlugin({
+    //   template: './src/form.html',
+    //   filename: './form.html',
+    // }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',
