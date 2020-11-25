@@ -9,12 +9,12 @@ import './assets/form.module.css';
 export const FormParent = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    form1: {
-      gender: '',
-      age: '',
-      height: '',
-      weight: '',
-    },
+    // form1: {
+    //   gender: '',
+    //   age: '',
+    //   height: '',
+    //   weight: '',
+    // },
     form2: {},
   });
   const nextStep = () => setStep((prev) => prev + 1);
