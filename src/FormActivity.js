@@ -12,13 +12,13 @@ import classNames from 'classnames';
 
 export const numberOfMealsSchema = yup
   .string()
-  .required('At least one checkbox is required');
+  .required('Počet jídel je povinná otázka');
 export const sportFrequencySchema = yup
   .string()
-  .required('At least one checkbox is required');
+  .required('Jak často sportuješ je povinná otázka');
 export const jobActivitySchema = yup
   .string()
-  .required('At least one checkbox is required');
+  .required('Denní aktivita je povinná otázka');
 
 const validate = (schema, value) => {
   try {

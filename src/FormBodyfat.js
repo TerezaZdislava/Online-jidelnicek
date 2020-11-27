@@ -40,66 +40,35 @@ function valuetext(value) {
   return `${value}%`;
 }
 
-const setFieldValue = (e, value) => {
-  console.log(e);
-  console.log('baaa  ' + value);
-};
-
-const formBodyfat = ({ formData, setFormData, nextStep, prevStep }) => {
-  const [direction, setDirection] = useState('back');
+const FormBodyFat = ({ formData, setFormData, nextStep, prevStep, values }) => {
+  //const [direction, setDirection] = useState('back');
+  //className="formBodyFat"
   const classes = useStyles();
 
   return (
-    <div className="formBodyfat">
-      <Formik
-        initialValues={formData}
-        onSubmit={(values) => {
-          setFormData(values);
-          direction === 'back' ? prevStep() : nextStep();
-        }}
-      >
-        {({ values, setFieldValue }) => (
-          <Form className={classes.form}>
-            <Typography id="discrete-slider-always" gutterBottom>
-              Kolik máte přibližně tuku v těle?
-            </Typography>
-            <Slider
-              getAriaValueText={valuetext}
-              aria-labelledby="discrete-slider-always"
-              step={1}
-              marks={marks}
-              valueLabelDisplay="on"
-              name="slider"
-              value={values.slide}
-              min={15}
-              max={50}
-              onChange={(e, v) => {
-                setFieldValue('slide', v);
-              }}
-            />
-            <div>
-              <button
-                className="tlacitko"
-                type="submit"
-                variant="contained"
-                onClick={() => setDirection('back')}
-              >
-                Zpět
-              </button>
-              <button
-                className="tlacitko"
-                type="submit"
-                variant="contained"
-                onClick={() => setDirection('forward')}
-              >
-                Další
-              </button>
-            </div>
-          </Form>
-        )}
-      </Formik>
+    <div>
+      {/* {(values, setFieldValue) => ( */}
+      <div className={classes.form}>
+        <Typography id="discrete-slider-always" gutterBottom>
+          Kolik máte přibližně tuku v těle?
+        </Typography>
+        <Slider
+          getAriaValueText={valuetext}
+          aria-labelledby="discrete-slider-always"
+          step={1}
+          marks={marks}
+          valueLabelDisplay="on"
+          name="formBodyFat"
+          value={20}
+          min={15}
+          max={50}
+          onChange={(e, v) => {
+            setFieldValue('formBodyFat', v);
+          }}
+        />
+      </div>
     </div>
   );
 };
 
-export default formBodyfat;
+export default FormBodyFat;

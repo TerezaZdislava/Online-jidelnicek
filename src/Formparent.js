@@ -3,11 +3,11 @@ import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import './App.css';
 import FormUserDetails, {
-  ageSchema,
-  heightSchema,
+  genderSchema,
+  goalSchema,
   weightSchema,
 } from './FormUserDetails';
-import FormBodyfat from './FormBodyfat';
+import FormBodyFat from './FormBodyFat';
 import FormFood from './FormFood';
 import FormActivity, {
   numberOfMealsSchema,
@@ -19,8 +19,8 @@ import './assets/form.module.css';
 import FormButtons from './FormButtons';
 
 const validationSchema = yup.object().shape({
-  age: ageSchema,
-  height: heightSchema,
+  gender: genderSchema,
+  goal: goalSchema,
   weight: weightSchema,
   numberOfMeals: numberOfMealsSchema,
   sportFrequency: sportFrequencySchema,
@@ -28,15 +28,22 @@ const validationSchema = yup.object().shape({
 });
 
 const initialValues = {
-  age: '',
-  height: '',
+  gender: 'Men',
+  goal: '1',
   weight: '',
+  exludedFood: '',
   numberOfMeals: 'A',
   sportFrequency: 'A',
   jobActivity: 'A',
+  formBodyFat: '20',
 };
 
-const stepComponents = [<FormUserDetails />, <FormActivity />];
+const stepComponents = [
+  <FormUserDetails />,
+  <FormFood />,
+  <FormActivity />,
+  <FormBodyFat />,
+];
 
 export const FormParent = () => {
   const [step, setStep] = useState(0);
@@ -54,8 +61,19 @@ export const FormParent = () => {
     >
       {({ errors, touched }) => (
         <Form className="formular1">
-          {stepComponents.map((stepComponent) => stepComponent)}
-          <FormButtons setStep={setStep} isFirst={isFirst} isLast={isLast} />
+          {stepComponents.map((stepComponent) => {
+            return (
+              <div>
+                {stepComponent}
+                <FormButtons
+                  setStep={setStep}
+                  isFirst={isFirst}
+                  isLast={isLast}
+                />
+              </div>
+            );
+          })}
+          {/* <FormButtons setStep={setStep} isFirst={isFirst} isLast={isLast} /> */}
         </Form>
       )}
     </Formik>
