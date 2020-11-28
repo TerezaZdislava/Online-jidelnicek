@@ -57,6 +57,11 @@ const FormParent = () => {
     <Formik
       initialValues={initialValues}
       onSubmit={(values) => {
+        values.gender = Number(values.gender);
+        values.goal = Number(values.goal);
+        values.jobActivity = Number(values.jobActivity);
+        values.numberOfMeals = Number(values.numberOfMeals);
+        values.sportFrequency = Number(values.sportFrequency);
         fetch('/api/form', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, *cors, same-origin
