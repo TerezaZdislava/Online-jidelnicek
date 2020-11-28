@@ -45,7 +45,7 @@ const FormParent = () => {
   const [step, setStep] = useState(0);
 
   const isFirst = step === 0;
-  const isLast = step === stepComponents.length - 1;
+  const isLast = step === stepComponents.length  - 1;
 
   return (
     <Formik

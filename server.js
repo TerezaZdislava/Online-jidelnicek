@@ -20,9 +20,7 @@ const getCoefficient = (form) => {
 
   return (
     (((weight - (formBodyFat / 100) * weight) * 21.6 + 370) *
-      goal *
-      gender *
-      ((sportFrequency + jobActivity) / 2)) /
+      ((goal + gender + sportFrequency + jobActivity) / 4)) /
     1789
   );
 };
@@ -32,7 +30,9 @@ function getRandomNumber(max) {
 }
 
 function recalculatedMacros(meal, coefficient) {
+  console.log(coefficient);
   meal.calories = Math.round(meal.calories * coefficient);
+
   meal.ingrediences = meal.ingrediences.map((ingredience) => {
     ingredience.grams = Math.round(ingredience.grams * coefficient);
     return ingredience;

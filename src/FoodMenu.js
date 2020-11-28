@@ -1,5 +1,5 @@
 import React from 'react';
-
+/*
 const menu = {
   breakfast: {
     name: 'Vločky s tvarohem',
@@ -29,7 +29,7 @@ const menu = {
 //   font-size: 2em;
 //   text-align: center;
 //   color: blue;
-// `;
+// `;*/
 
 const FoodMenu = () => {
   return (
