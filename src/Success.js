@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './assets/form.css';
+import './assets/form.module.css';
 
 export const Success = ({ formData }) => {
   useEffect(() => {

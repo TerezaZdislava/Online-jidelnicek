@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const path = require('path');
 module.exports = {
   //musim zapsat i dalsi javascript
   //do odkazu zapisovat html soubory jen jako ./nazev
@@ -7,7 +8,12 @@ module.exports = {
   //https://webpack.js.org/concepts/entry-points/
   //pokud menim webpack, potreba ctrc+c a ukoncit a zacit znovu npm start
   entry: {
-    main: './src/form.js',
+    entry: './src/index.js',
+  },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve('dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -27,7 +33,8 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              //vypnuto, aby CSS fungovalo - ale mozna nevhodne reseni
+              // modules: true,
               importLoaders: 1,
               localIdentName: '[name]_[local]_[hash:base64]',
               sourceMap: true,
@@ -52,10 +59,10 @@ module.exports = {
     },
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: './src/form.html',
-      filename: './form.html',
-    }),
+    // new HtmlWebPackPlugin({
+    //   template: './src/form.html',
+    //   filename: './form.html',
+    // }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',

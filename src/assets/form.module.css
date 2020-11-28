@@ -1,6 +1,5 @@
 body {
-  /* display: flex;
-  flex-wrap: wrap; */
+  margin: 0;
   color: rgb(0, 0, 0);
   font-family: Montserrat;
 }
@@ -79,7 +78,7 @@ img {
   font-size: 1.5rem;
 }
 .formUserDetails {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
 }
@@ -90,15 +89,14 @@ img {
   margin-right: 30%;
 }
 .otazka {
-  display: flex;
+  display: block;
   flex-basis: 100%;
   margin: 10px;
   justify-content: space-between;
 }
 .formFood {
   margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   justify-content: center;
 }
 .formFood-otazka {
@@ -130,6 +128,9 @@ img {
 }
 .form-check-input {
   margin-right: 7px;
+}
+.otazka field {
+  display: block;
 }
 /*
 
