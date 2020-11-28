@@ -78,7 +78,7 @@ const FormParent = () => {
           .then((response) => {
             return response.json();
           })
-          .then((data) => console.log(data));
+          .then((data) => localStorage.setItem('form', JSON.stringify(data)));
       }}
       validationSchema={validationSchema}
     >
