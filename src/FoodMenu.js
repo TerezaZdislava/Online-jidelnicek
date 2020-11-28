@@ -31,7 +31,7 @@ const menu = {
 //   color: blue;
 // `;
 
-const About = () => {
+const FoodMenu = () => {
   return (
     <section>
       <h1>Jídelníček</h1>
@@ -98,4 +98,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default FoodMenu;
