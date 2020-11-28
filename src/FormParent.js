@@ -45,7 +45,7 @@ const stepComponents = [
   <FormBodyFat />,
 ];
 
-export const FormParent = () => {
+const FormParent = () => {
   const [step, setStep] = useState(0);
 
   const isFirst = step === 0;
@@ -79,3 +79,5 @@ export const FormParent = () => {
     </Formik>
   );
 };
+
+export default FormParent;
