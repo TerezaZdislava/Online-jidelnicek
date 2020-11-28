@@ -17,6 +17,7 @@ import FormActivity, {
 import { Success } from './Success';
 import './assets/form.module.css';
 import FormButtons from './FormButtons';
+import SwipeableViews from 'react-swipeable-views';
 
 const validationSchema = yup.object().shape({
   gender: genderSchema,
@@ -28,28 +29,25 @@ const validationSchema = yup.object().shape({
 });
 
 const initialValues = {
-  gender: 'Men',
+  gender: '0.8',
   goal: '1',
-  weight: '',
+  weight: null,
   exludedFood: '',
-  numberOfMeals: 'A',
-  sportFrequency: 'A',
-  jobActivity: 'A',
-  formBodyFat: '20',
+  numberOfMeals: '3',
+  sportFrequency: '1',
+  jobActivity: '1',
+  formBodyFat: 20,
 };
 
-const stepComponents = [
-  <FormUserDetails />,
-  <FormFood />,
-  <FormActivity />,
-  <FormBodyFat />,
-];
+const stepComponents = [FormUserDetails, FormFood, FormActivity, FormBodyFat];
 
 const FormParent = () => {
   const [step, setStep] = useState(0);
 
   const isFirst = step === 0;
   const isLast = step === stepComponents.length - 1;
+
+  const renderStep = () => {};
 
   return (
     <Formik
@@ -59,21 +57,21 @@ const FormParent = () => {
       }}
       validationSchema={validationSchema}
     >
-      {({ errors, touched }) => (
+      {({ errors, touched, values, setFieldValue }) => (
         <Form className="formular1">
-          {stepComponents.map((stepComponent) => {
-            return (
-              <div>
-                {stepComponent}
-                <FormButtons
-                  setStep={setStep}
-                  isFirst={isFirst}
-                  isLast={isLast}
-                />
-              </div>
-            );
-          })}
-          {/* <FormButtons setStep={setStep} isFirst={isFirst} isLast={isLast} /> */}
+          <SwipeableViews index={step}>
+            {stepComponents.map((StepComponent) => {
+              return (
+                <div>
+                  <StepComponent
+                    values={values}
+                    setFieldValue={setFieldValue}
+                  />
+                </div>
+              );
+            })}
+          </SwipeableViews>
+          <FormButtons setStep={setStep} isFirst={isFirst} isLast={isLast} />
         </Form>
       )}
     </Formik>

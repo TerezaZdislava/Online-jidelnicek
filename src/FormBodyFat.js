@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Formik, Form, ErrorMessage } from 'formik';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
@@ -40,10 +39,23 @@ function valuetext(value) {
   return `${value}%`;
 }
 
-const FormBodyFat = ({ formData, setFormData, nextStep, prevStep, values }) => {
+const FormBodyFat = ({
+  formData,
+  setFormData,
+  nextStep,
+  prevStep,
+  values,
+  setFieldValue,
+}) => {
   //const [direction, setDirection] = useState('back');
   //className="formBodyFat"
   const classes = useStyles();
+
+  // const [fieldValue, setFieldValue] = useState(20);
+
+  // const handleChange = () => {
+  //   setFieldValue(value);
+  // };
 
   return (
     <div>
@@ -52,6 +64,7 @@ const FormBodyFat = ({ formData, setFormData, nextStep, prevStep, values }) => {
         <Typography id="discrete-slider-always" gutterBottom>
           Kolik máte přibližně tuku v těle?
         </Typography>
+        <img src={'./assets/img/bodyfatperc.jpg'} alt="tuky v tele" />
         <Slider
           getAriaValueText={valuetext}
           aria-labelledby="discrete-slider-always"
@@ -59,7 +72,7 @@ const FormBodyFat = ({ formData, setFormData, nextStep, prevStep, values }) => {
           marks={marks}
           valueLabelDisplay="on"
           name="formBodyFat"
-          value={20}
+          value={values.formBodyFat}
           min={15}
           max={50}
           onChange={(e, v) => {
