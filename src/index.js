@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Home from './Home.js';
 import About from './About.js';
-import { FormParent } from './FormParent.js';
+import FormParent from './FormParent.js';
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './assets/form.module.css';
 

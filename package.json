@@ -8,19 +8,24 @@
     "client": "webpack-dev-server --mode development --open",
     "server": "nodemon server.js",
     "build": "webpack --mode production",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "devDependencies": {
-    "concurrently": "^4.0.1",
-    "copy-webpack-plugin": "^6.3.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "concurrently": "^4.0.1",
+    "copy-webpack-plugin": "^6.3.1",
     "css-loader": "^1.0.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^3.2.0",
     "img-loader": "^3.0.2",
+    "nodemon": "^2.0.6",
     "style-loader": "^0.23.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",

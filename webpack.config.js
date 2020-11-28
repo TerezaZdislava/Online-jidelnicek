@@ -7,13 +7,10 @@ module.exports = {
   //funguje to jako zacatek stromu
   //https://webpack.js.org/concepts/entry-points/
   //pokud menim webpack, potreba ctrc+c a ukoncit a zacit znovu npm start
-  entry: {
-    entry: './src/index.js',
-  },
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve('dist'),
-    publicPath: '/',
   },
   module: {
     rules: [
