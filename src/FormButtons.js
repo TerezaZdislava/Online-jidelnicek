@@ -1,6 +1,12 @@
 import React from 'react';
 
-const FormButtons = ({ isFirst, isLast, setStep, submitForm }) => {
+const FormButtons = ({
+  isFirst,
+  isLast,
+  setStep,
+  submitForm,
+  nextDisabled,
+}) => {
   const nextStep = () => setStep((prev) => prev + 1);
   const prevStep = () => setStep((prev) => prev - 1);
 
@@ -17,6 +23,7 @@ const FormButtons = ({ isFirst, isLast, setStep, submitForm }) => {
         </button>
       )}
       <button
+        disabled={nextDisabled}
         className="tlacitko"
         type="button"
         variant="contained"

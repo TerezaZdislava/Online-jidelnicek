@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Field } from 'formik';
+import { Field, ErrorMessage } from 'formik';
 import './assets/form.module.css';
 import * as yup from 'yup';
 import classNames from 'classnames';
@@ -20,14 +20,14 @@ export const jobActivitySchema = yup
   .string()
   .required('Denní aktivita je povinná otázka');
 
-const validate = (schema, value) => {
-  try {
-    schema.validateSync(value);
-  } catch (error) {
-    // Tady by bylo fajn zobrazit uživateli nějakou chybu místo console.logu
-    console.log(error);
-  }
-};
+// const validate = (schema, value) => {
+//   try {
+//     schema.validateSync(value);
+//   } catch (error) {
+//     // Tady by bylo fajn zobrazit uživateli nějakou chybu místo console.logu
+//     console.log(error);
+//   }
+// };
 
 const questions = [
   {
@@ -101,8 +101,28 @@ const RadioButton = ({
   );
 };
 
-const FormActivity = ({ formData, setFormData, nextStep, prevStep }) => {
+const FormActivity = ({
+  formData,
+  setFormData,
+  nextStep,
+  prevStep,
+  setNextDisabled,
+}) => {
   const [direction, setDirection] = useState('back');
+
+  const validate = (schema, value) => {
+    try {
+      schema.validateSync(value);
+      setNextDisabled(false);
+    } catch (error) {
+      // Tady by bylo fajn zobrazit uživateli nějakou chybu místo console.logu
+      console.log('VALIDATION');
+      setNextDisabled(true);
+
+      console.log(error);
+    }
+  };
+
   return (
     <React.Fragment>
       <div className="card" key="0">
@@ -121,6 +141,7 @@ const FormActivity = ({ formData, setFormData, nextStep, prevStep }) => {
                   label={choice.answer}
                   validate={(value) => validate(numberOfMealsSchema, value)}
                 />
+                <ErrorMessage name="numberOfMeals" />
               </div>
             ))}
           </div>
@@ -137,6 +158,7 @@ const FormActivity = ({ formData, setFormData, nextStep, prevStep }) => {
                   label={choice.answer}
                   validate={(value) => validate(sportFrequencySchema, value)}
                 />
+                <ErrorMessage name="sportFrequency" />
               </div>
             ))}
           </div>
@@ -152,6 +174,7 @@ const FormActivity = ({ formData, setFormData, nextStep, prevStep }) => {
                   label={choice.answer}
                   validate={(value) => validate(jobActivitySchema, value)}
                 />
+                <ErrorMessage name="jobActivity" />
               </div>
             ))}
           </div>
