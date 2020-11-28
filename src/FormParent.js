@@ -18,6 +18,7 @@ import { Success } from './Success';
 import './assets/form.module.css';
 import FormButtons from './FormButtons';
 import SwipeableViews from 'react-swipeable-views';
+import { useHistory } from 'react-router-dom';
 
 const validationSchema = yup.object().shape({
   gender: genderSchema,
@@ -46,6 +47,7 @@ const requiredFieldPerStep = {
 const stepComponents = [FormUserDetails, FormFood, FormActivity, FormBodyFat];
 // const stepComponents = [FormUserDetails];
 const FormParent = () => {
+  const history = useHistory();
   const [step, setStep] = useState(0);
   const [nextDisabled, setNextDisabled] = useState(true);
   const setDisabled = (value) => {
@@ -85,6 +87,7 @@ const FormParent = () => {
           .then((data) => {
             localStorage.setItem('menu', JSON.stringify(data));
             localStorage.removeItem('form');
+            history.push('/foodmenu');
           });
       }}
       validationSchema={validationSchema}
