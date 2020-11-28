@@ -8,7 +8,8 @@
     "client": "webpack-dev-server --mode development --open",
     "server": "nodemon server.js",
     "build": "webpack --mode production",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "node server.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
