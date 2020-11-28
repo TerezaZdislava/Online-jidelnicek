@@ -15,40 +15,20 @@ const FormFood = ({ formData, setFormData, nextStep, prevStep }) => {
           aria-labelledby="checkbox-group"
         >
           <label>
-            <Field type="checkbox" name="exludedFood" value="Maso" />
+            <Field type="checkbox" name="exludedFood" value="maso" />
             Maso
           </label>
           <label>
-            <Field type="checkbox" name="exludedFood" value="Mléko" />
+            <Field type="checkbox" name="exludedFood" value="mléko" />
             Mléko
           </label>
           <label>
-            <Field type="checkbox" name="exludedFood" value="Vejce" />
+            <Field type="checkbox" name="exludedFood" value="vejce" />
             Vejce
           </label>
           <label>
-            <Field type="checkbox" name="exludedFood" value="Ryby" />
-            Ryby
-          </label>
-          <label>
-            <Field type="checkbox" name="exludedFood" value="Lepek" />
+            <Field type="checkbox" name="exludedFood" value="lepek" />
             Lepek
-          </label>
-          <label>
-            <Field type="checkbox" name="exludedFood" value="Rajčata" />
-            Rajčata
-          </label>
-          <label>
-            <Field type="checkbox" name="exludedFood" value="Tofu" />
-            Tofu
-          </label>
-          <label>
-            <Field type="checkbox" name="exludedFood" value="Houby" />
-            Houby
-          </label>
-          <label>
-            <Field type="checkbox" name="exludedFood" value="Avokádo" />
-            Avokádo
           </label>
         </div>
       </div>

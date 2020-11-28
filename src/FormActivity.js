@@ -33,18 +33,18 @@ const questions = [
   {
     question: 'Kolik jídel denně preferuješ?',
     choices: [
-      { option: 'A', answer: '3 jídla (snídaně, oběd, večeře)' },
-      { option: 'B', answer: '5 jídel (svačiny mezi hlavními jídly)' },
+      { option: '3', answer: '3 jídla (snídaně, oběd, večeře)' },
+      { option: '5', answer: '5 jídel (svačiny mezi hlavními jídly)' },
     ],
   },
   {
     question: 'Sportuješ během týdne?',
     choices: [
-      { option: 'A', answer: 'Nesportuji.' },
-      { option: 'B', answer: 'Sportuji 1 - 2x týdně.' },
-      { option: 'C', answer: 'Sportuji 3 - 4x týdně.' },
+      { option: '0.8', answer: 'Nesportuji.' },
+      { option: '1', answer: 'Sportuji 1 - 2x týdně.' },
+      { option: '1.35', answer: 'Sportuji 3 - 4x týdně.' },
       {
-        option: 'D',
+        option: '1.7',
         answer: 'Jsem sportovní nadšenec a dám si do těla minimálně 5x týdně.',
       },
     ],
@@ -53,15 +53,15 @@ const questions = [
     question: 'Jaké je Vaše zaměstnání, popřípadě náplň dne, kromě sportu?',
     choices: [
       {
-        option: 'A',
+        option: '0.8',
         answer: 'Nejsem aktivní. Denně ujdu méně než 8 K kroků.',
       },
       {
-        option: 'B',
+        option: '1',
         answer: 'Jsem středně aktivní, nachodím kolem 8 K kroků.',
       },
       {
-        option: 'C',
+        option: '1.35',
         answer: 'Jsem aktivní a většinu dne na nohou. Nachodím nad 10 K kroků',
       },
     ],

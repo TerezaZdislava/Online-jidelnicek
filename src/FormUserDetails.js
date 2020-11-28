@@ -51,12 +51,12 @@ export const FormUserDetails = ({ formData, setFormData, nextStep }) => {
           <div id="my-radio-group">Jsem:</div>
           <div role="group" aria-labelledby="my-radio-group">
             <label>
-              <Field type="radio" name="gender" value="Men" />
-              Muž
+              <Field type="radio" name="gender" value="0.8" />
+              Žena
             </label>
             <label>
-              <Field type="radio" name="gender" value="Women" />
-              Žena
+              <Field type="radio" name="gender" value="1.2" />
+              Muž
             </label>
           </div>
         </div>
@@ -80,6 +80,7 @@ export const FormUserDetails = ({ formData, setFormData, nextStep }) => {
         <div className="otazka">
           <label htmlFor="form1.weight">Kolik vážíte kg?</label>
           <Field
+            type="number"
             name="weight"
             label="Váha"
             margin="normal"
