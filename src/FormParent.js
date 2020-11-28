@@ -32,7 +32,7 @@ const initialValues = {
   gender: '0.8',
   goal: '1',
   weight: null,
-  exludedFood: '',
+  excludedFood: [],
   numberOfMeals: '3',
   sportFrequency: '1',
   jobActivity: '1',
@@ -47,17 +47,31 @@ const FormParent = () => {
   const isFirst = step === 0;
   const isLast = step === stepComponents.length - 1;
 
-  const renderStep = () => {};
-
   return (
     <Formik
       initialValues={initialValues}
       onSubmit={(values) => {
-        console.log(values);
+        fetch('/api/form', {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          mode: 'cors', // no-cors, *cors, same-origin
+          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: 'same-origin', // include, *same-origin, omit
+          headers: {
+            'Content-Type': 'application/json',
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          redirect: 'follow', // manual, *follow, error
+          referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: JSON.stringify(values), // body data type must match "Content-Type" header
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => console.log(data));
       }}
       validationSchema={validationSchema}
     >
-      {({ errors, touched, values, setFieldValue }) => (
+      {({ errors, touched, values, setFieldValue, submitForm }) => (
         <Form className="formular1">
           <SwipeableViews index={step}>
             {stepComponents.map((StepComponent) => {
@@ -71,7 +85,12 @@ const FormParent = () => {
               );
             })}
           </SwipeableViews>
-          <FormButtons setStep={setStep} isFirst={isFirst} isLast={isLast} />
+          <FormButtons
+            setStep={setStep}
+            submitForm={submitForm}
+            isFirst={isFirst}
+            isLast={isLast}
+          />
         </Form>
       )}
     </Formik>
