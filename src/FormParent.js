@@ -36,7 +36,7 @@ const initialValues = {
   numberOfMeals: null,
   sportFrequency: null,
   jobActivity: null,
-  formBodyFat: '',
+  formBodyFat: null,
 };
 
 const requiredFieldPerStep = {
@@ -55,7 +55,11 @@ const FormParent = () => {
   const isLast = step === stepComponents.length - 1;
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={
+        localStorage.getItem('form')
+          ? JSON.parse(localStorage.getItem('form'))
+          : initialValues
+      }
       onSubmit={(values) => {
         values.gender = Number(values.gender);
         values.goal = Number(values.goal);
@@ -78,7 +82,10 @@ const FormParent = () => {
           .then((response) => {
             return response.json();
           })
-          .then((data) => localStorage.setItem('form', JSON.stringify(data)));
+          .then((data) => {
+            localStorage.setItem('menu', JSON.stringify(data));
+            localStorage.removeItem('form');
+          });
       }}
       validationSchema={validationSchema}
     >
@@ -101,6 +108,7 @@ const FormParent = () => {
             errors.jobActivity,
           3: !values.formBodyFat || errors.formBodyFat,
         };
+        localStorage.setItem('form', JSON.stringify(values));
         return (
           <Form className="formular1">
             <SwipeableViews index={step}>

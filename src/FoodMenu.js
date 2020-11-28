@@ -32,7 +32,7 @@ const menu = {
 // `;*/
 
 const FoodMenu = () => {
-  const jsonForm = localStorage.getItem('form');
+  const jsonForm = localStorage.getItem('menu');
   if (jsonForm == null) {
     return <div>Nemáš vyplněný formulář</div>;
   }
