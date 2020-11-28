@@ -137,6 +137,11 @@ app.post('/api/form', (req, res) => {
   const menu = processForm(req.body);
   res.send(menu);
 });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/src/index.html'));
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
 //zapina server
 //npm i nodemon -g - ukaze mi zmeny na backendu a nemusim zapinat a vypinat, automaticky se propisou zmeny
