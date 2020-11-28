@@ -53,7 +53,8 @@ const FormParent = () => {
     <Formik
       initialValues={initialValues}
       onSubmit={(values) => {
-        console.log(values);
+        console.log(JSON.stringify(values));
+        localStorage.setItem('form', JSON.stringify(values));
       }}
       validationSchema={validationSchema}
     >
