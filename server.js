@@ -129,7 +129,8 @@ function processForm(form) {
 
 app.use(bodyParser.json()); //prevede na json format
 app.use(bodyParser.urlencoded({ extended: true }));
-
+const buildPath = express.static(path.join(__dirname, 'dist'));
+app.use(buildPath);
 app.post('/api/form', (req, res) => {
   //post = data z frontendu zpracuji na backendu
   //muzu si to pojmenovat, ale musi zacinat lomitkem
@@ -138,9 +139,7 @@ app.post('/api/form', (req, res) => {
   res.send(menu);
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/src/index.html'));
-});
+app.use('/*', buildPath);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 //zapina server
