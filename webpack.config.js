@@ -63,8 +63,8 @@ module.exports = {
     //   filename: './form.html',
     // }),
     new HtmlWebPackPlugin({
-      template: './src/index.html',
-      filename: './src/index.html',
+      template: 'src/index.html',
+      filename: 'src/index.html',
     }),
     new CopyPlugin({
       patterns: [
