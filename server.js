@@ -30,7 +30,6 @@ function getRandomNumber(max) {
 }
 
 function recalculatedMacros(meal, coefficient) {
-  console.log(coefficient);
   meal.calories = Math.round(meal.calories * coefficient);
 
   meal.ingrediences = meal.ingrediences.map((ingredience) => {
