@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field } from 'formik';
+import { Field, ErrorMessage } from 'formik';
 import './assets/form.module.css';
 import * as yup from 'yup';
 
@@ -9,16 +9,8 @@ export const weightSchema = yup
   .number()
   .required('Zadej svou váhu v kg')
   .max(150, 'Zadejte váhu mezi 40 a 150kg')
-  .min(40, 'Zadejte váhu mezi 40 a 150kg');
-
-const validate = (schema, value) => {
-  try {
-    schema.validateSync(value);
-  } catch (error) {
-    // Tady by bylo fajn zobrazit uživateli nějakou chybu místo console.logu
-    console.log(error);
-  }
-};
+  .min(40, 'Zadejte váhu mezi 40 a 150kg')
+  .typeError('Zadejte váhu mezi 40 a 150kg');
 
 // const validationSchema = yup.object().shape({
 //   age: yup
@@ -38,7 +30,16 @@ const validate = (schema, value) => {
 //     .min(40, 'Zadejte váhu mezi 40 a 150kg'),
 // });
 
-export const FormUserDetails = ({ formData, setFormData, nextStep }) => {
+export const FormUserDetails = ({ errors, touched, setNextDisabled }) => {
+  const validate = (schema, value) => {
+    console.log('Validate');
+    try {
+      schema.validateSync(value);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <h1>Formulář</h1>
@@ -51,44 +52,82 @@ export const FormUserDetails = ({ formData, setFormData, nextStep }) => {
           <div id="my-radio-group">Jsem:</div>
           <div role="group" aria-labelledby="my-radio-group">
             <label>
-              <Field type="radio" name="gender" value="0.8" />
+              <Field
+                type="radio"
+                name="gender"
+                value="0.8"
+                validate={(value) => {
+                  validate(genderSchema, value);
+                }}
+              />
               Žena
             </label>
             <label>
-              <Field type="radio" name="gender" value="1.2" />
+              <Field
+                type="radio"
+                name="gender"
+                value="1.2"
+                validate={(value) => {
+                  validate(genderSchema, value);
+                }}
+              />
               Muž
             </label>
           </div>
+          <ErrorMessage name="gender" />
         </div>
         <div className="otazka">
           <div id="my-radio-group">Pomocí jídelníčku chci:</div>
           <div role="group" aria-labelledby="my-radio-group">
             <label>
-              <Field type="radio" name="goal" value="0.8" />
+              <Field
+                type="radio"
+                name="goal"
+                value="0.8"
+                validate={(value) => {
+                  validate(goalSchema, value);
+                }}
+              />
               Zdravě zhubnout
             </label>
             <label>
-              <Field type="radio" name="goal" value="1" />
+              <Field
+                type="radio"
+                name="goal"
+                value="1"
+                validate={(value) => {
+                  validate(goalSchema, value);
+                }}
+              />
               Jíst zdravěji a udržet si váhu
             </label>
             <label>
-              <Field type="radio" name="goal" value="1.2" />
+              <Field
+                type="radio"
+                name="goal"
+                value="1.2"
+                validate={(value) => {
+                  validate(goalSchema, value);
+                }}
+              />
               Nabrat na váze
             </label>
           </div>
+          <ErrorMessage name="goal" />
         </div>
         <div className="otazka">
-          <label htmlFor="form1.weight">Kolik vážíte kg?</label>
+          <label htmlFor="weight">Kolik vážíte kg?</label>
           <Field
             type="number"
             name="weight"
             label="Váha"
             margin="normal"
             placeholder="Zadej svou váhu v kg"
-            //error={touched.weight && errors.weight}
-            //helperText={touched.weight && errors.weight}
-            validate={(value) => validate(weightSchema, value)}
+            validate={(value) => {
+              validate(weightSchema, value);
+            }}
           />
+          <ErrorMessage name="weight" />
         </div>
       </div>
     </div>

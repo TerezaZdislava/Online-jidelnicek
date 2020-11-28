@@ -29,28 +29,39 @@ const validationSchema = yup.object().shape({
 });
 
 const initialValues = {
-  gender: '0.8',
-  goal: '1',
+  gender: null,
+  goal: null,
   weight: null,
   excludedFood: [],
-  numberOfMeals: '3',
-  sportFrequency: '1',
-  jobActivity: '1',
-  formBodyFat: 20,
+  numberOfMeals: null,
+  sportFrequency: null,
+  jobActivity: null,
+  formBodyFat: '',
+};
+
+const requiredFieldPerStep = {
+  0: ['gender', 'goal', 'weight'],
 };
 
 const stepComponents = [FormUserDetails, FormFood, FormActivity, FormBodyFat];
-
+// const stepComponents = [FormUserDetails];
 const FormParent = () => {
   const [step, setStep] = useState(0);
-
+  const [nextDisabled, setNextDisabled] = useState(true);
+  const setDisabled = (value) => {
+    setNextDisabled(value);
+  };
   const isFirst = step === 0;
   const isLast = step === stepComponents.length - 1;
-
   return (
     <Formik
       initialValues={initialValues}
       onSubmit={(values) => {
+        values.gender = Number(values.gender);
+        values.goal = Number(values.goal);
+        values.jobActivity = Number(values.jobActivity);
+        values.numberOfMeals = Number(values.numberOfMeals);
+        values.sportFrequency = Number(values.sportFrequency);
         fetch('/api/form', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, *cors, same-origin
@@ -71,28 +82,52 @@ const FormParent = () => {
       }}
       validationSchema={validationSchema}
     >
-      {({ errors, touched, values, setFieldValue, submitForm }) => (
-        <Form className="formular1">
-          <SwipeableViews index={step}>
-            {stepComponents.map((StepComponent) => {
-              return (
-                <div>
-                  <StepComponent
-                    values={values}
-                    setFieldValue={setFieldValue}
-                  />
-                </div>
-              );
-            })}
-          </SwipeableViews>
-          <FormButtons
-            setStep={setStep}
-            submitForm={submitForm}
-            isFirst={isFirst}
-            isLast={isLast}
-          />
-        </Form>
-      )}
+      {({ errors, touched, values, setFieldValue, submitForm }) => {
+        const pageButtonsDisabled = {
+          0:
+            !values.gender ||
+            !values.weight ||
+            !values.goal ||
+            errors.gender ||
+            errors.weight ||
+            errors.goal,
+          1: false,
+          2:
+            !values.numberOfMeals ||
+            !values.sportFrequency ||
+            !values.jobActivity ||
+            errors.numberOfMeals ||
+            errors.sportFrequency ||
+            errors.jobActivity,
+          3: !values.formBodyFat || errors.formBodyFat,
+        };
+        return (
+          <Form className="formular1">
+            <SwipeableViews index={step}>
+              {stepComponents.map((StepComponent) => {
+                return (
+                  <div>
+                    <StepComponent
+                      touched={touched}
+                      errors={errors}
+                      setNextDisabled={setDisabled}
+                      values={values}
+                      setFieldValue={setFieldValue}
+                    />
+                  </div>
+                );
+              })}
+            </SwipeableViews>
+            <FormButtons
+              setStep={setStep}
+              submitForm={submitForm}
+              isFirst={isFirst}
+              isLast={isLast}
+              nextDisabled={pageButtonsDisabled[step]}
+            />
+          </Form>
+        );
+      }}
     </Formik>
   );
 };
