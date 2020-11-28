@@ -5,7 +5,7 @@ const transformData = require('./transformData');
 const app = express();
 const port = process.env.PORT || 5000; //muzu si tuto promennou nadefinovat teoreticky sama, default 5000
 //tady napisu funkci, budu psat logiku funkce
-
+const path = require('path');
 const transformedData = transformData(data);
 
 const getCoefficient = (form) => {
