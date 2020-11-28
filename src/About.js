@@ -25,9 +25,15 @@ const menu = {
   },
 };
 
+// const Sekce = styled.section`
+//   font-size: 2em;
+//   text-align: center;
+//   color: blue;
+// `;
+
 const About = () => {
   return (
-    <div>
+    <section>
       <h1>Jídelníček</h1>
       <div className="meals">
         <div className="breakfast">
@@ -88,7 +94,7 @@ const About = () => {
           </div>
         </div> */}
       </div>
-    </div>
+    </section>
   );
 };
 
