@@ -3,6 +3,7 @@ import { Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import styled from 'styled-components';
 import RadioButtonGroup from './RadioButtonGroup.js';
+import CustomField from './CustomField.js';
 
 export const genderSchema = yup.string().required('Povinná otázka');
 export const goalSchema = yup.string().required('Cíl je povinná otázka');
@@ -146,20 +147,15 @@ export const FormUserDetails = ({ errors, touched, values }) => {
               { value: '1.2', label: 'Nabrat na váze' },
             ]}
           />
-          <div className="otazka">
-            <label htmlFor="weight">Kolik vážíte kg?</label>
-            <Field
-              type="number"
-              name="weight"
-              label="Váha"
-              margin="normal"
-              placeholder="Zadej svou váhu v kg"
-              validate={(value) => {
-                validate(weightSchema, value);
-              }}
-            />
-            <ErrorMessage name="weight" />
-          </div>
+          <CustomField
+            question="Kolik vážíte kg?"
+            type="number"
+            name="weight"
+            placeholder="Zadej svou váhu v kg"
+            validate={(value) => {
+              validate(weightSchema, value);
+            }}
+          />
         </div>
       </div>
     </StyledFormUserDetails>
