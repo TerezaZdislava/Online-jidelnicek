@@ -30,10 +30,9 @@ const menu = {
 */
 const StyledSection = styled.section`
   padding: 1rem;
-  border-radius: 5px;
   .foodMenu {
     border-radius: 5%;
-    border: 1px solid black;
+    box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
     padding: 1rem;
   }
   h1 {
