@@ -13,7 +13,6 @@ import FormActivity, {
   sportFrequencySchema,
   jobActivitySchema,
 } from './FormActivity';
-import './assets/form.module.css';
 import FormButtons from './FormButtons';
 import SwipeableViews from 'react-swipeable-views';
 import { useHistory } from 'react-router-dom';
