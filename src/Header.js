@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Menu } from '@styled-icons/feather/Menu';
+import { useHistory } from 'react-router-dom';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -64,6 +65,7 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => {
+  const history = useHistory();
   const [open, setOpen] = useState(false);
 
   function toggleMenu(event) {
@@ -81,7 +83,7 @@ const Header = () => {
   return (
     <StyledHeader isOpen={open} onClick={handleHeaderClick}>
       <div className="topMenu">
-        <div className="logo">
+        <div onClick={() => history.push('/')} className="logo">
           <span className="logo1">ONLINE</span>
           <span className="logo2">JÍDELNÍČEK</span>
         </div>
