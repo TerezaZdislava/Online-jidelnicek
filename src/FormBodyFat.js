@@ -1,16 +1,9 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
+import styled from 'styled-components';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: 300,
-  },
-  margin: {
-    height: theme.spacing(7),
-  },
-}));
+const StyledBodyFat = styled.div``;
 
 const marks = [
   {
@@ -41,7 +34,7 @@ function valuetext(value) {
 
 const FormBodyFat = ({ values, setFieldValue }) => {
   return (
-    <StyledContent>
+    <StyledBodyFat>
       <Typography id="discrete-slider-always" gutterBottom>
         Kolik máte přibližně tuku v těle?
       </Typography>
@@ -60,7 +53,7 @@ const FormBodyFat = ({ values, setFieldValue }) => {
           setFieldValue('formBodyFat', v);
         }}
       />
-    </StyledContent>
+    </StyledBodyFat>
   );
 };
 
