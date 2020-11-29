@@ -20,6 +20,7 @@ const StyledCheckbox = styled.label`
 
   svg {
     margin-right: 0.5rem;
+    margin-left: 1.5rem;
   }
 `;
 

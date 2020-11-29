@@ -23,6 +23,7 @@ const StyledFormFood = styled.div`
     font-size: 1.3rem;
     margin-bottom: 0;
     padding: 0.7rem;
+    margin-top: 1rem;
   }
   .formFood-group {
     display: flex;
