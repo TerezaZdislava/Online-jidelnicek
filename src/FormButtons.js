@@ -1,4 +1,37 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-item: center;
+  margin: 2rem;
+
+  button {
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0.2rem;
+
+    &.next {
+      color: white;
+      background-color: rgb(255, 0, 55);
+    }
+
+    &.back {
+      color: rgb(255, 0, 55);
+      background-color: white;
+      border: 1px solid rgb(255, 0, 55);
+    }
+
+    &:disabled {
+      background-color: #c1c1c169;
+    }
+  }
+`;
 
 const FormButtons = ({
   isFirst,
@@ -11,10 +44,10 @@ const FormButtons = ({
   const prevStep = () => setStep((prev) => prev - 1);
 
   return (
-    <div>
+    <StyledButton>
       {!isFirst && (
         <button
-          className="tlacitko"
+          className="back"
           type="button"
           variant="contained"
           onClick={prevStep}
@@ -24,7 +57,7 @@ const FormButtons = ({
       )}
       <button
         disabled={nextDisabled}
-        className="tlacitko"
+        className="next"
         type="button"
         variant="contained"
         onClick={() => {
@@ -37,7 +70,7 @@ const FormButtons = ({
       >
         {isLast ? 'Odeslat' : 'Další'}
       </button>
-    </div>
+    </StyledButton>
   );
 };
 
