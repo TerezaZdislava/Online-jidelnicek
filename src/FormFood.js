@@ -26,7 +26,7 @@ const StyledFormFood = styled.div`
 const FormFood = ({ formData, setFormData, nextStep, prevStep }) => {
   return (
     <StyledFormFood>
-      <div class="formFood-all">
+      <div className="formFood-all">
         <p className="formFood-message">
           Jaké potraviny se nemají v jídelníčku vyskytovat?
         </p>
