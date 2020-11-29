@@ -29,15 +29,22 @@ const menu = {
 };
 */
 const StyledSection = styled.section`
+  position: relative;
   padding: 1rem;
   .foodMenu {
     border-radius: 5%;
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
-    padding: 1rem;
+    background-color: white;
+    overflow-x: hidden;
   }
   h1 {
     color: black;
     font-size: 2rem;
+  }
+  .headerimage {
+    height: 10rem;
+    position: absolute;
+    right: 0;
   }
 `;
 
@@ -49,6 +56,11 @@ const FoodMenu = () => {
   const menu = JSON.parse(jsonForm);
   return (
     <StyledSection>
+      <img
+        className="headerimage"
+        src={'./assets/img/foodmenu.png'}
+        alt="Online-jídelníček"
+      />
       <h1>Jídelníček</h1>
       <div className="foodMenu">
         <Meal title="Snídaně" data={menu.breakfast} className="breakfast" />
