@@ -5,7 +5,7 @@ import { CheckCircle } from '@styled-icons/feather/CheckCircle';
 import { Circle } from '@styled-icons/feather/Circle';
 
 const StyledRadioButtonGroup = styled.div`
-  display: block;
+  margin-bottom: 1rem;
   input {
     visibility: hidden;
     width: 0;
@@ -16,7 +16,7 @@ const StyledRadioButtonGroup = styled.div`
   h5 {
     font-weight: 600;
     font-size: 1.3rem;
-    margin-bottom: 0;
+    margin: 0;
     padding: 0.7rem;
   }
   .radio-answers {
@@ -26,7 +26,7 @@ const StyledRadioButtonGroup = styled.div`
       margin-bottom: 5px;
       display: flex;
       align-items: center;
-      padding-left: 0.7rem;
+      padding-left: 1.5rem;
       padding-right: 0.7rem;
       justify-content: space-between;
       svg {

@@ -36,7 +36,7 @@ const StyledFormUserDetails = styled.div`
   padding: 1rem;
   position: relative;
   .formUserDetails {
-    margin-top: 3rem;
+    margin-top: 1rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -110,17 +110,7 @@ export const FormUserDetails = ({ errors, touched, values }) => {
 
   return (
     <StyledFormUserDetails>
-      <img
-        className="headerimage"
-        src={'./assets/img/foodmenu.png'}
-        alt="Online-jídelníček"
-      />
-      <h1>Formulář</h1>
       <div className="formUserDetails">
-        <p className="messageToForm">
-          Abychom ti mohli sestavit jídelníček na míru, potřebujeme od tebe
-          vyplnit pár základních informací.
-        </p>
         <div>
           <RadioButtonGroup
             values={values}
@@ -134,6 +124,7 @@ export const FormUserDetails = ({ errors, touched, values }) => {
               { value: '1.2', label: 'Muž' },
             ]}
           />
+
           <RadioButtonGroup
             values={values}
             question="Pomocí jídelníčku chci:"
