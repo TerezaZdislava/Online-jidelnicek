@@ -14,7 +14,6 @@ import FormActivity, {
   sportFrequencySchema,
   jobActivitySchema,
 } from './FormActivity';
-import { Success } from './Success';
 import './assets/form.module.css';
 import FormButtons from './FormButtons';
 import SwipeableViews from 'react-swipeable-views';
