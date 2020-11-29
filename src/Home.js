@@ -6,6 +6,7 @@ import {
   bindKeyboard,
 } from 'react-swipeable-views-utils';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 // const EnhancedSwipeableViews = bindKeyboard(
 //   autoPlay(virtualize(SwipeableViews)),
@@ -60,6 +61,7 @@ const StyledContent = styled.div`
 `;
 
 const Home = () => {
+  const history = useHistory();
   return (
     <StyledContent>
       <div className="imagesAndCta">
@@ -76,7 +78,7 @@ const Home = () => {
           <div className="ctatext">
             <p>Zdravý a chutný jídelníček na míru</p>
           </div>
-          <button>Chci jídelníček</button>
+          <button onClick={() => history.push('/form')}>Chci jídelníček</button>
         </div>
       </div>
     </StyledContent>
