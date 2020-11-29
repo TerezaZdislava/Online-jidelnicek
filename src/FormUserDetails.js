@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import styled from 'styled-components';
+import RadioButtonGroup from './RadioButtonGroup.js';
 
 export const genderSchema = yup.string().required('Povinná otázka');
 export const goalSchema = yup.string().required('Cíl je povinná otázka');
@@ -58,7 +59,45 @@ const StyledFormUserDetails = styled.div`
   }
 `;
 
-export const FormUserDetails = ({ errors, touched }) => {
+{
+  /* 
+<RadioButtonGroup
+  title="Jsem"
+  name="gender"
+  validate={(value) => {
+    validate(genderSchema, value);
+  }}
+  amswers={[
+    { value:"0.8", label: "Zena"},
+    { value:"1.2", label: "Muz"}
+  ]}
+/>
+*/
+}
+
+const questions = [
+  {
+    question: 'Jsem',
+    name: 'gender',
+    validate: 'genderSchema',
+    amswers: [
+      { value: '0.8', label: 'Žena' },
+      { value: '1.2', label: 'Muž' },
+    ],
+  },
+  {
+    question: 'Pomocí jídelníčku chci:',
+    name: 'goal',
+    validate: 'goalSchema',
+    amswers: [
+      { value: '0.8', label: 'Zdravě zhubnout' },
+      { value: '1', label: 'Jíst zdravěji a udržet si váhu' },
+      { value: '1.2', label: 'Nabrat na váze' },
+    ],
+  },
+];
+
+export const FormUserDetails = ({ errors, touched, values }) => {
   const validate = (schema, value) => {
     console.log('Validate');
     try {
@@ -82,73 +121,31 @@ export const FormUserDetails = ({ errors, touched }) => {
           vyplnit pár základních informací.
         </p>
         <div>
-          <div className="otazka">
-            <div id="my-radio-group">Jsem:</div>
-            <div role="group" aria-labelledby="my-radio-group">
-              <label>
-                <Field
-                  type="radio"
-                  name="gender"
-                  value="0.8"
-                  validate={(value) => {
-                    validate(genderSchema, value);
-                  }}
-                />
-                Žena
-              </label>
-              <label>
-                <Field
-                  type="radio"
-                  name="gender"
-                  value="1.2"
-                  validate={(value) => {
-                    validate(genderSchema, value);
-                  }}
-                />
-                Muž
-              </label>
-            </div>
-            <ErrorMessage name="gender" />
-          </div>
-          <div className="otazka">
-            <div id="my-radio-group">Pomocí jídelníčku chci:</div>
-            <div role="group" aria-labelledby="my-radio-group">
-              <label>
-                <Field
-                  type="radio"
-                  name="goal"
-                  value="0.8"
-                  validate={(value) => {
-                    validate(goalSchema, value);
-                  }}
-                />
-                Zdravě zhubnout
-              </label>
-              <label>
-                <Field
-                  type="radio"
-                  name="goal"
-                  value="1"
-                  validate={(value) => {
-                    validate(goalSchema, value);
-                  }}
-                />
-                Jíst zdravěji a udržet si váhu
-              </label>
-              <label>
-                <Field
-                  type="radio"
-                  name="goal"
-                  value="1.2"
-                  validate={(value) => {
-                    validate(goalSchema, value);
-                  }}
-                />
-                Nabrat na váze
-              </label>
-            </div>
-            <ErrorMessage name="goal" />
-          </div>
+          <RadioButtonGroup
+            values={values}
+            question="Jsem:"
+            name="gender"
+            validate={(value) => {
+              validate(genderSchema, value);
+            }}
+            answers={[
+              { value: '0.8', label: 'Žena' },
+              { value: '1.2', label: 'Muž' },
+            ]}
+          />
+          <RadioButtonGroup
+            values={values}
+            question="Pomocí jídelníčku chci:"
+            name="goal"
+            validate={(value) => {
+              validate(goalSchema, value);
+            }}
+            answers={[
+              { value: '0.8', label: 'Zdravě zhubnout' },
+              { value: '1', label: 'Jíst zdravěji a udržet si váhu' },
+              { value: '1.2', label: 'Nabrat na váze' },
+            ]}
+          />
           <div className="otazka">
             <label htmlFor="weight">Kolik vážíte kg?</label>
             <Field
