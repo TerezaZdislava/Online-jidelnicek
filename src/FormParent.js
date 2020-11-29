@@ -52,7 +52,7 @@ const FormParent = () => {
   const [step, setStep] = useState(initialPage);
 
   useEffect(() => {
-    localStorage.setItem('formPage', step);
+    localStorage.setItem('formPage', Number(step));
   }, [step]);
 
   const isFirst = step === 0;
