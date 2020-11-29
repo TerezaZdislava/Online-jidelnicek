@@ -6,7 +6,7 @@ import { Menu } from '@styled-icons/feather/Menu';
 const StyledHeader = styled.header`
   width: 100%;
   height: 60px;
-  background-color:  white;
+  background-color: white;
   font-weight: 500;
   font-size: 1.3rem;
   display: flex;
@@ -19,16 +19,20 @@ const StyledHeader = styled.header`
   box-shadow: 0px 5px 4px 0px rgba(50, 50, 50, 0.3);
 
   ul {
-    padding-right: 4px;
-    padding-left: 10px;
+    padding: 0;
     display: none;
     flex-direction: column;
     list-style-type: none;
-    background-color: grey;
+    background-color: white;
     width: 100%;
     margin: 0;
-    padding-bottom: 10px;
-    padding-top: 10px;
+  }
+  .topMenu {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
   }
   .logo {
     margin: 0;
@@ -48,7 +52,8 @@ const StyledHeader = styled.header`
     margin: 0;
   }
   li {
-    padding 10px;
+    padding: 10px 20px;
+    border-top: 1px solid #80808040;
   }
   a {
     color: rgb(0, 0, 0);
@@ -59,8 +64,6 @@ const StyledHeader = styled.header`
   }
   svg {
     margin: 12px;
-    position: absolute;
-    right: 0px;
   }
 `;
 
@@ -79,9 +82,12 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <div className="logo">
-        <p className="logo1">ONLINE</p>
-        <p className="logo2">JÍDELNÍČEK</p>
+      <div className="topMenu">
+        <div className="logo">
+          <span className="logo1">ONLINE</span>
+          <span className="logo2">JÍDELNÍČEK</span>
+        </div>
+        <Menu size="1.4em" onClick={toggleMenu} />
       </div>
       <ul ref={ulRef}>
         <li>
@@ -94,7 +100,6 @@ const Header = () => {
           <Link to="/foodmenu">Jídelníček</Link>
         </li>
       </ul>
-      <Menu size="1.4em" onClick={toggleMenu} />
     </StyledHeader>
   );
 };
