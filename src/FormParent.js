@@ -34,7 +34,7 @@ const initialValues = {
   numberOfMeals: null,
   sportFrequency: null,
   jobActivity: null,
-  formBodyFat: null,
+  formBodyFat: 20,
 };
 
 const requiredFieldPerStep = {
@@ -118,7 +118,7 @@ const FormParent = () => {
         localStorage.setItem('form', JSON.stringify(values));
         return (
           <Form className="formular1">
-            <SwipeableViews index={step}>
+            <SwipeableViews disabled={true} index={step}>
               {stepComponents.map((StepComponent) => {
                 return (
                   <div>
