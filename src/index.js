@@ -7,6 +7,7 @@ import FormParent from './FormParent.js';
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './assets/index.css';
 import './assets/font/font.css';
+import styled from 'styled-components';
 
 const routes = [
   { path: '/', component: Home, exact: true },
@@ -14,14 +15,20 @@ const routes = [
   { path: '/form', component: FormParent },
 ];
 
+const Content = styled.div`
+  margin-top: 60px;
+`;
+
 render(
   <Router>
     <Header />
-    <Switch>
-      {routes.map((route) => (
-        <Route {...route} />
-      ))}
-    </Switch>
+    <Content>
+      <Switch>
+        {routes.map((route) => (
+          <Route {...route} />
+        ))}
+      </Switch>
+    </Content>
   </Router>,
   document.querySelector('#app'),
 );

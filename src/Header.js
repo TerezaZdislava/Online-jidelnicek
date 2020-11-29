@@ -1,26 +1,21 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Menu } from '@styled-icons/feather/Menu';
 
 const StyledHeader = styled.header`
   width: 100%;
-  height: 60px;
-  background-color: white;
   font-weight: 500;
   font-size: 1.3rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   color: rgb(0, 0, 0);
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
-  box-shadow: 0px 5px 4px 0px rgba(50, 50, 50, 0.3);
-
+  height: ${(props) => (props.isOpen ? '100%' : 'auto')};
   ul {
     padding: 0;
-    display: none;
+    display: ${(props) => (props.isOpen ? 'flex' : 'none')};
     flex-direction: column;
     list-style-type: none;
     background-color: white;
@@ -28,10 +23,12 @@ const StyledHeader = styled.header`
     margin: 0;
   }
   .topMenu {
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px 5px 4px 0px rgba(50, 50, 50, 0.3);
     justify-content: space-between;
     display: flex;
     width: 100%;
-    height: 100%;
     align-items: center;
   }
   .logo {
@@ -57,10 +54,9 @@ const StyledHeader = styled.header`
   }
   a {
     color: rgb(0, 0, 0);
-    list-style: none;
-    align-items: center;
-    margin: 0;
     text-decoration: none;
+    display: inline-block;
+    width: 100%;
   }
   svg {
     margin: 12px;
@@ -68,20 +64,22 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => {
-  const ulRef = useRef(null);
+  const [open, setOpen] = useState(false);
 
-  function toggleMenu() {
-    const ul = ulRef.current;
-    const currentStyle = window.getComputedStyle(ul);
-    if (currentStyle.display === 'flex') {
-      ul.style.display = 'none';
-    } else {
-      ul.style.display = 'flex';
+  function toggleMenu(event) {
+    setOpen((value) => !value);
+    event.stopPropagation();
+    //prestane probublavat event dolu na spodni elementy
+  }
+
+  function handleHeaderClick(event) {
+    if (event.target === event.currentTarget) {
+      toggleMenu(event);
     }
   }
 
   return (
-    <StyledHeader>
+    <StyledHeader isOpen={open} onClick={handleHeaderClick}>
       <div className="topMenu">
         <div className="logo">
           <span className="logo1">ONLINE</span>
@@ -89,7 +87,7 @@ const Header = () => {
         </div>
         <Menu size="1.4em" onClick={toggleMenu} />
       </div>
-      <ul ref={ulRef}>
+      <ul onClick={toggleMenu}>
         <li>
           <Link to="/">Domů</Link>
         </li>

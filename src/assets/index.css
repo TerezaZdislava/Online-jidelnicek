@@ -1,6 +1,8 @@
 html,
-body {
+body,
+#app {
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
