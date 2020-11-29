@@ -27,6 +27,7 @@ const StyledBodyFat = styled.div`
   }
   .styledSlider {
     width: 85%;
+    color: rgb(255, 0, 55);
   }
   h5 {
     font-weight: 600;
