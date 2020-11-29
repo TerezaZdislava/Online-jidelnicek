@@ -16,6 +16,38 @@
     "steps": null
   },
   {
+    "name": "Quacamole s chlebem",
+    "ingredience1": "avokádo",
+    "grams1": 60,
+    "ingredience2": "žitný chléb",
+    "grams2": 55,
+    "ingredience3": "rajče",
+    "grams3": 30,
+    "calories": 375,
+    "exclude": "lepek",
+    "mealDev": "snídaně",
+    "ingredience4": null,
+    "grams4": null,
+    "ingredience5": null,
+    "steps": "Avokádo rozmačkáme, rajče a cibuli nakrájíme najemno, přidáme čerstvý koriandr, sůl a pepř. Vše dobře promýcháme, aby vznikla pomazánka. Tu pak namažeme na chleba."
+  },
+  {
+    "name": "Chléb s humusem a klíčky",
+    "ingredience1": "Humus pikant",
+    "grams1": 50,
+    "ingredience2": "žitný chléb",
+    "grams2": 55,
+    "ingredience3": "klíčky ředkvičky, Mungo, alfalfa, česneku atd.",
+    "grams3": 30,
+    "calories": 375,
+    "exclude": "lepek",
+    "mealDev": "snídaně",
+    "ingredience4": null,
+    "grams4": null,
+    "ingredience5": null,
+    "steps": "Chléb pomažeme humusovou pastou a navrch ozdobíme klíčky."
+  },
+  {
     "name": "Chléb se šunkou a vejcem",
     "ingredience1": "kuřecí / krůtí šunka",
     "grams1": 60,
