@@ -11,7 +11,9 @@ const StyledFormFood = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: baseline;
-    border-radius: 5%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
     background-color: white;
   }

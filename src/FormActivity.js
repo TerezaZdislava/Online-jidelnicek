@@ -2,12 +2,33 @@ import React, { useState } from 'react';
 import { Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import classNames from 'classnames';
+import styled from 'styled-components';
 
 // const validationSchema = yup.object().shape({
 //   option0: yup.string().required('At least one checkbox is required'),
 //   option1: yup.string().required('At least one checkbox is required'),
 //   option2: yup.string().required('At least one checkbox is required'),
 // });
+const StyledFormActivity = styled.div`
+  padding: 1rem;
+
+  .FormActivityAll {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
+    background-color: white;
+  }
+  .formactivity-question {
+    background-color: #c1c1c169;
+    width: 100%;
+  }
+`;
 
 export const numberOfMealsSchema = yup
   .string()
@@ -113,63 +134,65 @@ const FormActivity = ({ formData, setFormData, nextStep, prevStep }) => {
   };
 
   return (
-    <React.Fragment>
-      <div className="card" key="0">
-        <div className="card-body">
-          <h6 className="formactivity-question">{questions[0].question}</h6>
+    <StyledFormActivity>
+      <div className="FormActivityAll">
+        <div className="card" key="0">
+          <div className="card-body">
+            <h6 className="formactivity-question">{questions[0].question}</h6>
 
-          <div role="group" aria-labelledby="my-radio-group">
-            {questions[0].choices.map((choice) => (
-              <div className="formactivity-check" key={choice.option}>
-                <Field
-                  component={RadioButton}
-                  id={choice.option}
-                  className="form-check-input"
-                  // name={`answers[${index}].answer`}
-                  name="numberOfMeals"
-                  label={choice.answer}
-                  validate={(value) => validate(numberOfMealsSchema, value)}
-                />
-                <ErrorMessage name="numberOfMeals" />
-              </div>
-            ))}
-          </div>
-          <h6 className="formactivity-question">{questions[1].question}</h6>
-          <div role="group" aria-labelledby="my-radio-group">
-            {questions[1].choices.map((choice) => (
-              <div className="formactivity-check" key={choice.option}>
-                <Field
-                  component={RadioButton}
-                  id={choice.option}
-                  className="form-check-input"
-                  // name={`answers[${index}].answer`}
-                  name="sportFrequency"
-                  label={choice.answer}
-                  validate={(value) => validate(sportFrequencySchema, value)}
-                />
-                <ErrorMessage name="sportFrequency" />
-              </div>
-            ))}
-          </div>
-          <h6 className="formactivity-question">{questions[2].question}</h6>
-          <div role="group" aria-labelledby="my-radio-group">
-            {questions[2].choices.map((choice) => (
-              <div className="formactivity-check" key={choice.option}>
-                <Field
-                  component={RadioButton}
-                  id={choice.option}
-                  className="form-check-input"
-                  name="jobActivity"
-                  label={choice.answer}
-                  validate={(value) => validate(jobActivitySchema, value)}
-                />
-                <ErrorMessage name="jobActivity" />
-              </div>
-            ))}
+            <div role="group" aria-labelledby="my-radio-group">
+              {questions[0].choices.map((choice) => (
+                <div className="formactivity-check" key={choice.option}>
+                  <Field
+                    component={RadioButton}
+                    id={choice.option}
+                    className="form-check-input"
+                    // name={`answers[${index}].answer`}
+                    name="numberOfMeals"
+                    label={choice.answer}
+                    validate={(value) => validate(numberOfMealsSchema, value)}
+                  />
+                  <ErrorMessage name="numberOfMeals" />
+                </div>
+              ))}
+            </div>
+            <h6 className="formactivity-question">{questions[1].question}</h6>
+            <div role="group" aria-labelledby="my-radio-group">
+              {questions[1].choices.map((choice) => (
+                <div className="formactivity-check" key={choice.option}>
+                  <Field
+                    component={RadioButton}
+                    id={choice.option}
+                    className="form-check-input"
+                    // name={`answers[${index}].answer`}
+                    name="sportFrequency"
+                    label={choice.answer}
+                    validate={(value) => validate(sportFrequencySchema, value)}
+                  />
+                  <ErrorMessage name="sportFrequency" />
+                </div>
+              ))}
+            </div>
+            <h6 className="formactivity-question">{questions[2].question}</h6>
+            <div role="group" aria-labelledby="my-radio-group">
+              {questions[2].choices.map((choice) => (
+                <div className="formactivity-check" key={choice.option}>
+                  <Field
+                    component={RadioButton}
+                    id={choice.option}
+                    className="form-check-input"
+                    name="jobActivity"
+                    label={choice.answer}
+                    validate={(value) => validate(jobActivitySchema, value)}
+                  />
+                  <ErrorMessage name="jobActivity" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </StyledFormActivity>
   );
 };
 

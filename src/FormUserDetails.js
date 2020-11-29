@@ -32,20 +32,29 @@ export const weightSchema = yup
 
 const StyledFormUserDetails = styled.div`
   padding: 1rem;
-
+  position: relative;
   .formUserDetails {
+    margin-top: 3rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: baseline;
-    border-radius: 5%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
     background-color: white;
   }
   .messageToForm {
     background-color: #c1c1c169;
     width: 100%;
+  }
+  .headerimage {
+    height: 10rem;
+    position: absolute;
+    right: 0;
+    opacity: 70%;
   }
 `;
 
@@ -61,6 +70,11 @@ export const FormUserDetails = ({ errors, touched }) => {
 
   return (
     <StyledFormUserDetails>
+      <img
+        className="headerimage"
+        src={'./assets/img/foodmenu.png'}
+        alt="Online-jídelníček"
+      />
       <h1>Formulář</h1>
       <div className="formUserDetails">
         <p className="messageToForm">
