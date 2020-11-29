@@ -5,23 +5,38 @@ import {
   virtualize,
   bindKeyboard,
 } from 'react-swipeable-views-utils';
+import styled from 'styled-components';
 
 // const EnhancedSwipeableViews = bindKeyboard(
 //   autoPlay(virtualize(SwipeableViews)),
 // );
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
+const StyledContent = styled.div`
+  img {
+    width: 100%;
+  }
+`;
+
 const Home = () => {
   return (
-    <AutoPlaySwipeableViews>
-      <img src={'./assets/img/jidlo-1.jpg'} alt="jidlo1" />
-      <img src={'./assets/img/jidlo-2.jpg'} alt="jidlo2" />
-      <img src={'./assets/img/jidlo-3.jpg'} alt="jidlo3" />
-      <img src={'./assets/img/jidlo-4.jpg'} alt="jidlo4" />
-      <img src={'./assets/img/jidlo-5.jpg'} alt="jidlo5" />
-      <img src={'./assets/img/jidlo-6.jpg'} alt="jidlo6" />
-      <img src={'./assets/img/jidlo-7.jpg'} alt="jidlo7" />
-    </AutoPlaySwipeableViews>
+    <StyledContent>
+      <AutoPlaySwipeableViews>
+        <img src={'./assets/img/jidlo-1.jpg'} alt="jidlo1" />
+        <img src={'./assets/img/jidlo-2.jpg'} alt="jidlo2" />
+        <img src={'./assets/img/jidlo-3.jpg'} alt="jidlo3" />
+        <img src={'./assets/img/jidlo-4.jpg'} alt="jidlo4" />
+        <img src={'./assets/img/jidlo-5.jpg'} alt="jidlo5" />
+        <img src={'./assets/img/jidlo-6.jpg'} alt="jidlo6" />
+        <img src={'./assets/img/jidlo-7.jpg'} alt="jidlo7" />
+      </AutoPlaySwipeableViews>
+      <div>
+        <p>
+          Získej zdravý a chutný jídelníček přímo na míru. Za pár minut a
+          zadarmo.
+        </p>
+      </div>
+    </StyledContent>
   );
 };
 
