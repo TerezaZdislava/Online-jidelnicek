@@ -28,6 +28,11 @@ const StyledBodyFat = styled.div`
   .styledSlider {
     width: 85%;
   }
+  h5 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 0.7rem;
+  }
 `;
 
 const marks = [
@@ -64,7 +69,7 @@ function getManPicture(formBodyFat) {
   return 'man-35.jpg';
 }
 function getWomanPicture(formBodyFat) {
-  if (formBodyFat < 15) {
+  if (formBodyFat <= 15) {
     return 'woman-15.jpg';
   } else if (formBodyFat <= 20) {
     return 'woman-20.jpg';
@@ -86,9 +91,9 @@ const FormBodyFat = ({ values, setFieldValue }) => {
   return (
     <StyledBodyFat>
       <div className="formBodyFat-all">
-        <div id="discrete-slider-always" className="formBodyMessage">
-          Kolik máte přibližně tuku v těle?
-        </div>
+        <h5 id="discrete-slider-always" className="formBodyMessage">
+          Kolik máte přibližně procent tuku v těle?
+        </h5>
         <img
           className="imageFat"
           src={`./assets/img/${
