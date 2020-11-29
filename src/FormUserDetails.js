@@ -31,7 +31,7 @@ export const weightSchema = yup
 // });
 
 const StyledFormUserDetails = styled.div`
-padding: 1rem;
+  padding: 1rem;
 
   .formUserDetails {
     width: 100%;
@@ -42,14 +42,10 @@ padding: 1rem;
     border-radius: 5%;
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
     background-color: white;
-
   }
   .messageToForm {
     background-color: #c1c1c169;
     width: 100%;
-    & > * {
-      margin: 0.7rem;
-      margin-left: 1rem;
   }
 `;
 
