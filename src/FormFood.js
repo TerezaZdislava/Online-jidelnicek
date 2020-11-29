@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field } from 'formik';
 import styled from 'styled-components';
+import Checkbox from './Checkbox.js';
 
 const StyledFormFood = styled.div`
   padding: 1rem;
@@ -17,42 +18,53 @@ const StyledFormFood = styled.div`
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
     background-color: white;
   }
-  .formFood-message {
-    background-color: #c1c1c169;
+  h5 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    padding: 0.7rem;
+  }
+  .formFood-group {
+    display: flex;
+    flex-direction: column;
     width: 100%;
   }
 `;
 
-const FormFood = ({ formData, setFormData, nextStep, prevStep }) => {
+const FormFood = ({ values }) => {
   return (
     <StyledFormFood>
       <div className="formFood-all">
-        <p className="formFood-message">
-          Jaké potraviny se nemají v jídelníčku vyskytovat?
-        </p>
-        <div className="formFood">
-          <div
-            className="formFood-group"
-            role="group"
-            aria-labelledby="checkbox-group"
-          >
-            <label>
-              <Field type="checkbox" name="excludedFood" value="maso" />
-              Maso
-            </label>
-            <label>
-              <Field type="checkbox" name="excludedFood" value="mléko" />
-              Mléko
-            </label>
-            <label>
-              <Field type="checkbox" name="excludedFood" value="vejce" />
-              Vejce
-            </label>
-            <label>
-              <Field type="checkbox" name="excludedFood" value="lepek" />
-              Lepek
-            </label>
-          </div>
+        <h5>Jaké potraviny se nemají v jídelníčku vyskytovat?</h5>
+        <div
+          className="formFood-group"
+          role="group"
+          aria-labelledby="checkbox-group"
+        >
+          <Checkbox
+            formValues={values}
+            name="excludedFood"
+            value="maso"
+            label="Maso"
+          />
+          <Checkbox
+            formValues={values}
+            name="excludedFood"
+            value="mléko"
+            label="Mléko"
+          />
+          <Checkbox
+            formValues={values}
+            name="excludedFood"
+            value="vejce"
+            label="Vejce"
+          />
+          <Checkbox
+            formValues={values}
+            name="excludedFood"
+            value="lepek"
+            label="Lepek"
+          />
         </div>
       </div>
     </StyledFormFood>
