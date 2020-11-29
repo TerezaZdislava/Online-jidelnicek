@@ -9,6 +9,9 @@ const StyledMeal = styled.div`
   align-items: baseline;
 
   .expansion {
+    & > * {
+      margin: 0 1rem;
+    }
     &.opened {
       display: flex;
       flex-direction: column;
@@ -28,13 +31,16 @@ const StyledMeal = styled.div`
   h5 {
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: 0.7rem;
+    margin: 0.7rem 0;
+  }
+
+  .ingrediences {
+    margin-bottom: 1rem;
   }
 
   .ingredience-row {
     display: flex;
     justify-content: space-between;
-    text-transform: capitalize;
     line-height: 2;
   }
 
@@ -45,12 +51,22 @@ const StyledMeal = styled.div`
     font-weight: 600;
   }
   .ingredience-header {
-    backgroud-color: #fef0eb;
+    background-color: #c1c1c169;
+    width: 100%;
+    & > * {
+      margin: 0.7rem;
+      margin-left: 1rem;
+    }
   }
 `;
 
+const capitalize = (s) => {
+  if (typeof s !== 'string') return '';
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
+
 const Meal = ({ className, title, data }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const expansionClassName = open ? 'expansion opened' : 'expansion closed';
 
   const handleToggle = () => {
@@ -67,13 +83,19 @@ const Meal = ({ className, title, data }) => {
         <div>{data.name}</div>
       </div>
       <div className={expansionClassName}>
-        <div className="ingredients">
+        <div className="ingrediences">
           <h5>Ingredience</h5>
           <div className="ingredience-text">
             {data.ingrediences.map((ingredience) => (
               <div className="ingredience-row" key={ingredience.name}>
-                <div className="ingredience-name">{ingredience.name}:</div>
-                <div className="ingredience-grams">{ingredience.grams}g</div>
+                <div className="ingredience-name">
+                  {capitalize(ingredience.name)}:
+                </div>
+                <div className="ingredience-grams">
+                  {ingredience.grams != null
+                    ? `${ingredience.grams}g`
+                    : 'Libovolné množství'}
+                </div>
               </div>
             ))}
           </div>
