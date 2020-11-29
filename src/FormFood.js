@@ -1,6 +1,5 @@
 import React from 'react';
 import { Field } from 'formik';
-import './assets/form.module.css';
 
 const FormFood = ({ formData, setFormData, nextStep, prevStep }) => {
   return (

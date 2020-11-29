@@ -1,6 +1,5 @@
 import React from 'react';
 import { Field, ErrorMessage } from 'formik';
-import './assets/form.module.css';
 import * as yup from 'yup';
 
 export const genderSchema = yup.string().required('Povinná otázka');

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
-import './App.css';
 import FormUserDetails, {
   genderSchema,
   goalSchema,
@@ -15,7 +14,6 @@ import FormActivity, {
   jobActivitySchema,
 } from './FormActivity';
 import { Success } from './Success';
-import './assets/form.module.css';
 import FormButtons from './FormButtons';
 import SwipeableViews from 'react-swipeable-views';
 

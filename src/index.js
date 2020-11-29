@@ -1,10 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
+import Header from './Header.js';
 import Home from './Home.js';
 import FoodMenu from './FoodMenu.js';
 import FormParent from './FormParent.js';
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import './assets/form.module.css';
+import './assets/index.css';
+import './assets/font/font.css';
 
 const routes = [
   { path: '/', component: Home, exact: true },
@@ -14,19 +16,7 @@ const routes = [
 
 render(
   <Router>
-    <header>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/form">Formulář</Link>
-        </li>
-        <li>
-          <Link to="/foodmenu">Jídelníček</Link>
-        </li>
-      </ul>
-    </header>
+    <Header />
     <Switch>
       {routes.map((route) => (
         <Route {...route} />

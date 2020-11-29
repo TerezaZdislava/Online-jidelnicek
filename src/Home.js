@@ -1,8 +1,46 @@
 import React from 'react';
+import SwipeableViews from 'react-swipeable-views';
+import {
+  autoPlay,
+  virtualize,
+  bindKeyboard,
+} from 'react-swipeable-views-utils';
 
-const Home = () => <h1>Homeeee</h1>;
+// const EnhancedSwipeableViews = bindKeyboard(
+//   autoPlay(virtualize(SwipeableViews)),
+// );
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+const Home = () => {
+  return (
+    <AutoPlaySwipeableViews>
+      <img src={'./assets/img/jidlo-1.jpg'} alt="jidlo1" />
+      <img src={'./assets/img/jidlo-2.jpg'} alt="jidlo2" />
+      <img src={'./assets/img/jidlo-3.jpg'} alt="jidlo3" />
+      <img src={'./assets/img/jidlo-4.jpg'} alt="jidlo4" />
+      <img src={'./assets/img/jidlo-5.jpg'} alt="jidlo5" />
+      <img src={'./assets/img/jidlo-6.jpg'} alt="jidlo6" />
+      <img src={'./assets/img/jidlo-7.jpg'} alt="jidlo7" />
+    </AutoPlaySwipeableViews>
+  );
+};
 
 export default Home;
+
+// const Home = () => {
+//   return (
+// <React.Fragment>
+
+//   <h1>Homeeee</h1>;
+//   <SwipeableViews index={step}>
+
+//   </SwipeableViews>
+// </React.Fragment>
+
+//   )
+// }
+
+// export default Home;
 
 {
   /* <section id="intro">
