@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   height: 60px;
   background-color:  white;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -16,10 +16,11 @@ const StyledHeader = styled.header`
   color: rgb(0, 0, 0);
   position: relative;
   z-index: 1;
+  box-shadow: 0px 5px 4px 0px rgba(50, 50, 50, 0.3);
 
   ul {
     padding-right: 4px;
-    padding-left: 30px;
+    padding-left: 10px;
     display: none;
     flex-direction: column;
     list-style-type: none;
@@ -29,12 +30,22 @@ const StyledHeader = styled.header`
     padding-bottom: 10px;
     padding-top: 10px;
   }
-  p {
+  .logo {
     margin: 0;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 40px;
-
+    padding-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .logo2 {
+    color: rgb(255, 0, 55);
+    margin: 0;
+    font-weight: 700;
+  }
+  .logo1 {
+    color: black;
+    margin: 0;
   }
   li {
     padding 10px;
@@ -68,7 +79,10 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <p>Online Jídelníček</p>
+      <div className="logo">
+        <p className="logo1">ONLINE</p>
+        <p className="logo2">JÍDELNÍČEK</p>
+      </div>
       <ul ref={ulRef}>
         <li>
           <Link to="/">Domů</Link>

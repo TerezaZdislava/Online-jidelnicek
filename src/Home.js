@@ -13,28 +13,71 @@ import styled from 'styled-components';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const StyledContent = styled.div`
+  display: block;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.2rem;
   img {
-    width: 100%;
+    width: 130%;
+    opacity: 0.7;
+  }
+  .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+  .ctatext {
+    background-color: white;
+    padding: 5px;
+    margin: 50px;
+    opacity: 0.8;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  .ctatext p {
+    opacity: 1;
+  }
+  button {
+    background-color: rgb(255, 0, 55);
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .imagesAndCta {
+    display: block;
+    position: relative;
   }
 `;
 
 const Home = () => {
   return (
     <StyledContent>
-      <AutoPlaySwipeableViews>
-        <img src={'./assets/img/jidlo-1.jpg'} alt="jidlo1" />
-        <img src={'./assets/img/jidlo-2.jpg'} alt="jidlo2" />
-        <img src={'./assets/img/jidlo-3.jpg'} alt="jidlo3" />
-        <img src={'./assets/img/jidlo-4.jpg'} alt="jidlo4" />
-        <img src={'./assets/img/jidlo-5.jpg'} alt="jidlo5" />
-        <img src={'./assets/img/jidlo-6.jpg'} alt="jidlo6" />
-        <img src={'./assets/img/jidlo-7.jpg'} alt="jidlo7" />
-      </AutoPlaySwipeableViews>
-      <div>
-        <p>
-          Získej zdravý a chutný jídelníček přímo na míru. Za pár minut a
-          zadarmo.
-        </p>
+      <div className="imagesAndCta">
+        <AutoPlaySwipeableViews>
+          <img src={'./assets/img/jidlo-1.jpg'} alt="jidlo1" />
+          <img src={'./assets/img/jidlo-2.jpg'} alt="jidlo2" />
+          <img src={'./assets/img/jidlo-3.jpg'} alt="jidlo3" />
+          <img src={'./assets/img/jidlo-4.jpg'} alt="jidlo4" />
+          <img src={'./assets/img/jidlo-5.jpg'} alt="jidlo5" />
+          <img src={'./assets/img/jidlo-6.jpg'} alt="jidlo6" />
+          <img src={'./assets/img/jidlo-7.jpg'} alt="jidlo7" />
+        </AutoPlaySwipeableViews>
+        <div className="cta">
+          <div className="ctatext">
+            <p>Zdravý a chutný jídelníček na míru</p>
+          </div>
+          <button>Chci jídelníček</button>
+        </div>
       </div>
     </StyledContent>
   );

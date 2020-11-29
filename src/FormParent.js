@@ -46,7 +46,7 @@ const stepComponents = [FormUserDetails, FormFood, FormActivity, FormBodyFat];
 const FormParent = () => {
   const initialPage =
     localStorage.getItem('formPage') != null
-      ? localStorage.getItem('formPage')
+      ? JSON.parse(localStorage.getItem('formPage'))
       : 0;
   const history = useHistory();
   const [step, setStep] = useState(initialPage);
