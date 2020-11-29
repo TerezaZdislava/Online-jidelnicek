@@ -144,18 +144,16 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 //zapina server
 //npm i nodemon -g - ukaze mi zmeny na backendu a nemusim zapinat a vypinat, automaticky se propisou zmeny
 
+// const form = {
+//   gender,
+//   weight,
+//   goal,
+//   sportFrequency,
+//   jobActivity,
+//   formBodyFat,
+//   excludedFood,
+//   numberOfMeals,
+// };
 
-const form = {
-  gender,
-  weight,
-  goal,
-  sportFrequency,
-  jobActivity,
-  formBodyFat,
-  excludedFood,
-  numberOfMeals,
-};
-
-console.log('PROCESSED FORM');
-console.log(JSON.stringify(processForm(form), null, 2));
-
+// console.log('PROCESSED FORM');
+// console.log(JSON.stringify(processForm(form), null, 2));

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import './App.css';
@@ -47,12 +47,17 @@ const requiredFieldPerStep = {
 const stepComponents = [FormUserDetails, FormFood, FormActivity, FormBodyFat];
 // const stepComponents = [FormUserDetails];
 const FormParent = () => {
+  const initialPage =
+    localStorage.getItem('formPage') != null
+      ? localStorage.getItem('formPage')
+      : 0;
   const history = useHistory();
-  const [step, setStep] = useState(0);
-  const [nextDisabled, setNextDisabled] = useState(true);
-  const setDisabled = (value) => {
-    setNextDisabled(value);
-  };
+  const [step, setStep] = useState(initialPage);
+
+  useEffect(() => {
+    localStorage.setItem('formPage', step);
+  }, [step]);
+
   const isFirst = step === 0;
   const isLast = step === stepComponents.length - 1;
   return (
@@ -68,6 +73,7 @@ const FormParent = () => {
         values.jobActivity = Number(values.jobActivity);
         values.numberOfMeals = Number(values.numberOfMeals);
         values.sportFrequency = Number(values.sportFrequency);
+        console.log(values);
         fetch('/api/form', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, *cors, same-origin
@@ -87,6 +93,7 @@ const FormParent = () => {
           .then((data) => {
             localStorage.setItem('menu', JSON.stringify(data));
             localStorage.removeItem('form');
+            localStorage.removeItem('formPage');
             history.push('/foodmenu');
           });
       }}
@@ -121,7 +128,6 @@ const FormParent = () => {
                     <StepComponent
                       touched={touched}
                       errors={errors}
-                      setNextDisabled={setDisabled}
                       values={values}
                       setFieldValue={setFieldValue}
                     />

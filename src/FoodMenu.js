@@ -1,4 +1,7 @@
 import React from 'react';
+
+import Meal from "./Meal.js";
+
 /*
 const menu = {
   breakfast: {
@@ -39,104 +42,12 @@ const FoodMenu = () => {
   const menu = JSON.parse(jsonForm);
   return (
     <section>
-      <h1>Jídelníček</h1>
-      <div className="meals">
-        <div className="breakfast">
-          <h4>Snídaně</h4>
-          <h5>{menu.breakfast.name}</h5>
-          <div className="ingredients">
-            <h4>Ingredience</h4>
-            <div>
-              {menu.breakfast.ingrediences.map((ingredience) => (
-                <React.Fragment key={ingredience.name}>
-                  <div>{ingredience.name}</div>
-                  <div>{ingredience.grams}</div>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-          <div className="steps">
-            <h4>Postup</h4>
-            <div>{menu.breakfast.steps}</div>
-          </div>
-        </div>
-        <div className="snackBef">
-          <h4>Dopolední svačina</h4>
-          <h5>{menu.snackBef.name}</h5>
-          <div className="ingredients">
-            <h4>Ingredience</h4>
-            <div>
-              {menu.snackBef.ingrediences.map((ingredience) => (
-                <React.Fragment key={ingredience.name}>
-                  <div>{ingredience.name}</div>
-                  <div>{ingredience.grams}</div>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-          <div className="steps">
-            <h4>Postup</h4>
-            <div>{menu.snackBef.steps}</div>
-          </div>
-        </div>
-        <div className="lunch">
-          <h4>Oběd</h4>
-          <h5>{menu.lunch.name}</h5>
-          <div className="ingredients">
-            <h4>Ingredience</h4>
-            <div>
-              {menu.lunch.ingrediences.map((ingredience) => (
-                <React.Fragment key={ingredience.name}>
-                  <div>{ingredience.name}</div>
-                  <div>{ingredience.grams}</div>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-          <div className="steps">
-            <h4>Postup</h4>
-            <div>{menu.lunch.steps}</div>
-          </div>
-        </div>
-        <div className="snackAfter">
-          <h4>Odpolední svačina</h4>
-          <h5>{menu.snackAfter.name}</h5>
-          <div className="ingredients">
-            <h4>Ingredience</h4>
-            <div>
-              {menu.snackAfter.ingrediences.map((ingredience) => (
-                <React.Fragment key={ingredience.name}>
-                  <div>{ingredience.name}</div>
-                  <div>{ingredience.grams}</div>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-          <div className="steps">
-            <h4>Postup</h4>
-            <div>{menu.snackAfter.steps}</div>
-          </div>
-        </div>
-        <div className="dinner">
-          <h4>Večeře</h4>
-          <h5>{menu.dinner.name}</h5>
-          <div className="ingredients">
-            <h4>Ingredience</h4>
-            <div>
-              {menu.dinner.ingrediences.map((ingredience) => (
-                <React.Fragment key={ingredience.name}>
-                  <div>{ingredience.name}</div>
-                  <div>{ingredience.grams}</div>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-          <div className="steps">
-            <h4>Postup</h4>
-            <div>{menu.dinner.steps}</div>
-          </div>
-        </div>
-      </div>
+      <h1>Jídelníček</h1>   
+        <Meal title="Snídaně" data={menu.breakfast} className="breakfast" />
+        <Meal title="Dopolední svačina" data={menu.snackBef} className="snackBef" />
+        <Meal title="Oběd" data={menu.lunch} className="lunch" />
+        <Meal title="Odpolední svačina" data={menu.snackAfter} className="snackAfter" />
+        <Meal title="Večeře" data={menu.dinner} className="dinner" />
     </section>
   );
 };
