@@ -34,34 +34,59 @@ function transformData(data) {
         );
     }
     if (ingredience1) {
-      result.ingrediences.push({
+      const ingredience = {
         name: ingredience1.trim(),
-        grams: grams1,
-      });
+      };
+      if (grams1) {
+        ingredience.grams = grams1;
+      } else {
+        ingredience.isArbitrary = true;
+      }
+      result.ingrediences.push(ingredience);
     }
     if (ingredience2) {
-      result.ingrediences.push({
+      const ingredience = {
         name: ingredience2.trim(),
-        grams: grams2,
-      });
+      };
+      if (grams2) {
+        ingredience.grams = grams2;
+      } else {
+        ingredience.isArbitrary = true;
+      }
+      result.ingrediences.push(ingredience);
     }
     if (ingredience3) {
-      result.ingrediences.push({
+      const ingredience = {
         name: ingredience3.trim(),
-        grams: grams3,
-      });
+      };
+      if (grams3) {
+        ingredience.grams = grams3;
+      } else {
+        ingredience.isArbitrary = true;
+      }
+      result.ingrediences.push(ingredience);
     }
     if (ingredience4) {
-      result.ingrediences.push({
+      const ingredience = {
         name: ingredience4.trim(),
-        grams: grams4,
-      });
+      };
+      if (grams4) {
+        ingredience.grams = grams4;
+      } else {
+        ingredience.isArbitrary = true;
+      }
+      result.ingrediences.push(ingredience);
     }
     if (ingredience5) {
-      result.ingrediences.push({
-        name: ingredience5.trim(),
-        grams: grams5,
-      });
+      const ingredience = {
+        name: ingredience3.trim(),
+      };
+      if (grams5) {
+        ingredience.grams = grams5;
+      } else {
+        ingredience.isArbitrary = true;
+      }
+      result.ingrediences.push(ingredience);
     }
     return result;
   });

@@ -20,9 +20,7 @@ const getCoefficient = (form) => {
 
   return (
     (((weight - (formBodyFat / 100) * weight) * 21.6 + 370) *
-      goal *
-      gender *
-      ((sportFrequency + jobActivity) / 2)) /
+      ((goal + gender + sportFrequency + jobActivity) / 4)) /
     1789
   );
 };
@@ -33,6 +31,7 @@ function getRandomNumber(max) {
 
 function recalculatedMacros(meal, coefficient) {
   meal.calories = Math.round(meal.calories * coefficient);
+
   meal.ingrediences = meal.ingrediences.map((ingredience) => {
     ingredience.grams = Math.round(ingredience.grams * coefficient);
     return ingredience;
@@ -145,31 +144,16 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 //zapina server
 //npm i nodemon -g - ukaze mi zmeny na backendu a nemusim zapinat a vypinat, automaticky se propisou zmeny
 
-///testing
-//nase logika
-//return {jidelnicek - cista data}
-//neuvidi to zatim uzivatel
-/*let gender = 0.8;
-let weight = 70;
-let formBodyFat = 20;
-let jobActivity = 1.2;
-let sportFrequency = 1;
-let goal = 0.8;
-let excludedFood = ['mléko', 'maso'];
-let numberOfMeals = 5;
+// const form = {
+//   gender,
+//   weight,
+//   goal,
+//   sportFrequency,
+//   jobActivity,
+//   formBodyFat,
+//   excludedFood,
+//   numberOfMeals,
+// };
 
-const form = {
-  gender,
-  weight,
-  goal,
-  sportFrequency,
-  jobActivity,
-  formBodyFat,
-  excludedFood,
-  numberOfMeals,
-};
-
-console.log('PROCESSED FORM');
-console.log(JSON.stringify(processForm(form), null, 2));
-
-// console.log(JSON.stringify(transformData(data), null, 2));*/
+// console.log('PROCESSED FORM');
+// console.log(JSON.stringify(processForm(form), null, 2));

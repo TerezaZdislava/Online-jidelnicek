@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import FormUserDetails, {
@@ -13,9 +13,10 @@ import FormActivity, {
   sportFrequencySchema,
   jobActivitySchema,
 } from './FormActivity';
-import { Success } from './Success';
+import './assets/form.module.css';
 import FormButtons from './FormButtons';
 import SwipeableViews from 'react-swipeable-views';
+import { useHistory } from 'react-router-dom';
 
 const validationSchema = yup.object().shape({
   gender: genderSchema,
@@ -34,7 +35,7 @@ const initialValues = {
   numberOfMeals: null,
   sportFrequency: null,
   jobActivity: null,
-  formBodyFat: '',
+  formBodyFat: null,
 };
 
 const requiredFieldPerStep = {
@@ -44,22 +45,33 @@ const requiredFieldPerStep = {
 const stepComponents = [FormUserDetails, FormFood, FormActivity, FormBodyFat];
 // const stepComponents = [FormUserDetails];
 const FormParent = () => {
-  const [step, setStep] = useState(0);
-  const [nextDisabled, setNextDisabled] = useState(true);
-  const setDisabled = (value) => {
-    setNextDisabled(value);
-  };
+  const initialPage =
+    localStorage.getItem('formPage') != null
+      ? localStorage.getItem('formPage')
+      : 0;
+  const history = useHistory();
+  const [step, setStep] = useState(initialPage);
+
+  useEffect(() => {
+    localStorage.setItem('formPage', step);
+  }, [step]);
+
   const isFirst = step === 0;
   const isLast = step === stepComponents.length - 1;
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={
+        localStorage.getItem('form')
+          ? JSON.parse(localStorage.getItem('form'))
+          : initialValues
+      }
       onSubmit={(values) => {
         values.gender = Number(values.gender);
         values.goal = Number(values.goal);
         values.jobActivity = Number(values.jobActivity);
         values.numberOfMeals = Number(values.numberOfMeals);
         values.sportFrequency = Number(values.sportFrequency);
+        console.log(values);
         fetch('/api/form', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, *cors, same-origin
@@ -76,7 +88,12 @@ const FormParent = () => {
           .then((response) => {
             return response.json();
           })
-          .then((data) => console.log(data));
+          .then((data) => {
+            localStorage.setItem('menu', JSON.stringify(data));
+            localStorage.removeItem('form');
+            localStorage.removeItem('formPage');
+            history.push('/foodmenu');
+          });
       }}
       validationSchema={validationSchema}
     >
@@ -99,6 +116,7 @@ const FormParent = () => {
             errors.jobActivity,
           3: !values.formBodyFat || errors.formBodyFat,
         };
+        localStorage.setItem('form', JSON.stringify(values));
         return (
           <Form className="formular1">
             <SwipeableViews index={step}>
@@ -108,7 +126,6 @@ const FormParent = () => {
                     <StepComponent
                       touched={touched}
                       errors={errors}
-                      setNextDisabled={setDisabled}
                       values={values}
                       setFieldValue={setFieldValue}
                     />

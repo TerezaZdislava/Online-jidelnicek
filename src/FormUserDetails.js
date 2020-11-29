@@ -29,7 +29,7 @@ export const weightSchema = yup
 //     .min(40, 'Zadejte váhu mezi 40 a 150kg'),
 // });
 
-export const FormUserDetails = ({ errors, touched, setNextDisabled }) => {
+export const FormUserDetails = ({ errors, touched }) => {
   const validate = (schema, value) => {
     console.log('Validate');
     try {

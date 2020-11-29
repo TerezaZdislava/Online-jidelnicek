@@ -100,24 +100,14 @@ const RadioButton = ({
   );
 };
 
-const FormActivity = ({
-  formData,
-  setFormData,
-  nextStep,
-  prevStep,
-  setNextDisabled,
-}) => {
+const FormActivity = ({ formData, setFormData, nextStep, prevStep }) => {
   const [direction, setDirection] = useState('back');
 
   const validate = (schema, value) => {
     try {
       schema.validateSync(value);
-      setNextDisabled(false);
     } catch (error) {
       // Tady by bylo fajn zobrazit uživateli nějakou chybu místo console.logu
-      console.log('VALIDATION');
-      setNextDisabled(true);
-
       console.log(error);
     }
   };
