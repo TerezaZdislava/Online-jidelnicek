@@ -61,6 +61,7 @@ const StyledContent = styled.div`
 `;
 
 const Home = () => {
+  const jsonForm = localStorage.getItem('menu');
   const history = useHistory();
   return (
     <StyledContent>
@@ -78,7 +79,9 @@ const Home = () => {
           <div className="ctatext">
             <p>Zdravý a chutný jídelníček na míru</p>
           </div>
-          <button onClick={() => history.push('/form')}>Chci jídelníček</button>
+          <button onClick={() => history.push('/form')}>
+            {jsonForm == null ? 'Chci jídelníček' : 'Můj jídelníček'}
+          </button>
         </div>
       </div>
     </StyledContent>

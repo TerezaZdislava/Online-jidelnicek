@@ -1,5 +1,4 @@
 import React from 'react';
-import { Field } from 'formik';
 import styled from 'styled-components';
 import Checkbox from './Checkbox.js';
 
