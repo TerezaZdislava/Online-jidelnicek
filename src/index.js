@@ -8,6 +8,7 @@ import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './assets/index.css';
 import './assets/font/font.css';
 import styled from 'styled-components';
+import Footer from "./Footer.js";
 
 const routes = [
   { path: '/', component: Home, exact: true },
@@ -29,6 +30,7 @@ render(
         ))}
       </Switch>
     </Content>
+    <Footer />
   </Router>,
   document.querySelector('#app'),
 );
