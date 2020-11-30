@@ -4,14 +4,16 @@ import styled from 'styled-components';
 const StyledFooter = styled.footer`
   h5 {
     margin-top: 20rem;
-    color: red;
   }
 `;
 
 const Footer = () => {
   return (
     <StyledFooter>
-      <h5>Ahoj a děkujeme APIFY CZECHITAS</h5>
+      <h5>
+        Copyright©2O2O,Online-jidelnicek.cz ve spolupráci s APIFY a Digitální
+        akademie - Web CZECHITAS
+      </h5>
     </StyledFooter>
   );
 };
