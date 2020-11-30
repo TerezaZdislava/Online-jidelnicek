@@ -2,13 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledAbout = styled.div`
-  h5 {
-    color: red;
-  }
+  margin-top: 10rem;
 `;
 
 const About = () => {
-  
   return (
     <StyledAbout>
       <div>Daniela Kůsová a Tereza Baštová info</div>
