@@ -80,7 +80,11 @@ const Home = () => {
           <div className="ctatext">
             <p>Zdravý a chutný jídelníček na míru</p>
           </div>
-          <button onClick={() => history.push('/form')}>
+          <button
+            onClick={() =>
+              history.push(jsonForm == null ? `/form` : `/foodmenu`)
+            }
+          >
             {jsonForm == null ? 'Chci jídelníček' : 'Můj jídelníček'}
           </button>
           <About />
