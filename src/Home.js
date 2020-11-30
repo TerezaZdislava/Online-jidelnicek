@@ -7,6 +7,7 @@ import {
 } from 'react-swipeable-views-utils';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import About from './About.js';
 
 // const EnhancedSwipeableViews = bindKeyboard(
 //   autoPlay(virtualize(SwipeableViews)),
@@ -82,6 +83,7 @@ const Home = () => {
           <button onClick={() => history.push('/form')}>
             {jsonForm == null ? 'Chci jídelníček' : 'Můj jídelníček'}
           </button>
+          <About />
         </div>
       </div>
     </StyledContent>
