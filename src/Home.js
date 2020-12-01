@@ -7,6 +7,7 @@ import {
 } from 'react-swipeable-views-utils';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import About from './About.js';
 
 // const EnhancedSwipeableViews = bindKeyboard(
 //   autoPlay(virtualize(SwipeableViews)),
@@ -61,6 +62,7 @@ const StyledContent = styled.div`
 `;
 
 const Home = () => {
+  const jsonForm = localStorage.getItem('menu');
   const history = useHistory();
   return (
     <StyledContent>
@@ -78,9 +80,16 @@ const Home = () => {
           <div className="ctatext">
             <p>Zdravý a chutný jídelníček na míru</p>
           </div>
-          <button onClick={() => history.push('/form')}>Chci jídelníček</button>
+          <button
+            onClick={() =>
+              history.push(jsonForm == null ? `/form` : `/foodmenu`)
+            }
+          >
+            {jsonForm == null ? 'Chci jídelníček' : 'Můj jídelníček'}
+          </button>
         </div>
       </div>
+      <About />
     </StyledContent>
   );
 };
