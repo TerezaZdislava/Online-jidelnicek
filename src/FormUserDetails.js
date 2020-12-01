@@ -59,7 +59,7 @@ const questions = [
     amswers: [
       { value: '0.8', label: 'Zdravě zhubnout' },
       { value: '1', label: 'Jíst zdravěji a udržet si váhu' },
-      { value: '1.2', label: 'Nabrat na váze' },
+      { value: '1.2', label: 'Nabrat svalovou hmotu' },
     ],
   },
 ];
