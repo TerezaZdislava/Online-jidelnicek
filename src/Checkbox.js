@@ -7,7 +7,8 @@ import { Square } from '@styled-icons/feather/Square';
 const StyledCheckbox = styled.label`
   display: flex;
   align-items: center;
-  background-color: ${(props) => (props.isChecked ? 'red' : 'white')};
+  background-color: ${(props) =>
+    props.isChecked ? 'rgb(255, 0, 55)' : 'white'};
   color: ${(props) => (props.isChecked ? 'white' : 'auto')};
   width: 100%;
   input {

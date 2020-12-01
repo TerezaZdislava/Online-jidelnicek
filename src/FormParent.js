@@ -157,17 +157,24 @@ const FormParent = () => {
                         values={values}
                         setFieldValue={setFieldValue}
                       />
+                      <FormButtons
+                        setStep={setStep}
+                        submitForm={submitForm}
+                        isFirst={isFirst}
+                        isLast={isLast}
+                        nextDisabled={pageButtonsDisabled[step]}
+                      />
                     </div>
                   );
                 })}
               </SwipeableViews>
-              <FormButtons
+              {/* <FormButtons
                 setStep={setStep}
                 submitForm={submitForm}
                 isFirst={isFirst}
                 isLast={isLast}
                 nextDisabled={pageButtonsDisabled[step]}
-              />
+              /> */}
             </Form>
           );
         }}

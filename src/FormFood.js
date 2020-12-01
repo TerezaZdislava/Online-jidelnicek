@@ -10,24 +10,23 @@ const StyledFormFood = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: baseline;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
+    border-collapse: separate;
     border-radius: 10px;
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
     background-color: white;
+    overflow: hidden;
+    perspective: 1px;
   }
   h5 {
     font-weight: 600;
     font-size: 1.3rem;
-    margin-bottom: 0;
-    padding: 0.7rem;
-    margin-top: 1rem;
+    margin: 1.2rem;
   }
   .formFood-group {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 1.2rem;
   }
 `;
 
