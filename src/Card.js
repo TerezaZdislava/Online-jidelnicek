@@ -5,22 +5,30 @@ const StyledCard = styled.div`
   display: block;
   position: relative;
   margin-top: 10rem;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
   border-radius: 10px;
   box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
   background-color: white;
   margin-top: 10rem;
-  weight: auto;
   height: 200 px;
   padding: 2rem;
   margin: 20px;
-
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  h5 {
+    font-style: italic;
+    margin-top: 0.5rem;
+    font-weight: 400;
+  }
   .profileImage {
-    display: block;
     height: 100px;
-    weight: 2px;
+    width: 100px;
     border-radius: 50%;
+    opacity: unset;
+    border: burlywood 2px dotted;
+  }
+  .textaboutus {
+    line-height: 1.7;
   }
 `;
 
@@ -33,7 +41,7 @@ const Card = (props) => {
         alt={`${props.alt}`}
       />
       <h5>{props.name}</h5>
-      <div>{props.text}</div>
+      <div className="textaboutus">{props.text}</div>
     </StyledCard>
   );
 };
