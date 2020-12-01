@@ -15,6 +15,8 @@ const StyledCard = styled.div`
   font-size: 1rem;
   font-weight: 400;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   h5 {
     font-style: italic;
     margin-top: 0.5rem;

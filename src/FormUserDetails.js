@@ -23,46 +23,11 @@ const StyledFormUserDetails = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: baseline;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
     background-color: white;
   }
-  .messageToForm {
-    background-color: #c1c1c169;
-    width: 100%;
-  }
-  .headerimage {
-    height: 10rem;
-    position: absolute;
-    right: 0;
-    opacity: 70%;
-  }
 `;
-
-const questions = [
-  {
-    question: 'Jsem',
-    name: 'gender',
-    validate: 'genderSchema',
-    amswers: [
-      { value: '0.8', label: 'Žena' },
-      { value: '1.2', label: 'Muž' },
-    ],
-  },
-  {
-    question: 'Pomocí jídelníčku chci:',
-    name: 'goal',
-    validate: 'goalSchema',
-    amswers: [
-      { value: '0.8', label: 'Zdravě zhubnout' },
-      { value: '1', label: 'Jíst zdravěji a udržet si váhu' },
-      { value: '1.2', label: 'Nabrat na váze' },
-    ],
-  },
-];
 
 export const FormUserDetails = ({ errors, touched, values }) => {
   const validate = (schema, value) => {

@@ -30,17 +30,21 @@ const StyledContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
   }
   .ctatext {
     background-color: white;
-    padding: 5px;
-    margin: 50px;
+    padding: 0 1.5rem;
+    margin: 5rem;
     opacity: 0.8;
     border-radius: 5px;
     margin-bottom: 20px;
+  }
+  .ctatext2 {
+    display: none;
   }
   .ctatext p {
     opacity: 1;
@@ -58,6 +62,57 @@ const StyledContent = styled.div`
   .imagesAndCta {
     display: block;
     position: relative;
+  }
+  @media (min-width: 550px) {
+    img {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+      margin-right: 50%;
+    }
+    .cta {
+      justify-content: flex-start;
+      margin-top: 4%;
+    }
+    .ctatext {
+      font-size: 1.6rem;
+    }
+    button {
+      margin-top: 1rem;
+      width: 12rem;
+      height: 4rem;
+      font-size: 1.4rem;
+    }
+  }
+  @media (min-width: 1000px) {
+    .cta {
+      justify-content: flex-start;
+      margin-top: 9%;
+    }
+    .ctatext {
+      font-size: 2.2rem;
+    }
+    button {
+      margin-top: 3rem;
+      width: 15rem;
+      height: 5rem;
+      font-size: 1.8rem;
+    }
+  }
+  @media (min-width: 1250px) {
+    .cta {
+      justify-content: flex-start;
+      margin-top: 12%;
+    }
+    .ctatext {
+      font-size: 2.4rem;
+    }
+    button {
+      margin-top: 4rem;
+      width: 17rem;
+      height: 7rem;
+      font-size: 1.8rem;
+    }
   }
 `;
 

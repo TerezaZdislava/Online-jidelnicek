@@ -18,8 +18,8 @@ const StyledBodyFat = styled.div`
     background-color: white;
   }
   .formBodyMessage {
-    background-color: #c1c1c169;
-    margin: 2rem 1;
+    margin: 10px;
+    text-align: center;
   }
   .imageFat {
     width: 100px;

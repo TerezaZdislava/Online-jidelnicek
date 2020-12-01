@@ -13,24 +13,24 @@ const StyledFormActivity = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: baseline;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
+    // justify-content: center;
+    // align-items: baseline;
+    // -webkit-border-radius: 10px;
+    // -moz-border-radius: 10px;
     border-radius: 10px;
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
     background-color: white;
   }
-  .messageToForm {
-    background-color: #c1c1c169;
-    width: 100%;
-  }
-  .headerimage {
-    height: 10rem;
-    position: absolute;
-    right: 0;
-    opacity: 70%;
-  }
+  // .messageToForm {
+  //   background-color: #c1c1c169;
+  //   width: 100%;
+  // }
+  // .headerimage {
+  //   height: 10rem;
+  //   position: absolute;
+  //   right: 0;
+  //   opacity: 70%;
+  // }
 `;
 
 export const numberOfMealsSchema = yup

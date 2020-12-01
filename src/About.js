@@ -2,7 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Card from './Card.js';
 
-const StyledAbout = styled.div``;
+const StyledAbout = styled.div`
+display: block;
+@media (min-width: 550px) {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+`;
 
 const About = () => {
   return (

@@ -65,7 +65,7 @@ const FormParent = () => {
       padding-top: 30px;
       padding-left: 30px;
       font-weight: 600;
-      font-size: 1.2rem;
+      font-size: 1.6rem;
 
       z-index: 2;
     }
@@ -144,7 +144,7 @@ const FormParent = () => {
                 {stepComponents.map((StepComponent) => {
                   return (
                     <div>
-                      <h1>FORMULÁŘ</h1>
+                      <h1>Formulář</h1>
 
                       <img
                         className="headerimage"
