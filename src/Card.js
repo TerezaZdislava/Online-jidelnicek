@@ -19,7 +19,7 @@ const StyledCard = styled.div`
   .profileImage {
     display: block;
     height: 100px;
-    weight: 2px;
+    width: 100px;
     border-radius: 50%;
   }
 `;
