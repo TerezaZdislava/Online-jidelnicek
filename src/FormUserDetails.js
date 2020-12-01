@@ -14,24 +14,6 @@ export const weightSchema = yup
   .min(40, 'Zadejte váhu mezi 40 a 150kg')
   .typeError('Zadejte váhu mezi 40 a 150kg');
 
-// const validationSchema = yup.object().shape({
-//   age: yup
-//     .number()
-//     .required('Zadej svůj věk')
-//     .max(100, 'Zadejte věk mezi 18 a 100 roky')
-//     .min(18, 'Zadejte věk mezi 18 a 100 roky'),
-//   height: yup
-//     .number()
-//     .required('Zadej svou výšku v cm')
-//     .max(220, 'Zadejte výšku mezi 150 a 220 cm')
-//     .min(150, 'Zadejte výšku mezi 150 a 220 cm'),
-//   weight: yup
-//     .number()
-//     .required('Zadej svou váhu v kg')
-//     .max(150, 'Zadejte váhu mezi 40 a 150kg')
-//     .min(40, 'Zadejte váhu mezi 40 a 150kg'),
-// });
-
 const StyledFormUserDetails = styled.div`
   padding: 1rem;
   position: relative;
@@ -59,22 +41,6 @@ const StyledFormUserDetails = styled.div`
     opacity: 70%;
   }
 `;
-
-{
-  /* 
-<RadioButtonGroup
-  title="Jsem"
-  name="gender"
-  validate={(value) => {
-    validate(genderSchema, value);
-  }}
-  amswers={[
-    { value:"0.8", label: "Zena"},
-    { value:"1.2", label: "Muz"}
-  ]}
-/>
-*/
-}
 
 const questions = [
   {
