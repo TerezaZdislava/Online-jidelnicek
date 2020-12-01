@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
+  font-size: 0.5rem;
   h5 {
     margin-top: 20rem;
   }

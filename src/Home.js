@@ -87,9 +87,9 @@ const Home = () => {
           >
             {jsonForm == null ? 'Chci jídelníček' : 'Můj jídelníček'}
           </button>
-          <About />
         </div>
       </div>
+      <About />
     </StyledContent>
   );
 };
