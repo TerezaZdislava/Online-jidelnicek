@@ -2,25 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import Card from './Card.js';
 
-const StyledAbout = styled.div`
-  
-
-`;
+const StyledAbout = styled.div``;
 
 const About = () => {
   return (
     <StyledAbout>
       <Card
-        img="danca.png"
-        alt="Daniela Kůsová"
-        name="Daniela Kůsová, tvůrce"
-        text="Věřím, že online jídelníček přibližuje  široké veřejnosti způsob, jak přemýšlet nad stravováním a dokáže přispět ke snížení rizik, které jsou spojeny s obezitou."
-      />
-      <Card
-        img="foodmenu.png"
-        alt="Tereza Baštová"
-        name="Tereza Baštová, tvůrce"
-        text="BLABLABLABLA"
+        img="terkadanca.png"
+        alt="Daniela Kůsová a Tereza Baštová"
+        name="Daniela Kůsová a Tereza Baštová, tvůrci"
+        text="Věříme, že online jídelníček přibližuje široké veřejnosti způsob, jak přemýšlet nad stravováním a dokáže přispět ke snížení rizik, které jsou spojeny s obezitou."
       />
     </StyledAbout>
   );
