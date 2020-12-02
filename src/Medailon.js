@@ -22,21 +22,26 @@ const StyledCard = styled.div`
     margin-top: 0.5rem;
     font-weight: 400;
   }
+  h4 {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
   .profileImage {
     height: 100px;
     width: 100px;
     border-radius: 50%;
     opacity: unset;
-    border: burlywood 2px dotted;
+    border: rgb(255, 0, 55) 2px dotted;
   }
   .textaboutus {
     line-height: 1.7;
   }
 `;
 
-const Card = (props) => {
+const Medailon = (props) => {
   return (
     <StyledCard>
+      <h4>{props.title}</h4>
       <img
         className="profileImage"
         src={`./assets/img/${props.img}`}
@@ -48,4 +53,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default Medailon;

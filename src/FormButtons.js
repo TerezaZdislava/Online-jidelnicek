@@ -31,6 +31,19 @@ const StyledButton = styled.div`
       background-color: #c1c1c169;
     }
   }
+  @media (min-width: 550px) {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+  @media (min-width: 750px) {
+    margin-left: 35%;
+    margin-right: 35%;
+    font-size: 1.3rem;
+  }
+  @media (min-width: 1200px) {
+    margin-left: 40%;
+    margin-right: 40%;
+  }
 `;
 
 const FormButtons = ({

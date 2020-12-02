@@ -48,6 +48,22 @@ const StyledSection = styled.section`
     position: absolute;
     right: 0;
   }
+  @media (min-width: 550px) {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  @media (min-width: 750px) {
+    margin-left: 25%;
+    margin-right: 25%;
+    font-size: 1.3rem;
+    h5 {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
 `;
 
 const FoodMenu = () => {
