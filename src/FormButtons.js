@@ -43,6 +43,7 @@ const StyledButton = styled.div`
   @media (min-width: 1200px) {
     margin-left: 40%;
     margin-right: 40%;
+    font-size: 1.3rem;
   }
 `;
 
