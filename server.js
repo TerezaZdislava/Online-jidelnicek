@@ -8,6 +8,27 @@ const port = process.env.PORT || 5000; //muzu si tuto promennou nadefinovat teor
 const path = require('path');
 const transformedData = transformData(data);
 
+const getCoefficient = (form) => {
+  const {
+    gender,
+    goal,
+    weight,
+    sportFrequency,
+    jobActivity,
+    formBodyFat,
+  } = form;
+
+  return (
+    (((weight - (formBodyFat / 100) * weight) * 21.6 + 370) *
+      ((goal + gender + sportFrequency + jobActivity) / 4)) /
+    1789
+  );
+};
+
+function getRandomNumber(max) {
+  return Math.floor(Math.random() * max);
+}
+
 function getRandomMealWithRecalculatedMacros(mealArray, coefficient) {
   // Vybere náhodné jídlo z pole receptů (mealArray)
   const meal = mealArray[getRandomNumber(mealArray.length)];
@@ -38,22 +59,7 @@ function processForm(form) {
     (meal) => meal.mealDev === 'večeře',
   );
   // Výpočet koeficientu
-  const coefficient = getCoefficient((form) => {
-    const {
-      gender,
-      goal,
-      weight,
-      sportFrequency,
-      jobActivity,
-      formBodyFat,
-    } = form;
-
-    return (
-      (((weight - (formBodyFat / 100) * weight) * 21.6 + 370) *
-        ((goal + gender + sportFrequency + jobActivity) / 4)) /
-      1789
-    );
-  });
+  const coefficient = getCoefficient(form);
   // Výběr náhodného jídla s přepočítanými makry
   const breakfast = getRandomMealWithRecalculatedMacros(
     breakfastArr,
