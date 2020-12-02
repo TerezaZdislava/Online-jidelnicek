@@ -34,6 +34,14 @@ const StyledBodyFat = styled.div`
     font-size: 1.3rem;
     padding: 0.7rem;
   }
+  @media (min-width: 550px) {
+  }
+
+  @media (min-width: 1000px) {
+  }
+
+  @media (min-width: 1250px) {
+  }
 `;
 
 const marks = [
