@@ -66,9 +66,6 @@ const StyledHeader = styled.header`
     .logo {
       cursor: pointer;
     }
-    .mainMenu {
-      display: none;
-    }
   }
 `;
 
