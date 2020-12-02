@@ -122,7 +122,7 @@ const FormParent = () => {
               history.push('/foodmenu');
             })
             .catch((error) => {
-              console.error(
+              alert(
                 'Jejda, něco se porouchalo. Jídelníček v tuto chvíli nelze vytvořit.',
                 error,
               );
