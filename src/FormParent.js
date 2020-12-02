@@ -76,6 +76,12 @@ const FormParent = () => {
       right: 0;
       z-index: 0;
     }
+    @media (min-width: 400px) {
+      h1 {
+        display: flex;
+        justify-content: center;
+      }
+    }
   `;
 
   return (

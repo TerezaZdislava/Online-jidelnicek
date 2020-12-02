@@ -93,6 +93,7 @@ const StyledContent = styled.div`
       font-size: 2.2rem;
     }
     button {
+      cursor:pointer;
       margin-top: 3rem;
       width: 15rem;
       height: 5rem;
@@ -108,6 +109,7 @@ const StyledContent = styled.div`
       font-size: 2.4rem;
     }
     button {
+      cursor:pointer;
       margin-top: 4rem;
       width: 17rem;
       height: 7rem;

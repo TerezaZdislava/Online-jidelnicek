@@ -24,6 +24,7 @@ const StyledCheckbox = styled.label`
     margin-left: 1.5rem;
   }
   @media (min-width: 750px) {
+    cursor: pointer;
     font-size: 1.3rem;
     h5 {
       font-size: 1.5rem;

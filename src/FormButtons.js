@@ -34,6 +34,9 @@ const StyledButton = styled.div`
   @media (min-width: 550px) {
     margin-left: 30%;
     margin-right: 30%;
+    button {
+      cursor: pointer;
+    }
   }
   @media (min-width: 750px) {
     margin-left: 35%;
