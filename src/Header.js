@@ -19,9 +19,9 @@ const StyledHeader = styled.header`
     display: ${(props) => (props.isOpen ? 'flex' : 'none')};
     flex-direction: column;
     list-style-type: none;
-    background-color: white;
     width: 100%;
     margin: 0;
+    background-color: white;
   }
   .topMenu {
     height: 60px;
@@ -62,9 +62,45 @@ const StyledHeader = styled.header`
   svg {
     margin: 12px;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 750px) {
+    display: flex;
+    flex-wrap: wrap;
+    height: 60px;
+    justify-content: space-between;
+    svg {
+      display: none;
+    }
+    .topMenu {
+      width: 40%;
+      box-shadow: none;
+    }
+    li {
+      width: 15%;
+      border-top: none;
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      width: 50%;
+      flex-direction: row;
+      height: 60px;
+      padding-right: 2rem;
+    }
     .logo {
       cursor: pointer;
+    }
+  }
+  @media (min-width: 1000px) {
+    font-size: 1.5rem;
+    ul {
+      width: 40%;
+      font-size: 1.5rem;
+    }
+    .topMenu {
+      margin-left: 2rem;
+      font-size: 1.8rem;
     }
   }
 `;
@@ -92,8 +128,9 @@ const Header = () => {
           <span className="logo1">ONLINE</span>
           <span className="logo2">JÍDELNÍČEK</span>
         </div>
-        <Menu className="mainMenu" size="1.4em" onClick={toggleMenu} />
+        <Menu size="1.4em" onClick={toggleMenu} />
       </div>
+      {/* <ul onClick={window.innerWidth > 750 ? { toggleMenu } : null}> */}
       <ul onClick={toggleMenu}>
         <li>
           <Link to="/">Domů</Link>

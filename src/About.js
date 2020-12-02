@@ -8,11 +8,15 @@ display: block;
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
+    h2 {
+      margin-bottom: 4rem;
+    }
 `;
 
 const About = () => {
   return (
     <StyledAbout>
+      <h2>Kdo za projektem stojí?</h2>
       <Medailon
         title="Naše maličkost"
         img="terkadanca.png"

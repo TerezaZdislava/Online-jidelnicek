@@ -60,7 +60,7 @@ const FormParent = () => {
   const isLast = step === stepComponents.length - 1;
 
   const StyledContainer = styled.div`
-    h1 {
+    background-image: url(/assets/img/pozadi4.png) h1 {
       margin: 0;
       padding-top: 30px;
       padding-left: 30px;

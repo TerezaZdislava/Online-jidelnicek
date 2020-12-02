@@ -32,6 +32,7 @@ const StyledRadioButtonGroup = styled.div`
       justify-content: space-between;
       svg {
         order: 3;
+        flex-shrink: 0;
       }
       &.checked {
         background-color: rgb(255, 0, 55);
