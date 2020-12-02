@@ -30,7 +30,7 @@ const StyledFormUserDetails = styled.div`
   @media (min-width: 550px) {
     margin-left: 15%;
     margin-right: 15%;
-  }
+}
   @media (min-width: 750px) {
     margin-left: 25%;
     margin-right: 25%;
