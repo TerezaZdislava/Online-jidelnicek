@@ -30,7 +30,7 @@ const StyledFormUserDetails = styled.div`
   @media (min-width: 550px) {
     margin-left: 15%;
     margin-right: 15%;
-}
+  }
   @media (min-width: 750px) {
     margin-left: 25%;
     margin-right: 25%;
@@ -82,7 +82,7 @@ export const FormUserDetails = ({ errors, touched, values }) => {
             answers={[
               { value: '0.8', label: 'Zdravě zhubnout' },
               { value: '1', label: 'Jíst zdravěji a udržet si váhu' },
-              { value: '1.2', label: 'Nabrat na váze' },
+              { value: '1.2', label: 'Nabrat svalovou hmotu' },
             ]}
           />
           <CustomField
