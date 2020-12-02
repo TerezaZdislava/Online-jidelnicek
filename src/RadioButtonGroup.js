@@ -42,7 +42,7 @@ const StyledRadioButtonGroup = styled.div`
     }
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 500px) {
 label {
 cursor:pointer;
 }
