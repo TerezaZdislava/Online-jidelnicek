@@ -66,6 +66,7 @@ const StyledHeader = styled.header`
   @media (min-width: 750px) {
     display: flex;
     flex-wrap: wrap;
+    height: 60px;
     justify-content: space-between;
     svg {
       display: none;
@@ -91,7 +92,6 @@ const StyledHeader = styled.header`
     .logo {
       cursor: pointer;
     }
-<<<<<<< HEAD
   }
   @media (min-width: 1000px) {
     font-size: 1.5rem;
@@ -103,8 +103,6 @@ const StyledHeader = styled.header`
       margin-left: 2rem;
       font-size: 1.8rem;
     }
-=======
->>>>>>> e6eecf72579db2f9d6f51d194ad5dbc77d049050
   }
 `;
 
@@ -133,6 +131,7 @@ const Header = () => {
         </div>
         <Menu size="1.4em" onClick={toggleMenu} />
       </div>
+      {/* <ul onClick={window.innerWidth > 750 ? { toggleMenu } : null}> */}
       <ul onClick={toggleMenu}>
         <li>
           <Link to="/">Domů</Link>
