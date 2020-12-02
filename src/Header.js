@@ -10,7 +10,6 @@ const StyledHeader = styled.header`
   font-size: 1.3rem;
   color: rgb(0, 0, 0);
   position: absolute;
-  background-color: white;
   top: 0;
   left: 0;
   z-index: 1;
@@ -20,9 +19,9 @@ const StyledHeader = styled.header`
     display: ${(props) => (props.isOpen ? 'flex' : 'none')};
     flex-direction: column;
     list-style-type: none;
-    background-color: white;
     width: 100%;
     margin: 0;
+    background-color: white;
   }
   .topMenu {
     height: 60px;
