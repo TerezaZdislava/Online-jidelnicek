@@ -864,6 +864,22 @@
     "steps": null
   },
   {
+    "name": "Chléb s humusem a klíčky",
+    "ingredience1": "Humus pikant",
+    "grams1": 40,
+    "ingredience2": "žitný chléb",
+    "grams2": 55,
+    "ingredience3": "klíčky ředkvičky, Mungo, alfalfa, česneku atd.",
+    "grams3": 30,
+    "calories": 355,
+    "exclude": "lepek",
+    "mealDev": "svačinaOdpo",
+    "ingredience4": null,
+    "grams4": null,
+    "ingredience5": null,
+    "steps": "Chléb pomažeme humusovou pastou a navrch ozdobíme klíčky."
+  },
+  {
     "name": "Žitný chléb s cottage sýrem",
     "ingredience1": "sýr cottage",
     "grams1": 223,

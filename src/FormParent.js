@@ -120,6 +120,12 @@ const FormParent = () => {
               localStorage.removeItem('form');
               localStorage.removeItem('formPage');
               history.push('/foodmenu');
+            })
+            .catch((error) => {
+              console.error(
+                'Jejda, něco se porouchalo. Jídelníček v tuto chvíli nelze vytvořit.',
+                error,
+              );
             });
         }}
         validationSchema={validationSchema}
