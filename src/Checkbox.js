@@ -23,6 +23,16 @@ const StyledCheckbox = styled.label`
     margin-right: 0.5rem;
     margin-left: 1.5rem;
   }
+  @media (min-width: 750px) {
+    font-size: 1.3rem;
+    h5 {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
 `;
 
 const Checkbox = (props) => {

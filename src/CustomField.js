@@ -20,6 +20,15 @@ const StyledField = styled.div`
     border-radius: 0.3rem;
     padding: 0.2rem 0.6rem;
   }
+  @media (min-width: 750px) {
+    font-size: 1.3rem;
+    label { 
+      font-size: 1.5rem;
+    }
+    input {
+      height: 35px;
+      font-size: 1.3rem;
+    }
 `;
 
 const CustomField = ({ question, name, validate, type, placeholder }) => {

@@ -5,6 +5,7 @@ import { CheckCircle } from '@styled-icons/feather/CheckCircle';
 import { Circle } from '@styled-icons/feather/Circle';
 
 const StyledRadioButtonGroup = styled.div`
+  display: block;
   margin-bottom: 1rem;
   input {
     visibility: hidden;

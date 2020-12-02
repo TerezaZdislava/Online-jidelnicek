@@ -27,6 +27,22 @@ const StyledFormUserDetails = styled.div`
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
     background-color: white;
   }
+  @media (min-width: 550px) {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  @media (min-width: 750px) {
+    margin-left: 25%;
+    margin-right: 25%;
+    font-size: 1.3rem;
+    h5 {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
 `;
 
 export const FormUserDetails = ({ errors, touched, values }) => {

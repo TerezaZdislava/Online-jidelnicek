@@ -9,28 +9,29 @@ const StyledFormActivity = styled.div`
   padding: 1rem;
   position: relative;
   .FormActivityAll {
+    display: block;
     margin-top: 1rem;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    // align-items: baseline;
-    // -webkit-border-radius: 10px;
-    // -moz-border-radius: 10px;
     border-radius: 10px;
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
     background-color: white;
   }
-  // .messageToForm {
-  //   background-color: #c1c1c169;
-  //   width: 100%;
-  // }
-  // .headerimage {
-  //   height: 10rem;
-  //   position: absolute;
-  //   right: 0;
-  //   opacity: 70%;
-  // }
+  @media (min-width: 550px) {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  @media (min-width: 750px) {
+    margin-left: 25%;
+    margin-right: 25%;
+    font-size: 1.3rem;
+    h5 {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
 `;
 
 export const numberOfMealsSchema = yup

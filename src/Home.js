@@ -31,7 +31,6 @@ const StyledContent = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
     position: absolute;
     top: 0;
   }
@@ -42,9 +41,6 @@ const StyledContent = styled.div`
     opacity: 0.8;
     border-radius: 5px;
     margin-bottom: 20px;
-  }
-  .ctatext2 {
-    display: none;
   }
   .ctatext p {
     opacity: 1;
@@ -64,11 +60,14 @@ const StyledContent = styled.div`
     position: relative;
   }
   @media (min-width: 550px) {
-    img {
-      width: 100%;
+    .imagesAndCta {
       height: 70%;
       object-fit: cover;
-      margin-right: 50%;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 70%;
     }
     .cta {
       justify-content: flex-start;
@@ -88,6 +87,7 @@ const StyledContent = styled.div`
     .cta {
       justify-content: flex-start;
       margin-top: 9%;
+      height: 100%;
     }
     .ctatext {
       font-size: 2.2rem;
@@ -112,6 +112,9 @@ const StyledContent = styled.div`
       width: 17rem;
       height: 7rem;
       font-size: 1.8rem;
+    }
+    .imagesAndCta {
+      height: 70%;
     }
   }
 `;
