@@ -62,6 +62,14 @@ const StyledHeader = styled.header`
   svg {
     margin: 12px;
   }
+  @media (min-width: 1000px) {
+    .logo {
+      cursor: pointer;
+  } 
+  .mainMenu {
+    cursor: pointer;
+  }
+  }
 `;
 
 const Header = () => {
@@ -87,7 +95,7 @@ const Header = () => {
           <span className="logo1">ONLINE</span>
           <span className="logo2">JÍDELNÍČEK</span>
         </div>
-        <Menu size="1.4em" onClick={toggleMenu} />
+        <Menu className="mainMenu"size="1.4em" onClick={toggleMenu} />
       </div>
       <ul onClick={toggleMenu}>
         <li>
