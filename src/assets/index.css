@@ -1,9 +1,7 @@
 html,
 body,
 #app {
-  overflow-x: hidden;
   height: 100%;
-  align-items: center;
 }
 
 body {
