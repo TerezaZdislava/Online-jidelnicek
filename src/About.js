@@ -3,14 +3,19 @@ import styled from 'styled-components';
 import Medailon from './Medailon.js';
 
 const StyledAbout = styled.div`
-display: block;
-@media (min-width: 550px) {
-    width: 50%;
+  display: block;
+  @media (min-width: 550px) {
     margin-left: 25%;
     margin-right: 25%;
-    h2 {
-      margin-bottom: 4rem;
+    font-size: 1.3rem;
+    h5 {
+      font-size: 1.5rem;
     }
+  }
+  @media (min-width: 1200px) {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
 `;
 
 const About = () => {

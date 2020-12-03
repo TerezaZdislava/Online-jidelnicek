@@ -63,6 +63,7 @@ const StyledHeader = styled.header`
     margin: 12px;
   }
   @media (min-width: 750px) {
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
     height: 60px;

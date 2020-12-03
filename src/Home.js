@@ -8,6 +8,7 @@ import {
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import About from './About.js';
+import Content from './Content.js';
 
 // const EnhancedSwipeableViews = bindKeyboard(
 //   autoPlay(virtualize(SwipeableViews)),
@@ -22,8 +23,7 @@ const StyledContent = styled.div`
   font-weight: 700;
   font-size: 1.2rem;
   img {
-    width: 130%;
-    opacity: 0.7;
+    width: 100%;
   }
   .cta {
     display: flex;
@@ -93,7 +93,7 @@ const StyledContent = styled.div`
       font-size: 2.2rem;
     }
     button {
-      cursor:pointer;
+      cursor: pointer;
       margin-top: 3rem;
       width: 15rem;
       height: 5rem;
@@ -109,7 +109,7 @@ const StyledContent = styled.div`
       font-size: 2.4rem;
     }
     button {
-      cursor:pointer;
+      cursor: pointer;
       margin-top: 4rem;
       width: 17rem;
       height: 7rem;
@@ -127,7 +127,7 @@ const Home = () => {
   return (
     <StyledContent>
       <div className="imagesAndCta">
-        <AutoPlaySwipeableViews>
+        {/* <AutoPlaySwipeableViews>
           <img src={'./assets/img/jidlo-1.jpg'} alt="jidlo1" />
           <img src={'./assets/img/jidlo-2.jpg'} alt="jidlo2" />
           <img src={'./assets/img/jidlo-3.jpg'} alt="jidlo3" />
@@ -135,7 +135,8 @@ const Home = () => {
           <img src={'./assets/img/jidlo-5.jpg'} alt="jidlo5" />
           <img src={'./assets/img/jidlo-6.jpg'} alt="jidlo6" />
           <img src={'./assets/img/jidlo-7.jpg'} alt="jidlo7" />
-        </AutoPlaySwipeableViews>
+        </AutoPlaySwipeableViews> */}
+        <img src={'./assets/img/food-hp.jpg'} alt="jidlo na homepage" />
         <div className="cta">
           <div className="ctatext">
             <p>Zdravý a chutný jídelníček na míru</p>
@@ -149,6 +150,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+      <Content />
       <About />
     </StyledContent>
   );
