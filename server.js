@@ -29,6 +29,97 @@ function getRandomNumber(max) {
   return Math.floor(Math.random() * max);
 }
 
+function getRandomMealWithRecalculatedMacros(mealArray, coefficient) {
+  // Vybere náhodné jídlo z pole receptů (mealArray)
+  const meal = mealArray[getRandomNumber(mealArray.length)];
+  // Přepočítá kalorie
+  meal.calories = Math.round(meal.calories * coefficient);
+  // Přepočítá gramy jednotliváých ingrediencí
+  meal.ingrediences = meal.ingrediences.map((ingredience) => {
+    ingredience.grams = Math.round(ingredience.grams * coefficient);
+    return ingredience;
+  });
+  return meal;
+}
+function processForm(form) {
+  // Vybere pouze jídla, které neobsahují excludedFood
+  const dataWithoutExludedFood = transformedData.filter((meal) => {
+    const hasNoExclusions = form.excludedFood.reduce((result, food) => {
+      return result && !meal.excludedFood.includes(food);
+    }, true);
+    return hasNoExclusions;
+  });
+  const breakfastArr = dataWithoutExludedFood.filter(
+    (meal) => meal.mealDev === 'snídaně',
+  );
+  const lunchArr = dataWithoutExludedFood.filter(
+    (meal) => meal.mealDev === 'oběd',
+  );
+  const dinnerArr = dataWithoutExludedFood.filter(
+    (meal) => meal.mealDev === 'večeře',
+  );
+  // Výpočet koeficientu
+  const coefficient = getCoefficient(form);
+  // Výběr náhodného jídla s přepočítanými makry
+  const breakfast = getRandomMealWithRecalculatedMacros(
+    breakfastArr,
+    coefficient,
+  );
+  const lunch = getRandomMealWithRecalculatedMacros(lunchArr, coefficient);
+  const dinner = getRandomMealWithRecalculatedMacros(dinnerArr, coefficient);
+  if (form.numberOfMeals === 3) {
+    return {
+      breakfast,
+      lunch,
+      dinner,
+    };
+  } else {
+    // Pokud 5 jídel tak přidáme i svačiny
+    const snackBefArr = dataWithoutExludedFood.filter(
+      (meal) => meal.mealDev === 'svačinaDopo',
+    );
+    const snackAfterArr = dataWithoutExludedFood.filter(
+      (meal) => meal.mealDev === 'svačinaOdpo',
+    );
+    const snackBef = getRandomMealWithRecalculatedMacros(
+      snackBefArr,
+      coefficient,
+    );
+    const snackAfter = getRandomMealWithRecalculatedMacros(
+      snackAfterArr,
+      coefficient,
+    );
+    return {
+      breakfast,
+      snackBef,
+      lunch,
+      snackAfter,
+      dinner,
+    };
+  }
+}
+
+/*const getCoefficient = (form) => {
+  const {
+    gender,
+    goal,
+    weight,
+    sportFrequency,
+    jobActivity,
+    formBodyFat,
+  } = form;
+
+  return (
+    (((weight - (formBodyFat / 100) * weight) * 21.6 + 370) *
+      ((goal + gender + sportFrequency + jobActivity) / 4)) /
+    1789
+  );
+};
+
+function getRandomNumber(max) {
+  return Math.floor(Math.random() * max);
+}
+
 function recalculatedMacros(meal, coefficient) {
   meal.calories = Math.round(meal.calories * coefficient);
 
@@ -124,7 +215,7 @@ function processForm(form) {
       dinner,
     };
   }
-}
+}*/
 
 app.use(bodyParser.json()); //prevede na json format
 app.use(bodyParser.urlencoded({ extended: true }));
