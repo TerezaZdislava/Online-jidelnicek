@@ -42,7 +42,7 @@ const StyledSection = styled.section`
 `;
 const StyledDiv = styled.div`
   display: block;
-  height: 100px;
+  height: auto;
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
@@ -50,6 +50,9 @@ const StyledDiv = styled.div`
   box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
   background-color: white;
   padding: 1rem;
+  p {
+    font-size: 0, 5rem;
+  }
 
   button {
     display: flex;
@@ -94,7 +97,22 @@ const FoodMenu = () => {
   if (jsonForm == null) {
     return (
       <StyledDiv>
-        <h5>Nemáš vyplněný formulář</h5>
+        <h5>Online generátor jídelníčku</h5>
+        <p>"Vyzkoušej to!"</p>
+        <p>Za pár minut můžeš mít svůj jídelníček:</p>
+        <p>
+          👉 Stačí vyplnit tvé omezení v jídle. Díky tomu vyfiltrujeme správné
+          recepty.
+        </p>
+        <p>
+          👉 Zadej, kolik měříš, vážíš, jak jsi přes den aktivní a jestli
+          sportuješ. To nám pomůže zjistit ideální denní příjem kalorií.
+        </p>
+        <p>👉 Také si vyber, kolik jídel denně preferuješ.</p>
+        <p>
+          Aplikace Ti navrhne na míru chutný jídelníček zatím na jeden den. Ale
+          plánujeme brzy rozšíření na celý měsíc! Stay tunned.
+        </p>
         <button onClick={() => history.push(`/form`)}>Chci jídelníček</button>
       </StyledDiv>
     );
