@@ -5,7 +5,17 @@ import { useHistory } from 'react-router-dom';
 
 const StyledSection = styled.section`
   padding: 1rem;
-
+  button {
+    margin-top: 2 rem;
+    background-color: rgb(255, 0, 55);
+    width: 170px;
+    height: 60px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
   .foodMenu {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -90,6 +100,8 @@ const StyledDiv = styled.div`
   }
 `;
 
+const StyledPDF = styled.div``;
+
 const FoodMenu = () => {
   const jsonForm = localStorage.getItem('menu');
   const history = useHistory();
@@ -141,6 +153,13 @@ const FoodMenu = () => {
         />
         <Meal title="Večeře" data={menu.dinner} className="dinner" />
       </div>
+
+      <form method="POST" action="https://pdf.zkusmo.eu/online-jidelnicek">
+        <input name="type" value="json" type="hidden" />
+        <input name="root" value="json" type="hidden" />
+        <input name="data" value={JSON.stringify(menu)} type="hidden" />
+        <button type="submit">Stáhni si jídelníček v PDF</button>
+      </form>
     </StyledSection>
   );
 };
