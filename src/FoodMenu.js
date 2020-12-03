@@ -105,8 +105,8 @@ const FoodMenu = () => {
           recepty.
         </p>
         <p>
-          👉 Zadej, kolik měříš, vážíš, jak jsi přes den aktivní a jestli
-          sportuješ. To nám pomůže zjistit ideální denní příjem kalorií.
+          👉 Zadej, kolik vážíš, jak jsi přes den aktivní a jestli sportuješ. To
+          nám pomůže zjistit ideální denní příjem kalorií.
         </p>
         <p>👉 Také si vyber, kolik jídel denně preferuješ.</p>
         <p>
