@@ -69,39 +69,39 @@ function valuetext(value) {
 
 function getManPicture(formBodyFat) {
   if (formBodyFat < 8) {
-    return 'man-8.jpg';
+    return 'man-8.png';
   } else if (formBodyFat <= 12) {
-    return 'man-12.jpg';
+    return 'man-12.png';
   } else if (formBodyFat <= 15) {
-    return 'man-15.jpg';
+    return 'man-15.png';
   } else if (formBodyFat <= 20) {
-    return 'man-20.jpg';
+    return 'man-20.png';
   } else if (formBodyFat <= 25) {
-    return 'man-25.jpg';
+    return 'man-25.png';
   } else if (formBodyFat <= 30) {
-    return 'man-30.jpg';
+    return 'man-30.png';
   } else if (formBodyFat <= 35) {
-    return 'man-35.jpg';
+    return 'man-35.png';
   }
-  return 'man-35.jpg';
+  return 'man-35.png';
 }
 function getWomanPicture(formBodyFat) {
   if (formBodyFat <= 15) {
-    return 'woman-15.jpg';
+    return 'woman-15.png';
   } else if (formBodyFat <= 20) {
-    return 'woman-20.jpg';
+    return 'woman-20.png';
   } else if (formBodyFat <= 25) {
-    return 'woman-25.jpg';
+    return 'woman-25.png';
   } else if (formBodyFat <= 30) {
-    return 'woman-30.jpg';
+    return 'woman-30.png';
   } else if (formBodyFat <= 35) {
-    return 'woman-35.jpg';
+    return 'woman-35.png';
   } else if (formBodyFat <= 40) {
-    return 'woman-40.jpg';
+    return 'woman-40.png';
   } else if (formBodyFat <= 45) {
-    return 'woman-45.jpg';
+    return 'woman-45.png';
   }
-  return 'woman-45.jpg';
+  return 'woman-45.png';
 }
 
 const FormBodyFat = ({ values, setFieldValue }) => {

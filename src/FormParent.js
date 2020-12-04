@@ -74,11 +74,11 @@ const FormParent = () => {
       z-index: 2;
     }
     .headerimage {
-      height: 10rem;
+      height: 5rem;
       position: absolute;
-      top: -20px;
-      right: 0;
-      z-index: 0;
+      top: 65px;
+      right: -20px;
+      z-index: 1;
     }
     @media (min-width: 400px) {
       h1 {
@@ -90,6 +90,12 @@ const FormParent = () => {
 
   return (
     <StyledContainer>
+      <h1>Formulář</h1>
+      <img
+        className="headerimage"
+        src={'./assets/img/foodmenu.png'}
+        alt="Online-jídelníček"
+      />
       <Formik
         initialValues={
           localStorage.getItem('form')
@@ -164,13 +170,6 @@ const FormParent = () => {
                 {stepComponents.map((StepComponent) => {
                   return (
                     <div>
-                      <h1>Formulář</h1>
-
-                      <img
-                        className="headerimage"
-                        src={'./assets/img/foodmenu.png'}
-                        alt="Online-jídelníček"
-                      />
                       <StepComponent
                         touched={touched}
                         errors={errors}

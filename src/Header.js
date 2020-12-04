@@ -121,11 +121,15 @@ const Header = () => {
       toggleMenu(event);
     }
   }
+  function handleLogoClick() {
+    history.push('/');
+    setOpen(false);
+  }
 
   return (
     <StyledHeader isOpen={open} onClick={handleHeaderClick}>
       <div className="topMenu">
-        <div onClick={() => history.push('/')} className="logo">
+        <div onClick={handleLogoClick} className="logo">
           <span className="logo1">ONLINE</span>
           <span className="logo2">JÍDELNÍČEK</span>
         </div>

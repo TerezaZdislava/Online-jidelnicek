@@ -10,6 +10,7 @@ import { useHistory } from 'react-router-dom';
 import About from './About.js';
 import Content from './Content.js';
 import Photogallery from './Photogallery.js';
+import Partners from './Partners.js';
 
 // const EnhancedSwipeableViews = bindKeyboard(
 //   autoPlay(virtualize(SwipeableViews)),
@@ -174,6 +175,7 @@ const Home = () => {
       <Content />
       <Photogallery />
       <About />
+      <Partners />
     </StyledContent>
   );
 };
