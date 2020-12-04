@@ -54,6 +54,10 @@ const FormParent = () => {
 
   useEffect(() => {
     localStorage.setItem('formPage', Number(step));
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }, [step]);
 
   const isFirst = step === 0;
@@ -120,6 +124,10 @@ const FormParent = () => {
               localStorage.removeItem('form');
               localStorage.removeItem('formPage');
               history.push('/foodmenu');
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              });
             })
             .catch((error) => {
               alert(
