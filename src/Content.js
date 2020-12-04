@@ -1,58 +1,50 @@
 import styled from 'styled-components';
 import React from 'react';
+import { Timer } from '@styled-icons/open-iconic/Timer';
+import { LocationFood } from '@styled-icons/zondicons/LocationFood';
+import { Person } from '@styled-icons/open-iconic/Person';
 
 const StyledContent = styled.div`
-  display: block;
-  box-shadow: rgba(50, 50, 50, 0.3) 1px 1px 10px 0px;
-  background-color: white;
-  margin-top: 10rem;
-  border-radius: 10px;
-  padding: 2rem;
-  margin: 20px;
-  font-size: 1rem;
-  font-weight: 400;
   text-align: center;
-  align-items: center;
-  justify-content: center;
-  h5 {
-    font-style: italic;
-    margin-top: 0.5rem;
-    font-weight: 400;
-  }
-  h4 {
-    font-size: 1.2rem;
-    margin-top: 0;
-  }
-  @media (min-width: 550px) {
-    margin-left: 15%;
-    margin-right: 15%;
+  .card {
+    margin: 10%;
+    font-size: 0.8rem;
   }
   @media (min-width: 750px) {
-    margin-left: 25%;
-    margin-right: 25%;
-    font-size: 1.3rem;
-    h5 {
-      font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    .card {
+      margin: 8% 5% 5% 5%;
+      font-size: 1rem;
+      width: 20%;
     }
   }
   @media (min-width: 1200px) {
-    margin-left: 30%;
-    margin-right: 30%;
   }
 `;
-const Content = (props) => {
+const Content = () => {
   return (
     <StyledContent>
-      <h4>Za pár minut můžeš mít svůj jídelníček:</h4>
-      <h5>Jak to funguje?</h5>
-      <div className="text">
+      <div className="card">
+        <Timer size="1.4em" />
         <p>
-          Aplikace Ti na míru navrhne chutný jídelníček na pár dní. K tomu
-          dostaneš praktický nákupní seznam.📝
+          Získej jídelníček online, snadno a do 5 minut. Stačí vyplnit krátký
+          dotazník.
         </p>
+      </div>
+      <div className="card">
+        <Person size="1.4em" />
         <p>
-          Stačí vyplnit několik otázek ohledně Tvého cíle, aktivity nebo
-          preferencí v jídle.
+          Jídelníček bude na míru přesně pro Tebe. Stačí vyplnit, jak jsi
+          aktivní, jakou máš postavu, cíle nebo preference v jídle.
+        </p>
+      </div>
+      <div className="card">
+        <LocationFood size="1.4em" />
+        <p>
+          Garantujeme, že si pochutnáš! Připravili jsme pestrý jídelníček plný
+          zdravých dobrot. Porce jsou tak akorát velké vzhledem ke Tvé spotřebě
+          kalorií.
         </p>
       </div>
     </StyledContent>

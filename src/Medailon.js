@@ -3,11 +3,7 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
   display: block;
-  position: relative;
   margin-top: 10rem;
-  border-radius: 10px;
-  box-shadow: rgba(50, 50, 50, 0.3) 1px 1px 10px 0px;
-  background-color: white;
   margin-top: 10rem;
   height: 200 px;
   padding: 2rem;
@@ -35,6 +31,10 @@ const StyledCard = styled.div`
   }
   .textaboutus {
     line-height: 1.7;
+  }
+  @media (min-width: 1000px) {
+    width: 30%;
+    height: fit-content;
   }
 `;
 

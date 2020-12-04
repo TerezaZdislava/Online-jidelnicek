@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import About from './About.js';
 import Content from './Content.js';
+import Photogallery from './Photogallery.js';
 
 // const EnhancedSwipeableViews = bindKeyboard(
 //   autoPlay(virtualize(SwipeableViews)),
@@ -17,33 +18,59 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const StyledContent = styled.div`
   display: block;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  font-weight: 700;
-  font-size: 1.2rem;
-  img {
+  font-size: 1.3rem;
+  .imagesAndCta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    img {
+      width: 150%;
+    }
+  }
+  .divTriangles {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+  }
+  .triangles {
+    bottom: 0;
     width: 100%;
+    display: flex;
+  }
+  .triangle2 {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 0 0 300px;
+    border-color: transparent transparent transparent #ffffff;
+  }
+  .triangle1 {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 30px 300px;
+    border-color: transparent transparent #ffffff transparent;
   }
   .cta {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     width: 100%;
     position: absolute;
     top: 0;
   }
   .ctatext {
-    background-color: white;
-    padding: 0 1.5rem;
-    margin: 5rem;
-    opacity: 0.8;
+    width: 65%;
+    font-weight: 500;
+    color: white;
+    margin: 10% 0;
     border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  .ctatext p {
-    opacity: 1;
+    background-color: #632d2d8c;
+    padding: 0 5%;
   }
   button {
     background-color: rgb(255, 0, 55);
@@ -54,69 +81,57 @@ const StyledContent = styled.div`
     border: none;
     font-size: 1.1rem;
     font-weight: 700;
-  }
-  .imagesAndCta {
-    display: block;
-    position: relative;
+    margin: 0;
+    cursor: pointer;
   }
   @media (min-width: 550px) {
-    .imagesAndCta {
-      height: 70%;
-      object-fit: cover;
+    .triangle1 {
+      border-width: 0 0 40px 500px;
     }
-    img {
-      width: 100%;
-      object-fit: cover;
-      height: 70%;
+    .triangle2 {
+      border-width: 40px 0 0 500px;
     }
     .cta {
-      justify-content: flex-start;
-      margin-top: 4%;
+      margin-top: 5%;
     }
     .ctatext {
-      font-size: 1.6rem;
+      width: 40%;
+      font-size: 1.8rem;
     }
     button {
-      margin-top: 1rem;
       width: 12rem;
       height: 4rem;
-      font-size: 1.4rem;
+    }
+    .imagesAndCta img {
+      width: 120%;
     }
   }
   @media (min-width: 1000px) {
-    .cta {
-      justify-content: flex-start;
-      margin-top: 9%;
-      height: 100%;
+    .triangle1 {
+      border-width: 0 0 50px 625px;
+    }
+    .triangle2 {
+      border-width: 50px 0 0 625px;
     }
     .ctatext {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
-    button {
-      cursor: pointer;
-      margin-top: 3rem;
-      width: 15rem;
-      height: 5rem;
-      font-size: 1.8rem;
+    .imagesAndCta img {
+      width: 100%;
     }
   }
   @media (min-width: 1250px) {
-    .cta {
-      justify-content: flex-start;
-      margin-top: 12%;
+    .triangle1 {
+      border-width: 0 0 60px 950px;
+    }
+    .triangle2 {
+      border-width: 60px 0 0 950px;
     }
     .ctatext {
-      font-size: 2.4rem;
+      font-size: 2.1rem;
     }
     button {
-      cursor: pointer;
-      margin-top: 4rem;
-      width: 17rem;
-      height: 7rem;
-      font-size: 1.8rem;
-    }
-    .imagesAndCta {
-      height: 70%;
+      font-size: 1.2rem;
     }
   }
 `;
@@ -136,7 +151,13 @@ const Home = () => {
           <img src={'./assets/img/jidlo-6.jpg'} alt="jidlo6" />
           <img src={'./assets/img/jidlo-7.jpg'} alt="jidlo7" />
         </AutoPlaySwipeableViews> */}
-        <img src={'./assets/img/food-hp.jpg'} alt="jidlo na homepage" />
+        <img src={'./assets/img/foodhp10.jpg'} alt="jidlo na homepage" />
+        <div className="divTriangles">
+          <div className="triangles">
+            <div className="triangle2"></div>
+            <div className="triangle1"></div>
+          </div>
+        </div>
         <div className="cta">
           <div className="ctatext">
             <p>Zdravý a chutný jídelníček na míru</p>
@@ -151,6 +172,7 @@ const Home = () => {
         </div>
       </div>
       <Content />
+      <Photogallery />
       <About />
     </StyledContent>
   );

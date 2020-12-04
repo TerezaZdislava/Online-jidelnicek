@@ -35,6 +35,8 @@
   "dependencies": {
     "@material-ui/core": "^4.11.1",
     "@styled-icons/feather": "^10.18.0",
+    "@styled-icons/open-iconic": "^10.18.0",
+    "@styled-icons/zondicons": "^10.18.0",
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
     "express": "^4.17.1",
