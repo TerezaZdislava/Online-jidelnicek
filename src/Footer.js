@@ -27,15 +27,17 @@ const Footer = () => {
   return (
     <StyledFooter>
       <div className="footer">
-        <span className="copyright">Copyright©2O2O,</span>
+        <span className="copyright">Copyright©2O2O</span>
         <div className="logo">
           <span className="logo1">ONLINE</span>
           <span className="logo2">JÍDELNÍČEK</span>
         </div>
-        <span className="e-mail">
-          V případě dotazů či spolupráce nás kontaktuj:{' '}
-          <e-mail>info@online-jidelnicek.cz</e-mail>
-        </span>
+        <div className="e-mail">
+          "V případě dotazů či spolupráce nás kontaktuj:{' '}
+          <a href={`mailto:${`info@online-jidelnicek.cz`}`}>
+            info@online-jidelnicek.cz
+          </a>
+        </div>
       </div>
     </StyledFooter>
   );

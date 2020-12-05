@@ -42,7 +42,7 @@ const About = () => {
           img="terkadanca.png"
           alt="Daniela Kůsová a Tereza Baštová"
           name="Daniela Kůsová a Tereza Baštová"
-          text="Milý, neznámý, děkujeme, že jsi zavítal na naší stránku a věříme, že online jídelníček ti pomůže nastartovat tvoji cestu za vyváženým a zdravým způsobem stravování a tak dokáže přispět ke snížení rizik, které jsou spojeny s obezitou. Rozhodně nejsme zastánkyně náhražek klasické potravy, proto v našich receptech nenajdeš žádné umělé proteiny či cukry. Recepty do databáze píšeme buď z vlastní kladné zkušenosti nebo po poradě s nutričními specialisty. Budeme rádi za jakýkoliv Feedback."
+          text="Milý, neznámý, děkujeme, že jsi zavítal na naší stránku a věříme, že online jídelníček ti pomůže nastartovat tvoji cestu za vyváženým a zdravým způsobem stravování a tak dokáže přispět ke snížení rizik, které jsou spojeny s obezitou. Rozhodně nejsme zastánkyně náhražek klasických potravin, proto v našich receptech nenajdeš žádné umělé proteiny či cukry. Recepty do databáze píšeme buď z vlastní kladné zkušenosti nebo po poradě s nutričními specialisty. Budeme rádi za jakýkoliv Feedback."
         />
         <Medailon
           className="medailon"
