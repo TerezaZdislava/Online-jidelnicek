@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Checkbox from './Checkbox.js';
 
 const StyledFormFood = styled.div`
-  background-image: url("food-bg3.jpg")
   padding: 1.5rem;
   .formFood-all {
+    background-color: white;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,6 @@ const StyledFormFood = styled.div`
     border-collapse: separate;
     border-radius: 10px;
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
-    background-color: white;
     overflow: hidden;
     perspective: 1px;
   }

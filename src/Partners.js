@@ -3,14 +3,10 @@ import styled from 'styled-components';
 import Logos from './Logos.js';
 
 const StyledPartners = styled.div`
-  margin: 0;
+  margin: 5%;
   display: block;
-
-  @media (min-width: 1000px) {
-    displax: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  justify-content: center;
+  align-items: center;
 `;
 
 const Partners = () => {

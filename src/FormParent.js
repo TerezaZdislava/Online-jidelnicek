@@ -64,7 +64,9 @@ const FormParent = () => {
   const isLast = step === stepComponents.length - 1;
 
   const StyledContainer = styled.div`
-    background-image: url(/assets/img/pozadi4.png) h1 {
+    background-image: url(${(props) => props.img});
+    background-size: cover;
+    h1 {
       margin: 0;
       padding-top: 30px;
       padding-left: 30px;
@@ -89,7 +91,7 @@ const FormParent = () => {
   `;
 
   return (
-    <StyledContainer>
+    <StyledContainer img={`./assets/img/food-bg2.jpg`}>
       <h1>Formulář</h1>
       <img
         className="headerimage"

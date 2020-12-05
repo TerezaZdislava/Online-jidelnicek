@@ -47,7 +47,7 @@ const StyledFormUserDetails = styled.div`
 
 export const FormUserDetails = ({ errors, touched, values }) => {
   const validate = (schema, value) => {
-    console.log('Validate');
+    // console.log('Validate');
     try {
       schema.validateSync(value);
     } catch (error) {

@@ -3,14 +3,12 @@ import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
   display: block;
-  margin-left: 25%;
+  text-align: center;
+  justify-content: center;
   width: 100%;
-  box-shadow: 0px 5px 4px 0px rgba(50, 50, 50, 0.3);
-  height: 60px;
+  height: 30px;
   h5 {
-    margin: 0;
-    height: 60px;
-    box-shadow: 0px 5px 4px 0px rgba(50, 50, 50, 0.3);
+    margin: 0 10%;
   }
 `;
 
