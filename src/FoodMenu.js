@@ -50,6 +50,9 @@ const StyledSection = styled.section`
     h5 {
       font-size: 1.5rem;
     }
+    button {
+      cursor: pointer;
+    }
   }
   @media (min-width: 1200px) {
     margin-left: 30%;
