@@ -19,6 +19,7 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const StyledContent = styled.div`
   display: block;
+  overflow-x: hidden;
   font-size: 1.3rem;
   .imagesAndCta {
     display: flex;
@@ -27,6 +28,7 @@ const StyledContent = styled.div`
     position: relative;
     img {
       width: 150%;
+      overflow-x: hidden;
     }
   }
   .divTriangles {

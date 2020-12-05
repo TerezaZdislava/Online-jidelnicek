@@ -154,10 +154,7 @@ const FoodMenu = () => {
         <Meal title="Večeře" data={menu.dinner} className="dinner" />
       </div>
 
-      <form
-        method="POST"
-        action="https://api.online-jidelnicek.cz/online-jidelnicek"
-      >
+      <form method="POST" action="https://api.online-jidelnicek.cz/pdf">
         <input name="type" value="json" type="hidden" />
         <input name="root" value="json" type="hidden" />
         <input name="data" value={JSON.stringify(menu)} type="hidden" />

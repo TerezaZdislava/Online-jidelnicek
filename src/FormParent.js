@@ -95,11 +95,6 @@ const FormParent = () => {
   return (
     <StyledContainer img={`./assets/img/foodimage-form.jpg`}>
       <h1>Formulář</h1>
-      <img
-        className="headerimage"
-        src={'./assets/img/foodmenu.png'}
-        alt="Online-jídelníček"
-      />
       <Formik
         initialValues={
           localStorage.getItem('form')
