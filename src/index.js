@@ -8,7 +8,8 @@ import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './assets/index.css';
 import './assets/font/font.css';
 import styled from 'styled-components';
-import Footer from "./Footer.js";
+import Footer from './Footer.js';
+import GlobalFonts from './assets/font/font';
 
 const routes = [
   { path: '/', component: Home, exact: true },
@@ -22,6 +23,7 @@ const Content = styled.div`
 
 render(
   <Router>
+    <GlobalFonts />
     <Header />
     <Content>
       <Switch>

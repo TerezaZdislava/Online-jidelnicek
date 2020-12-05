@@ -51,7 +51,7 @@ const StyledSection = styled.section`
   }
 `;
 const StyledDiv = styled.div`
-  display: block;
+  display: flex;
   height: auto;
   justify-content: center;
   align-items: center;
@@ -154,7 +154,10 @@ const FoodMenu = () => {
         <Meal title="Večeře" data={menu.dinner} className="dinner" />
       </div>
 
-      <form method="POST" action="https://pdf.zkusmo.eu/online-jidelnicek">
+      <form
+        method="POST"
+        action="https://api.online-jidelnicek.cz/online-jidelnicek"
+      >
         <input name="type" value="json" type="hidden" />
         <input name="root" value="json" type="hidden" />
         <input name="data" value={JSON.stringify(menu)} type="hidden" />

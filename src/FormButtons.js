@@ -9,6 +9,7 @@ const StyledButton = styled.div`
   margin: 2rem;
 
   button {
+    font-family: 'Poppins';
     height: 40px;
     border-radius: 5px;
     border: none;

@@ -11,8 +11,12 @@ const StyledPartners = styled.div`
     padding: 0 15rem;
     display: flex;
     flex-wrap: wrap;
-    .logo {
+    .logo2 {
       width: 40%;
+    }
+    .logo2 {
+      width: auto;
+      height: fit-content;
     }
   }
 `;
@@ -23,7 +27,7 @@ const Partners = () => {
       <div className="logo">
         <Logos src="./assets/img/logoCzechitas.png" alt="Czechitas" />
       </div>
-      <div className="logo">
+      <div className="logo2">
         <Logos src="./assets/img/logoApify.png" alt="APIFY" />
       </div>
     </StyledPartners>

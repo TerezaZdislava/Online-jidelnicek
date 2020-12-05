@@ -39,10 +39,12 @@ const StyledHeader = styled.header`
     padding-left: 20px;
     display: flex;
     flex-wrap: wrap;
+    font-family: 'Poppins';
   }
   .logo2 {
     color: rgb(255, 0, 55);
     margin: 0;
+    font-family: 'Poppins';
     font-weight: 700;
   }
   .logo1 {

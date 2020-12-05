@@ -67,6 +67,8 @@ const FormParent = () => {
     background-image: url(${(props) => props.img});
     background-size: cover;
     h1 {
+      color: white;
+      font-family: 'Poppins';
       margin: 0;
       padding-top: 30px;
       padding-left: 30px;
@@ -91,7 +93,7 @@ const FormParent = () => {
   `;
 
   return (
-    <StyledContainer img={`./assets/img/food-bg2.jpg`}>
+    <StyledContainer img={`./assets/img/foodimage-form.jpg`}>
       <h1>Formulář</h1>
       <img
         className="headerimage"

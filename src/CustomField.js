@@ -14,6 +14,7 @@ const StyledField = styled.div`
   }
   input {
     margin-top: 0.7rem;
+    margin-bottom: 1rem;
     height: 25px;
     width: 92%;
     border: 1px solid red;
