@@ -4,11 +4,10 @@ import styled from 'styled-components';
 const StyledFooter = styled.div`
   .footer {
     display: flex;
+    height: auto;
     justify-content: space-around;
     width: 100%;
-    padding: 1 rem;
     box-shadow: 0px 5px 4px 0px rgba(50, 50, 50, 0.3);
-    height: auto;
   }
   .logo {
     justify-content: wrap;
@@ -34,7 +33,7 @@ const Footer = () => {
           <span className="logo2">JÍDELNÍČEK</span>
         </div>
         <span className="e-mail">
-          V případě dotazů nás kontaktujte:{' '}
+          V případě dotazů či spolupráce nás kontaktuj:{' '}
           <e-mail>info@online-jidelnicek.cz</e-mail>
         </span>
       </div>
