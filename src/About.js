@@ -38,15 +38,15 @@ const About = () => {
       <div className="medailonky">
         <Medailon
           className="medailon"
-          title="Tvůrkyně webu"
+          title="WebMasters&Design, CEO, CMO a CS"
           img="terkadanca.png"
           alt="Daniela Kůsová a Tereza Baštová"
           name="Daniela Kůsová a Tereza Baštová"
-          text="Věříme, že online jídelníček přibližuje široké veřejnosti způsob, jak přemýšlet nad stravováním a dokáže přispět ke snížení rizik, které jsou spojeny s obezitou."
+          text="Milý, neznámý, děkujeme, že jsi zavítal na naší stránku a věříme, že online jídelníček ti pomůže nastartovat tvoji cestu za vyváženým a zdravým způsobem stravování a tak dokáže přispět ke snížení rizik, které jsou spojeny s obezitou. Rozhodně nejsme zastánkyně náhražek klasických potravin, proto v našich receptech nenajdeš žádné umělé proteiny či cukry. Recepty do databáze píšeme buď z vlastní kladné zkušenosti nebo po poradě s nutričními specialisty. Budeme rádi za jakýkoliv Feedback."
         />
         <Medailon
           className="medailon"
-          title="Výživová poradkyně"
+          title="Výživová poradkyně a osobní trenérka"
           img="janicka.jpg"
           alt="Výživová poradkyně"
           name="Ing. Jana Slámová"
@@ -54,11 +54,11 @@ const About = () => {
         />
         <Medailon
           className="medailon"
-          title="Food fotografka"
-          img="terkadanca.png"
+          title="Food fotografka a Poradce pro výživu"
+          img="makybfit.jpg"
           alt="Maky Bašková"
-          name="Food fotografka"
-          text="ahoj"
+          name="Maky Bašková"
+          text="ŽAČNI TEĎ HNED! Nečekej na správnou příležitost, neboť ta nikdy nenastane... nikdy nedovol, aby sis v hlavě říkal:,,Začnu za týden, dva, až po Vánocích, na Nový rok, apod.”, protože ti to dlouho nevydrží. Chce to jít po malých krůčkách a k dané věci se postupně přibližovat. Hlavní je, abychom se nenutili!! Jestli se dneska necítíš na trénink, odpočiň si - tělo ti maximálně tak poděkuje! Ráda jsem podpořila ONLINE JÍDELNÍČEK, protože věřím, že umožní široké veřejnosti pochopit principy zdravého stravování."
         />
       </div>
     </StyledAbout>
