@@ -10,6 +10,7 @@ const StyledLogos = styled.div`
     width: 90%;
   }
   @media (min-width: 550px) {
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
     .imageLogo {
@@ -17,9 +18,8 @@ const StyledLogos = styled.div`
     }
   }
   @media (min-width: 1000px) {
-    .imageLogo {
-      width: 40%;
-    }
+    width: 100%;
+    margin: 0;
   }
 `;
 
