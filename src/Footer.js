@@ -2,9 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
-  font-size: 0.5rem;
+  display: block;
+  margin-left: 25%;
+  width: 100%;
+  box-shadow: 0px 5px 4px 0px rgba(50, 50, 50, 0.3);
+  height: 60px;
   h5 {
-    margin-top: 20rem;
+    margin: 0;
+    height: 60px;
+    box-shadow: 0px 5px 4px 0px rgba(50, 50, 50, 0.3);
   }
 `;
 
@@ -12,8 +18,8 @@ const Footer = () => {
   return (
     <StyledFooter>
       <h5>
-        Copyright©2O2O,Online-jidelnicek.cz ve spolupráci s APIFY a Digitální
-        akademie - Web CZECHITAS
+        Copyright©2O2O, Online-jidelnicek.cz V případě dotazů nás kontaktujte:{' '}
+        <e-mail>info@online-jidelnicek.cz</e-mail>
       </h5>
     </StyledFooter>
   );
