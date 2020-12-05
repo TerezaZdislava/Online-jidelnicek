@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Checkbox from './Checkbox.js';
 
 const StyledFormFood = styled.div`
-  padding: 1rem;
-
+  background-image: url("food-bg3.jpg")
+  padding: 1.5rem;
   .formFood-all {
     width: 100%;
     display: flex;
@@ -20,13 +20,13 @@ const StyledFormFood = styled.div`
   h5 {
     font-weight: 600;
     font-size: 1.3rem;
-    margin: 1.2rem;
+    margin: 1.5rem;
   }
   .formFood-group {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
   }
   @media (min-width: 550px) {
     margin-left: 15%;
