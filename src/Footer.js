@@ -33,7 +33,7 @@ const Footer = () => {
           <span className="logo2">JÍDELNÍČEK</span>
         </div>
         <div className="e-mail">
-          "V případě dotazů či spolupráce nás kontaktuj:{' '}
+          V případě dotazů či spolupráce nás kontaktuj:{' '}
           <a href={`mailto:${`info@online-jidelnicek.cz`}`}>
             info@online-jidelnicek.cz
           </a>
