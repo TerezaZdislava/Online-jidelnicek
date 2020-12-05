@@ -33,6 +33,12 @@ const StyledSection = styled.section`
     position: absolute;
     right: 0;
   }
+  .buttonPDF {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
   @media (min-width: 550px) {
     margin-left: 15%;
     margin-right: 15%;
@@ -51,17 +57,14 @@ const StyledSection = styled.section`
   }
 `;
 const StyledDiv = styled.div`
-  display: flex;
+  padding: 1rem;
   height: auto;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5rem;
   border-radius: 10px;
   box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
   background-color: white;
-  padding: 1rem;
-  p {
-    font-size: 0, 5rem;
+  h1 {
+    color: black;
+    font-size: 2rem;
   }
 
   button {
@@ -70,6 +73,7 @@ const StyledDiv = styled.div`
     align-items: center;
     background-color: rgb(255, 0, 55);
     margin-top: 10 rem;
+    margin-left: 3rem;
     width: 170px;
     height: 40px;
     border-radius: 5px;
@@ -109,21 +113,25 @@ const FoodMenu = () => {
   if (jsonForm == null) {
     return (
       <StyledDiv>
-        <h5>Online generátor jídelníčku</h5>
-        <p>"Vyzkoušej to!"</p>
-        <p>Za pár minut můžeš mít svůj jídelníček:</p>
+        <h1>Online generátor jídelníčku</h1>
+        <p>Vyzkoušej to!</p>
+        <p>Za 2 minuty můžeš mít svůj jídelníček:</p>
         <p>
-          👉 Stačí vyplnit tvé omezení v jídle. Díky tomu vyfiltrujeme správné
-          recepty.
+          👉 Jídelníček na základě dat o tobě vypočítá hodnotu kalorií pro
+          správné fungování tvého bazálního metabolismu.
         </p>
         <p>
-          👉 Zadej, kolik vážíš, jak jsi přes den aktivní a jestli sportuješ. To
-          nám pomůže zjistit ideální denní příjem kalorií.
+          👉 Jídelníček bere v úvahu i to, jak jsi přes den aktivní a jestli
+          sportuješ. To nám pomůže zjistit ideální denní příjem kalorií.
         </p>
-        <p>👉 Také si vyber, kolik jídel denně preferuješ.</p>
+        <p>
+          👉 Generátor je výjimečný v tom, že si můžeš z jídelníčku odstranit
+          potraviny, které nejíš. Také si stanovíš, kolik jídel za den chceš.
+        </p>
         <p>
           Aplikace Ti navrhne na míru chutný jídelníček zatím na jeden den. Ale
-          plánujeme brzy rozšíření na celý měsíc! Stay tunned.
+          plánujeme brzy rozšíření na celý měsíc! Využij tedy možnost si
+          postavit jídelníček zatím zdarma.
         </p>
         <button onClick={() => history.push(`/form`)}>Chci jídelníček</button>
       </StyledDiv>
@@ -153,13 +161,14 @@ const FoodMenu = () => {
         />
         <Meal title="Večeře" data={menu.dinner} className="dinner" />
       </div>
-
-      <form method="POST" action="https://api.online-jidelnicek.cz/pdf">
-        <input name="type" value="json" type="hidden" />
-        <input name="root" value="json" type="hidden" />
-        <input name="data" value={JSON.stringify(menu)} type="hidden" />
-        <button type="submit">Stáhni si jídelníček v PDF</button>
-      </form>
+      <div className="buttonPDF">
+        <form method="POST" action="https://api.online-jidelnicek.cz/pdf">
+          <input name="type" value="json" type="hidden" />
+          <input name="root" value="json" type="hidden" />
+          <input name="data" value={JSON.stringify(menu)} type="hidden" />
+          <button type="submit">Stáhni si jídelníček v PDF</button>
+        </form>
+      </div>
     </StyledSection>
   );
 };

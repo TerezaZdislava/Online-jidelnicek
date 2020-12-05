@@ -38,7 +38,7 @@ const About = () => {
       <div className="medailonky">
         <Medailon
           className="medailon"
-          title="WebMasters&Design, CEO, CMO a CS"
+          title="WebMaster&Design, CEO, CMO a CS"
           img="terkadanca.png"
           alt="Daniela Kůsová a Tereza Baštová"
           name="Daniela Kůsová a Tereza Baštová"

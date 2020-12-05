@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledFooter = styled.div`
-    display: flex;
+    display: block;
     height: 60px;
-    justify-content: space-around;
     width: 100%;
+    font-size: 0.8rem;
     box-shadow: 0px 5px 4px 0px rgba(50, 50, 50, 0.3);
   }
   .logo2 {
@@ -16,6 +16,12 @@ const StyledFooter = styled.div`
   .logo1 {
     color: black;
     margin: 0;
+  }
+  @media (min-width: 1000px) {
+
+    display: flex;
+    justify-content: space-around;
+    font-size:1 rem;
   }
 `;
 
