@@ -6,7 +6,7 @@ import { Circle } from '@styled-icons/feather/Circle';
 
 const StyledRadioButtonGroup = styled.div`
   display: block;
-  margin-bottom: 1rem;
+  padding-bottom: 1.5rem;
   input {
     visibility: hidden;
     width: 0;
@@ -43,6 +43,9 @@ const StyledRadioButtonGroup = styled.div`
   }
 }
 @media (min-width: 500px) {
+  h5 {
+  padding: 1.5rem;
+  }
 label {
 cursor:pointer;
 }

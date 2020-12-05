@@ -3,14 +3,14 @@ import React from 'react';
 import { Field, ErrorMessage } from 'formik';
 
 const StyledField = styled.div`
-  margin-top: 1rem;
+  padding: 1.5rem;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
   label {
     font-weight: 600;
     font-size: 1.3rem;
     margin-bottom: 0;
-    padding: 0.7rem;
   }
   input {
     margin-top: 0.7rem;
@@ -21,6 +21,7 @@ const StyledField = styled.div`
     padding: 0.2rem 0.6rem;
   }
   @media (min-width: 750px) {
+    padding: 1.5rem;
     font-size: 1.3rem;
     label { 
       font-size: 1.5rem;
