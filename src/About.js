@@ -8,6 +8,8 @@ const StyledAbout = styled.div`
   h2 {
     font-size: 1rem;
     margin: 10%;
+    display: flex;
+    justify-content: center;
   }
   @media (min-width: 1000px) {
     justify-content: center;
@@ -28,13 +30,16 @@ const StyledAbout = styled.div`
     }
   }
   @media (min-width: 1200px) {
+    h2 {
+      font-size: 2rem;
+    }
   }
 `;
 
 const About = () => {
   return (
     <StyledAbout>
-      <h2>Na projektu se podílely:</h2>
+      <h2>Na projektu se podílely</h2>
       <div className="medailonky">
         <Medailon
           className="medailon"
