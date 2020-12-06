@@ -81,7 +81,7 @@ const StyledContent = styled.div`
     font-family: 'Poppins';
     background-color: rgb(255, 0, 55);
     width: 170px;
-    height: 40px;
+    height: auto;
     border-radius: 5px;
     color: white;
     border: none;
@@ -89,6 +89,7 @@ const StyledContent = styled.div`
     font-weight: 700;
     margin: 0;
     cursor: pointer;
+    padding: 0.5rem;
   }
   @media (min-width: 550px) {
     .triangle1 {
@@ -106,7 +107,8 @@ const StyledContent = styled.div`
     }
     button {
       width: 12rem;
-      height: 4rem;
+      height: auto;
+      padding: 1rem;
     }
     .imagesAndCta img {
       width: 120%;
