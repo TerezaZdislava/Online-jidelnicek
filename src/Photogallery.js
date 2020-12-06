@@ -14,7 +14,7 @@ const StyledPhotogallery = styled.div`
     img {
       positon: absolute;
       width: 33.333%;
-      height: 33.333%%;
+      height: auto;
       filter: brightness(0.5);
       transition: 0s ease;
     }
