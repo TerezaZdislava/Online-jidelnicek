@@ -10,12 +10,13 @@ const StyledPhotogallery = styled.div`
   .photogallery {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     positon: relative;
     height: auto;
     img {
       positon: absolute;
       width: 33.333%;
-      height: auto;
+      height: intrinsic;
       filter: brightness(0.5);
       transition: 0s ease;
     }
