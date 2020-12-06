@@ -99,14 +99,15 @@ const StyledDiv = styled.div`
   }
   h1 {
     color: white;
-    font-size: 1rem;
+    font-size: 1.6rem;
+    font-family: 'Poppins';
   }
-.buttonArea {
-  display:flex;
-  justify-content: center;
-  alig-items: center;
-  padding:1rem;
-}
+  .buttonArea {
+    display: flex;
+    justify-content: center;
+    alig-items: center;
+    padding: 1rem;
+  }
   button {
     background-color: rgb(255, 0, 55);
     width: 170px;
