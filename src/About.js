@@ -38,11 +38,11 @@ const About = () => {
       <div className="medailonky">
         <Medailon
           className="medailon"
-          title="WebMaster&Design, CEO, CMO a CS"
+          title="WebMaster&Design"
           img="terkadanca.png"
           alt="Daniela Kůsová a Tereza Baštová"
           name="Daniela Kůsová a Tereza Baštová"
-          text="Milý, neznámý, děkujeme, že jsi zavítal na naší stránku a věříme, že online jídelníček ti pomůže nastartovat tvoji cestu za vyváženým a zdravým způsobem stravování a tak dokáže přispět ke snížení rizik, které jsou spojeny s obezitou. Rozhodně nejsme zastánkyně náhražek klasických potravin, proto v našich receptech nenajdeš žádné umělé proteiny či cukry. Recepty do databáze píšeme buď z vlastní kladné zkušenosti nebo po poradě s nutričními specialisty. Budeme rádi za jakýkoliv Feedback."
+          text="Věříme, že online jídelníček ti pomůže nastartovat tvoji cestu za vyváženým a zdravým způsobem stravování a tak dokáže přispět ke snížení rizik, které jsou spojeny s nadváhou. Rozhodně nejsme zastánkyně hladovění a přísných diet. Naopak, náš jídelníček je pestrý, dlouhodobě udržitelný a porce jsou na míru Tvé spotřebě energie. Garatnujeme, že si pochutnáš na spoustě výtečných jídel. V našich receptech nenajdeš žádné umělé proteiny či cukry. Recepty do databáze píšeme z vlastní kladné zkušenosti po poradě s nutričními specialisty. Budeme rády za jakýkoliv Feedback."
         />
         <Medailon
           className="medailon"

@@ -22,13 +22,13 @@ const StyledContent = styled.div`
   overflow-x: hidden;
   font-size: 1.3rem;
   .imagesAndCta {
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     img {
       width: 150%;
-      overflow-x: hidden;
     }
   }
   .divTriangles {

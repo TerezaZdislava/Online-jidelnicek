@@ -6,7 +6,7 @@ width: auto;
 padding: 1rem;
 overflow-x: hidden;
 display: block;
-height: 60px;
+height: fit-content;
 font-size: 0.8rem;
   }
   .logo2 {
