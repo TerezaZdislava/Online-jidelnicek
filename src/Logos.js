@@ -27,9 +27,8 @@ const Logos = (props) => {
   return (
     <StyledLogos>
       <a href={props.http} target="_blank">
-        <img
+        <img className="imageLogo"
           onClick={(e) => (e.href = 'https://apify.com')}
-          className="imageLogo"
           src={props.src}
           alt={props.alt}
         />
