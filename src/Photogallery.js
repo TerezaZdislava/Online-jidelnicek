@@ -4,16 +4,19 @@ import React from 'react';
 const StyledPhotogallery = styled.div`
   display: flex;
   position: relative;
+  height: auto;
   justify-content: center;
   align-items: center;
   .photogallery {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     positon: relative;
+    height: auto;
     img {
       positon: absolute;
       width: 33.333%;
-      height: 33.333%%;
+      height: intrinsic;
       filter: brightness(0.5);
       transition: 0s ease;
     }

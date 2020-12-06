@@ -6,8 +6,12 @@ const StyledAbout = styled.div`
   margin: 0;
   display: block;
   h2 {
-    font-size: 1rem;
+    font-family: 'Poppins';
+    text-align: center;
+    font-size: 1.4rem;
     margin: 10%;
+    margin-bottom: 1%;
+    margin-top: 15%;
     display: flex;
     justify-content: center;
   }
@@ -39,7 +43,7 @@ const StyledAbout = styled.div`
 const About = () => {
   return (
     <StyledAbout>
-      <h2>Na projektu se podílely</h2>
+      <h2>Na projektu se podílely 🙌</h2>
       <div className="medailonky">
         <Medailon
           className="medailon"
