@@ -25,10 +25,18 @@ const Partners = () => {
   return (
     <StyledPartners>
       <div className="logo">
-        <Logos src="./assets/img/logoCzechitas.png" alt="Czechitas" />
+        <Logos
+          http="https://czechitas.cz"
+          src="./assets/img/logoCzechitas.png"
+          alt="Czechitas"
+        />
       </div>
       <div className="logo2">
-        <Logos src="./assets/img/logoApify.png" alt="APIFY" />
+        <Logos
+          http="https://apify.com"
+          src="./assets/img/logoApify.png"
+          alt="APIFY"
+        />
       </div>
     </StyledPartners>
   );
