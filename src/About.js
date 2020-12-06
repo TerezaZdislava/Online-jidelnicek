@@ -39,7 +39,7 @@ const StyledAbout = styled.div`
 const About = () => {
   return (
     <StyledAbout>
-      <h2>Na projektu se podílely</h2>
+      <h2>Na projektu se podílely 🙌</h2>
       <div className="medailonky">
         <Medailon
           className="medailon"

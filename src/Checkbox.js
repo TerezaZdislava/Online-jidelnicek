@@ -30,10 +30,6 @@ const StyledCheckbox = styled.label`
       font-size: 1.5rem;
     }
   }
-  @media (min-width: 1200px) {
-    margin-left: 30%;
-    margin-right: 30%;
-  }
 `;
 
 const Checkbox = (props) => {
