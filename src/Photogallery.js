@@ -11,6 +11,7 @@ const StyledPhotogallery = styled.div`
     display: flex;
     flex-wrap: wrap;
     positon: relative;
+    height: auto;
     img {
       positon: absolute;
       width: 33.333%;

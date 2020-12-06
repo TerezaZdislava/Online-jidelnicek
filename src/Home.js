@@ -18,6 +18,7 @@ import Partners from './Partners.js';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const StyledContent = styled.div`
+  height: auto;
   display: block;
   overflow-x: hidden;
   font-size: 1.3rem;
