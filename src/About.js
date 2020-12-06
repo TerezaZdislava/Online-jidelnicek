@@ -8,6 +8,8 @@ const StyledAbout = styled.div`
   h2 {
     font-size: 1rem;
     margin: 10%;
+    display: flex;
+    justify-content: center;
   }
   @media (min-width: 1000px) {
     justify-content: center;
@@ -28,21 +30,24 @@ const StyledAbout = styled.div`
     }
   }
   @media (min-width: 1200px) {
+    h2 {
+      font-size: 2rem;
+    }
   }
 `;
 
 const About = () => {
   return (
     <StyledAbout>
-      <h2>Na projektu se podílely:</h2>
+      <h2>Na projektu se podílely</h2>
       <div className="medailonky">
         <Medailon
           className="medailon"
-          title="WebMaster&Design"
+          title="WebMaster, WebDesign"
           img="terkadanca.png"
           alt="Daniela Kůsová a Tereza Baštová"
           name="Daniela Kůsová a Tereza Baštová"
-          text="Věříme, že online jídelníček ti pomůže nastartovat tvoji cestu za vyváženým a zdravým způsobem stravování a tak dokáže přispět ke snížení rizik, které jsou spojeny s nadváhou. Rozhodně nejsme zastánkyně hladovění a přísných diet. Naopak, náš jídelníček je pestrý, dlouhodobě udržitelný a porce jsou na míru Tvé spotřebě energie. Garatnujeme, že si pochutnáš na spoustě výtečných jídel. V našich receptech nenajdeš žádné umělé proteiny či cukry. Recepty do databáze píšeme z vlastní kladné zkušenosti po poradě s nutričními specialisty. Budeme rády za jakýkoliv Feedback."
+          text="Věříme, že online jídelníček pomůže nastartovat tvoji cestu za vyváženým a zdravým způsobem stravování. Nejsme zastánkyně hladovění a přísných diet. Naopak, náš jídelníček je pestrý, dlouhodobě udržitelný a porce jsou na míru Tvé spotřebě energie. Garantujeme, že si pochutnáš na spoustě výtečných jídel. V našich receptech nenajdeš žádné umělé proteiny či cukry. Recepty do databáze píšeme z vlastní kladné zkušenosti po poradě s nutričními specialisty."
         />
         <Medailon
           className="medailon"
@@ -55,10 +60,10 @@ const About = () => {
         <Medailon
           className="medailon"
           title="Food fotografka a Poradce pro výživu"
-          img="makybfit.jpg"
+          img="maky.jpg"
           alt="Maky Bašková"
           name="Maky Bašková"
-          text="ŽAČNI TEĎ HNED! Nečekej na správnou příležitost, neboť ta nikdy nenastane... nikdy nedovol, aby sis v hlavě říkal:,,Začnu za týden, dva, až po Vánocích, na Nový rok, apod.”, protože ti to dlouho nevydrží. Chce to jít po malých krůčkách a k dané věci se postupně přibližovat. Hlavní je, abychom se nenutili!! Jestli se dneska necítíš na trénink, odpočiň si - tělo ti maximálně tak poděkuje! Ráda jsem podpořila ONLINE JÍDELNÍČEK, protože věřím, že umožní široké veřejnosti pochopit principy zdravého stravování."
+          text="Jsem milovnice fitness, zdravého jídla a dobrot, která se každým dnem snaží posouvat dopředu a motivovat ostatní! ❤ Vždycky říkám, že je vše o disciplíně a není správné se do věcí nutit. Člověk si v první řadě sám musí uvědomit, PROČ začal a čeho chce dosáhnout. Já sama si tohle uvědomila již dávno a hlavně tuhle myšlenku chci předávat i dál. Nevzdávat se, sečkat a bojovat!"
         />
       </div>
     </StyledAbout>

@@ -26,12 +26,13 @@ const StyledLogos = styled.div`
 const Logos = (props) => {
   return (
     <StyledLogos>
-      <img
-        onClick={(e) => (e.href = 'apify.com')}
-        className="imageLogo"
-        src={props.src}
-        alt={props.alt}
-      />
+      <a href={props.http} target="_blank">
+        <img className="imageLogo"
+          onClick={(e) => (e.href = 'https://apify.com')}
+          src={props.src}
+          alt={props.alt}
+        />
+      </a>
     </StyledLogos>
   );
 };
