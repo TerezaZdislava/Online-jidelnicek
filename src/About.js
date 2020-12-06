@@ -7,9 +7,11 @@ const StyledAbout = styled.div`
   display: block;
   h2 {
     font-family: 'Poppins';
-    font-size: 1rem;
+    text-align: center;
+    font-size: 1.4rem;
     margin: 10%;
     margin-bottom: 1%;
+    margin-top: 15%;
     display: flex;
     justify-content: center;
   }
