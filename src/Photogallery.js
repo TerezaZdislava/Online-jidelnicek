@@ -4,6 +4,7 @@ import React from 'react';
 const StyledPhotogallery = styled.div`
   display: flex;
   position: relative;
+  height: auto;
   justify-content: center;
   align-items: center;
   .photogallery {

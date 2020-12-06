@@ -77,6 +77,7 @@ const StyledContent = styled.div`
     padding: 0 5%;
   }
   button {
+    -webkit-appearance: none;
     font-family: 'Poppins';
     background-color: rgb(255, 0, 55);
     width: 170px;
