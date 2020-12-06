@@ -67,11 +67,12 @@ const FormParent = () => {
     background-image: url(${(props) => props.img});
     background-size: cover;
     h1 {
+      display: flex;
+      justify-content: center;
       color: white;
       font-family: 'Poppins';
       margin: 0;
       padding-top: 30px;
-      padding-left: 30px;
       font-weight: 600;
       font-size: 1.6rem;
 
@@ -83,12 +84,6 @@ const FormParent = () => {
       top: 65px;
       right: -20px;
       z-index: 1;
-    }
-    @media (min-width: 400px) {
-      h1 {
-        display: flex;
-        justify-content: center;
-      }
     }
   `;
 

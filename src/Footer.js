@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledFooter = styled.div`
-    display: block;
-    height: 60px;
-    width: 100%;
-    font-size: 0.8rem;
-    box-shadow: 0px 5px 4px 0px rgba(50, 50, 50, 0.3);
+width: auto;
+padding: 1rem;
+overflow-x: hidden;
+display: block;
+height: fit-content;
+font-size: 0.8rem;
   }
   .logo2 {
     color: rgb(255, 0, 55);

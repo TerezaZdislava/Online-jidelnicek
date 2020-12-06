@@ -4,48 +4,58 @@ import Meal from './Meal.js';
 import { useHistory } from 'react-router-dom';
 
 const StyledSection = styled.section`
+  background-image: url(${(props) => props.img});
+  background-size: cover;
   padding: 1rem;
   button {
     margin-top: 2 rem;
     background-color: rgb(255, 0, 55);
-    width: 170px;
-    height: 60px;
+    width: 17rem;
+    height: 3rem;
     border-radius: 5px;
     color: white;
     border: none;
     font-size: 1.1rem;
     font-weight: 700;
+    font-family: 'Poppins';
   }
   .foodMenu {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
     background-color: white;
-    overflow-x: hidden;
-  }
-  h1 {
-    color: black;
-    font-size: 2rem;
+    overflow: hidden;
   }
   .headerimage {
-    height: 10rem;
+    height: 8rem;
     position: absolute;
     right: 0;
+    top: -1rem;
+    z-index: 0;
+    overflow: visible;
+  }
+  h1 {
+    position: relative;
+    color: white;
+    font-size: 1.6rem;
+    font-family: 'Poppins';
   }
   .buttonPDF {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin: 2rem;
   }
   @media (min-width: 550px) {
-    margin-left: 15%;
-    margin-right: 15%;
-  }
+    padding-left: 15%;
+    padding-right: 15%;
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   @media (min-width: 750px) {
-    margin-left: 25%;
-    margin-right: 25%;
+    padding-left: 25%;
+    padding-right: 25%;
     font-size: 1.3rem;
     h5 {
       font-size: 1.5rem;
@@ -55,8 +65,24 @@ const StyledSection = styled.section`
     }
   }
   @media (min-width: 1200px) {
-    margin-left: 30%;
-    margin-right: 30%;
+    padding-left: 30%;
+    padding-right: 30%;
+    .headerimage {
+      height: 10rem;
+      right: 1rem;
+   }
+    button {
+    margin-top: 2 rem;
+    width: 20rem;
+    height: 4rem;
+    font-size: 1.3rem;
+  }
+  .buttonPDF {
+    margin: 5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
   }
 `;
 const StyledDiv = styled.div`
@@ -141,13 +167,15 @@ const FoodMenu = () => {
   }
   const menu = JSON.parse(jsonForm);
   return (
-    <StyledSection>
-      <img
-        className="headerimage"
-        src={'./assets/img/foodmenu.png'}
-        alt="Online-jídelníček"
-      />
-      <h1>Jídelníček</h1>
+    <StyledSection img={`./assets/img/foodimage-form.jpg`}>
+      <h1>
+        Jídelníček
+        <img
+          className="headerimage"
+          src={'./assets/img/foodmenu.png'}
+          alt="Online-jídelníček"
+        />
+      </h1>
       <div className="foodMenu">
         <Meal title="Snídaně" data={menu.breakfast} className="breakfast" />
         <Meal
