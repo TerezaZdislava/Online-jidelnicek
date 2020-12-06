@@ -62,6 +62,7 @@ const StyledSection = styled.section`
 const StyledDiv = styled.div`
   padding: 1rem;
   height: auto;
+  background-color: white;
   border-radius: 10px;
   box-shadow: 1px 1px 16px 0px rgba(50, 50, 50, 0.75);
   background-color: white;
@@ -106,8 +107,6 @@ const StyledDiv = styled.div`
     margin-right: 30%;
   }
 `;
-
-const StyledPDF = styled.div``;
 
 const FoodMenu = () => {
   const jsonForm = localStorage.getItem('menu');
