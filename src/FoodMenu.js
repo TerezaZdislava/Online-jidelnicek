@@ -10,13 +10,14 @@ const StyledSection = styled.section`
   button {
     margin-top: 2 rem;
     background-color: rgb(255, 0, 55);
-    width: 170px;
-    height: 60px;
+    width: 17rem;
+    height: 3rem;
     border-radius: 5px;
     color: white;
     border: none;
     font-size: 1.1rem;
     font-weight: 700;
+    font-family: 'Poppins';
   }
   .foodMenu {
     border-radius: 10px;
@@ -69,7 +70,19 @@ const StyledSection = styled.section`
     .headerimage {
       height: 10rem;
       right: 1rem;
+   }
+    button {
+    margin-top: 2 rem;
+    width: 20rem;
+    height: 4rem;
+    font-size: 1.3rem;
   }
+  .buttonPDF {
+    margin: 5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
   }
 `;
 const StyledDiv = styled.div`
