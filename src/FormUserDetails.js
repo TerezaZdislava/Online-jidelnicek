@@ -86,7 +86,7 @@ export const FormUserDetails = ({ errors, touched, values }) => {
             ]}
           />
           <CustomField
-            question="Kolik vážíte kg?"
+            question="Kolik vážíte (odhadem) kg?"
             type="number"
             name="weight"
             placeholder="Zadej svou váhu v kg"

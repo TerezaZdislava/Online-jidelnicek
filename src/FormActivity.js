@@ -91,7 +91,7 @@ export const FormActivity = ({ values }) => {
 
         <RadioButtonGroup
           values={values}
-          question="Jaké je máš zaměstnání, popřípadě náplň dne, kromě sportu?"
+          question="Jaké je máš zaměstnání, popřípadě náplň dne?"
           name="jobActivity"
           validate={(value) => {
             validate(jobActivitySchema, value);
@@ -99,16 +99,16 @@ export const FormActivity = ({ values }) => {
           answers={[
             {
               value: '0.8',
-              label: 'Nejsem aktivní. Denně ujdu méně než 8 K kroků.',
+              label: 'Nejsem aktivní. Jezdím autem. Sedavé zaměstnání.',
             },
             {
               value: '1',
-              label: 'Jsem středně aktivní, nachodím kolem 8 K kroků.',
+              label: 'Jsem středně aktivní. Chodím často pěšky.',
             },
             {
               value: '1.35',
               label:
-                'Jsem aktivní a většinu dne na nohou. Nachodím nad 10 K kroků',
+                'Jsem většinu dne na nohou. Mám fyzicky náročné zaměstnání.',
             },
           ]}
         />
