@@ -56,9 +56,9 @@ const About = () => {
         <Medailon
           className="medailon"
           title="Výživová poradkyně a osobní trenérka"
-          img="janicka.jpg"
+          img="miluska.jpg"
           alt="Výživová poradkyně"
-          name="Ing. Jana Slámová"
+          name="Miluška"
           text="Do zdravého životního stylu jsem se doslova zamilovala. Je skvělé, že ho mohu šířit dál mezi další nadšence. Diety, které představují pro člověka velké restrikce nejsou pro člověka dlouhodobě udržitelné a většina dietářů se poté vrátí na svůj výchozí bod a nebo se dokonce dostaví jojo efekt. Svým klientům chci ukazovat cestu, která možná bude pomalejší než zázračné diety z reklam, ale bude zdravá pro tělo a dosažené výsledky si udržíte dlouhodobě. Všem Vám držím moc palce v cestě za Vašimi sny."
         />
         <Medailon
